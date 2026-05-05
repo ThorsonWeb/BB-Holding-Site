@@ -2,9 +2,46 @@ import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import Link from "next/link";
-import Image from "next/image";
 
-export default function LobbyPage() {
+const tickerItems = [
+  {
+    accent: "primary",
+    icon: "groups",
+    label: "Meet local players and find more games near you",
+  },
+  {
+    accent: "default",
+    icon: "event",
+    label: "Set up a game in minutes and fill the table faster",
+  },
+  {
+    accent: "secondary",
+    icon: "trending_up",
+    label: "Track your results and see your game improve over time",
+  },
+  {
+    accent: "primary",
+    icon: "military_tech",
+    label: "Build a unique profile with awards, badges, and bragging rights",
+  },
+  {
+    accent: "secondary",
+    icon: "workspace_premium",
+    label: "Earn an exclusive early signup badge only available to early adopters",
+  },
+  {
+    accent: "default",
+    icon: "storefront",
+    label: "Discover store events, book tables, and back your local scene",
+  },
+  {
+    accent: "primary",
+    icon: "sports_esports",
+    label: "Play more often across the games and communities you love",
+  },
+];
+
+export default function ForPlayersPage() {
   return (
     <>
       <TopNavBar />
@@ -24,7 +61,7 @@ export default function LobbyPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
                 <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
                 <span className="text-secondary text-[10px] font-headline font-bold tracking-widest uppercase">
-                  Direct Transmission: Phase 1 Active
+                  For Players
                 </span>
               </div>
               <h1 className="text-5xl md:text-8xl font-headline font-bold tracking-tighter text-on-surface mb-6 leading-[1.1] md:leading-[0.9]">
@@ -34,14 +71,14 @@ export default function LobbyPage() {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-on-surface-variant max-w-2xl mb-10 leading-relaxed">
-                The definitive tactical command deck for players. Track win rates, find local games, and claim your spot on the global leaderboard.
+                Battle Beacon helps you arrange games more easily, play more often, meet new players, build a profile you are proud of, earn badges and bragging rights, and support the local gaming stores you love.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/join"
                   className="px-8 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-headline font-bold rounded-lg scale-100 hover:scale-105 active:scale-95 transition-all neon-glow-primary uppercase tracking-tight text-center"
                 >
-                  Join the Front Line
+                  Join Battle Beacon
                 </Link>
                 <button className="px-8 py-4 bg-transparent border border-outline-variant text-on-surface font-headline font-bold rounded-lg hover:bg-surface-container-high transition-colors uppercase tracking-tight">
                   Download App
@@ -52,9 +89,9 @@ export default function LobbyPage() {
               <div className="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full"></div>
               <div className="relative w-[320px] aspect-[9/19] rounded-[3rem] border-[8px] border-surface-container-highest shadow-2xl overflow-hidden animate-float">
                 <img
-                  alt="Battle Buddies App Interface"
+                  alt="Battle Beacon app interface"
                   className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida/ADBb0uh6sUgWR90kWUyQbGGNKUSxG1lkSHGGNqxaxB3nHuHq-sXw1ECI3gVIfv7wsYR3un6SaWw-aUYuD5DAvVwlVi-StBl3Lk9gDz1MRY6-dJpSvfPB4g08shoS5Q3A-jRcJwQefvCIkEUy-pDWhQyFrkDZE2Co39YnViTaCOpn1CEXTit7f4ckaVXiaT1cSl25gtZcvKlxp_Tp1ZufDELg7d3zMhqcN9j2Sg-XMfiDrI0wmj_8aG71Ba0HVJ32YZ9D8Yybt2gsxWO3Ag"
+                  src="/homescreen.jpeg"
                 />
               </div>
             </div>
@@ -65,31 +102,39 @@ export default function LobbyPage() {
         <div className="bg-surface-container-lowest border-y border-outline-variant/10 py-3 overflow-hidden whitespace-nowrap">
           <div className="flex animate-[marquee_30s_linear_infinite] w-fit">
             <div className="flex gap-12 items-center px-6">
-              <span className="text-primary font-headline font-bold text-sm tracking-widest uppercase flex items-center gap-2">
-                <span className="material-symbols-outlined text-xs">swords</span> LIVE TOURNAMENT: INDOMITUS OPEN 2024
-              </span>
-              <span className="text-on-surface-variant font-body text-sm">PLAYER 1 (ULTRAMARINES) VS PLAYER 2 (NECRONS) - SCORE 45:12</span>
-              <span className="text-primary font-headline font-bold text-sm tracking-widest uppercase flex items-center gap-2">
-                <span className="material-symbols-outlined text-xs">stars</span> NEW BADGE UNLOCKED: &quot;THE PURGE&quot; (USER_409)
-              </span>
-              <span className="text-on-surface-variant font-body text-sm">MTG REGIONAL QUALIFIERS - BRISTOL HQ - 14 SLOTS REMAINING</span>
-              <span className="text-secondary font-headline font-bold text-sm tracking-widest uppercase flex items-center gap-2">
-                <span className="material-symbols-outlined text-xs">emergency</span> PRIORITY ALERT: NEW STORE CHALLENGE NEAR YOU
-              </span>
+              {tickerItems.map((item) => (
+                <span
+                  key={item.label}
+                  className={`font-headline font-bold text-sm tracking-widest uppercase flex items-center gap-2 ${
+                    item.accent === "primary"
+                      ? "text-primary"
+                      : item.accent === "secondary"
+                        ? "text-secondary"
+                        : "text-on-surface-variant"
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-xs">{item.icon}</span>
+                  {item.label}
+                </span>
+              ))}
             </div>
             {/* Duplicate for seamless loop */}
             <div className="flex gap-12 items-center px-6" aria-hidden="true">
-              <span className="text-primary font-headline font-bold text-sm tracking-widest uppercase flex items-center gap-2">
-                <span className="material-symbols-outlined text-xs">swords</span> LIVE TOURNAMENT: INDOMITUS OPEN 2024
-              </span>
-              <span className="text-on-surface-variant font-body text-sm">PLAYER 1 (ULTRAMARINES) VS PLAYER 2 (NECRONS) - SCORE 45:12</span>
-              <span className="text-primary font-headline font-bold text-sm tracking-widest uppercase flex items-center gap-2">
-                <span className="material-symbols-outlined text-xs">stars</span> NEW BADGE UNLOCKED: &quot;THE PURGE&quot; (USER_409)
-              </span>
-              <span className="text-on-surface-variant font-body text-sm">MTG REGIONAL QUALIFIERS - BRISTOL HQ - 14 SLOTS REMAINING</span>
-              <span className="text-secondary font-headline font-bold text-sm tracking-widest uppercase flex items-center gap-2">
-                <span className="material-symbols-outlined text-xs">emergency</span> PRIORITY ALERT: NEW STORE CHALLENGE NEAR YOU
-              </span>
+              {tickerItems.map((item) => (
+                <span
+                  key={`${item.label}-duplicate`}
+                  className={`font-headline font-bold text-sm tracking-widest uppercase flex items-center gap-2 ${
+                    item.accent === "primary"
+                      ? "text-primary"
+                      : item.accent === "secondary"
+                        ? "text-secondary"
+                        : "text-on-surface-variant"
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-xs">{item.icon}</span>
+                  {item.label}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -116,15 +161,15 @@ export default function LobbyPage() {
                       <span className="material-symbols-outlined text-sm">groups</span> Host Game
                     </span>
                   </div>
-                  <h3 className="text-3xl font-headline font-bold text-on-surface mb-4 uppercase">Direct Deployment</h3>
+                  <h3 className="text-3xl font-headline font-bold text-on-surface mb-4 uppercase">Arrange More Games</h3>
                   <p className="text-on-surface-variant text-lg max-w-md">
-                    Instantly find active sector deployments or host your own. The tactical command deck makes tabletop coordination seamless across any game system.
+                    Find people to play with, organise your own game nights, and make it easier to get regular games in across the systems you play.
                   </p>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-2">
-                  <span className="px-3 py-1 rounded-full bg-surface-container-highest text-[10px] font-bold text-primary uppercase border border-primary/20">Sector 7 Assault</span>
-                  <span className="px-3 py-1 rounded-full bg-surface-container-highest text-[10px] font-bold text-primary uppercase border border-primary/20">Active Missions</span>
-                  <span className="px-3 py-1 rounded-full bg-surface-container-highest text-[10px] font-bold text-primary uppercase border border-primary/20">Live Briefing</span>
+                  <span className="px-3 py-1 rounded-full bg-surface-container-highest text-[10px] font-bold text-primary uppercase border border-primary/20">Open Tables</span>
+                  <span className="px-3 py-1 rounded-full bg-surface-container-highest text-[10px] font-bold text-primary uppercase border border-primary/20">Weekly Meetups</span>
+                  <span className="px-3 py-1 rounded-full bg-surface-container-highest text-[10px] font-bold text-primary uppercase border border-primary/20">Store Events</span>
                 </div>
               </div>
             </div>
@@ -141,9 +186,9 @@ export default function LobbyPage() {
               <div className="mb-auto relative z-10">
                 <span className="material-symbols-outlined text-secondary text-4xl mb-6">trending_up</span>
                 <h3 className="text-2xl font-headline font-bold text-on-surface mb-2 uppercase">14 Win Streak</h3>
-                <p className="text-on-surface-variant text-sm mb-6">
-                  Track your momentum. Our deep analytics suite records your campaign progress and tactical performance in real-time.
-                </p>
+                  <p className="text-on-surface-variant text-sm mb-6">
+                    Turn every game into progress with tracked results, profile stats, awards, badges, and more reasons to keep climbing.
+                  </p>
               </div>
               <div className="space-y-3 relative z-10 mt-auto">
                 <div className="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden">
@@ -160,12 +205,12 @@ export default function LobbyPage() {
             <div className="md:col-span-12 rounded-xl bg-surface-container p-8 border border-outline-variant/10 flex flex-col md:flex-row gap-8 items-center group overflow-hidden">
               <div className="flex-1 relative z-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-primary/10 border border-primary/20 mb-4">
-                  <span className="text-primary text-[10px] font-headline font-bold tracking-widest uppercase">Verified Base Operations</span>
+                  <span className="text-primary text-[10px] font-headline font-bold tracking-widest uppercase">Local Gaming Stores</span>
                 </div>
                 <h3 className="text-4xl font-headline font-bold text-on-surface mb-4 uppercase">Strategic Venues</h3>
-                <p className="text-on-surface-variant text-lg max-w-2xl">
-                  Discover and support local gaming hubs. From &apos;The Griffin&apos;s Nest&apos; to &apos;Warpzone Minis&apos;, find certified battle zones with table booking and venue-specific rewards.
-                </p>
+                  <p className="text-on-surface-variant text-lg max-w-2xl">
+                    Discover local gaming stores, see where games are happening, and support your favourite venues by booking tables and showing up for their events.
+                  </p>
                 <div className="mt-8 flex gap-4">
                   <div className="flex items-center gap-2 text-primary font-headline font-bold uppercase text-xs cursor-pointer hover:underline">
                     <span className="material-symbols-outlined text-lg">location_on</span> View Local Hubs
@@ -198,7 +243,7 @@ export default function LobbyPage() {
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
               <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-8 uppercase tracking-tighter leading-tight">
-                THE <span className="text-primary">COMMAND CENTER</span> <br />IN YOUR POCKET
+                YOUR <span className="text-primary">GAMING NETWORK</span> <br />IN YOUR POCKET
               </h2>
               <div className="space-y-8">
                 <div className="flex gap-6 items-start">
@@ -206,8 +251,8 @@ export default function LobbyPage() {
                     <span className="material-symbols-outlined">analytics</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Live Briefing</h4>
-                    <p className="text-on-surface-variant">Real-time alerts for local game sessions and tournament openings. Never miss a deployment.</p>
+                    <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Find Games Nearby</h4>
+                    <p className="text-on-surface-variant">See local game sessions, store events, and open tables so it is easier to say yes to more games.</p>
                   </div>
                 </div>
                 <div className="flex gap-6 items-start">
@@ -215,8 +260,17 @@ export default function LobbyPage() {
                     <span className="material-symbols-outlined">military_tech</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Squad Progress</h4>
-                    <p className="text-on-surface-variant">Track your personal win/loss ratio and squad participation across all your tabletop campaigns.</p>
+                    <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Track Your Progress</h4>
+                    <p className="text-on-surface-variant">Track results, unlock awards and badges, and build a player profile that shows off your tabletop journey.</p>
+                  </div>
+                </div>
+                <div className="flex gap-6 items-start">
+                  <div className="w-12 h-12 shrink-0 rounded-lg bg-surface-container-highest border border-primary/30 flex items-center justify-center text-primary">
+                    <span className="material-symbols-outlined">workspace_premium</span>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Earn Early Adopter Status</h4>
+                    <p className="text-on-surface-variant">Join early to claim an exclusive signup badge that will only ever be available to the first wave of Battle Beacon players.</p>
                   </div>
                 </div>
                 <div className="flex gap-6 items-start">
@@ -224,8 +278,8 @@ export default function LobbyPage() {
                     <span className="material-symbols-outlined">storefront</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Base Operations</h4>
-                    <p className="text-on-surface-variant">Integrated venue management. Book tables, see shop hours, and earn &apos;Gems&apos; for local support.</p>
+                    <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Support Local Stores</h4>
+                    <p className="text-on-surface-variant">Book tables, stay in touch with your favourite venues, and help local stores build stronger gaming communities.</p>
                   </div>
                 </div>
               </div>
@@ -236,9 +290,9 @@ export default function LobbyPage() {
               <div className="relative w-[340px] aspect-[9/19] rounded-[3.5rem] p-4 bg-surface-container-highest border-[1px] border-outline-variant/30 shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden">
                 <div className="w-full h-full rounded-[2.5rem] overflow-hidden">
                   <img
-                    alt="Full Mobile UI Showcase"
+                    alt="Full mobile UI showcase"
                     className="w-full h-full object-cover"
-                    src="https://lh3.googleusercontent.com/aida/ADBb0uh6sUgWR90kWUyQbGGNKUSxG1lkSHGGNqxaxB3nHuHq-sXw1ECI3gVIfv7wsYR3un6SaWw-aUYuD5DAvVwlVi-StBl3Lk9gDz1MRY6-dJpSvfPB4g08shoS5Q3A-jRcJwQefvCIkEUy-pDWhQyFrkDZE2Co39YnViTaCOpn1CEXTit7f4ckaVXiaT1cSl25gtZcvKlxp_Tp1ZufDELg7d3zMhqcN9j2Sg-XMfiDrI0wmj_8aG71Ba0HVJ32YZ9D8Yybt2gsxWO3Ag"
+                    src="/hostgamescreen.jpeg"
                   />
                 </div>
               </div>
@@ -253,7 +307,7 @@ export default function LobbyPage() {
             <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/5 blur-3xl rounded-full"></div>
             <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-6 uppercase tracking-tighter relative z-10">Ready to Deploy?</h2>
             <p className="text-on-surface-variant text-lg mb-10 relative z-10 max-w-2xl mx-auto">
-              Join 10,000+ players already dominating the tabletop meta. Download the Battle Buddies Command app today and secure your victory streak.
+              Join 10,000+ players already dominating the tabletop meta. Download the Battle Beacon Command app today and secure your victory streak.
             </p>
             <div className="flex flex-wrap justify-center gap-6 relative z-10">
               <button className="flex items-center gap-3 px-8 py-4 bg-surface-container-highest rounded-lg border border-outline-variant hover:border-primary transition-all group">

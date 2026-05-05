@@ -2,7 +2,6 @@ import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -31,7 +30,7 @@ export default function Home() {
                 <span className="text-primary italic">To Tactical Command</span>
               </h1>
               <p className="text-lg md:text-xl text-on-surface-variant mb-10 leading-relaxed font-body max-w-2xl">
-                The tabletop ecosystem is fractured. Disjointed chats, lost scores, and empty venues are relics of the past. Battle Buddies centralizes the skirmish, empowering players and shop owners with military-grade management tools.
+                The tabletop ecosystem is fractured. Disjointed chats, lost scores, and empty venues are relics of the past. Battle Beacon centralizes the skirmish, empowering players and shop owners with military-grade management tools.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -41,10 +40,10 @@ export default function Home() {
                   Initialize Deployment
                 </Link>
                 <Link
-                  href="/lobby"
+                  href="/for-players"
                   className="px-8 py-4 bg-transparent border border-outline-variant text-primary font-headline font-bold uppercase rounded-lg hover:bg-primary/5 transition-all text-center"
                 >
-                  View Intel Feed
+                  For Players
                 </Link>
               </div>
             </div>
@@ -133,7 +132,7 @@ export default function Home() {
                 </h2>
                 <div className="h-1 w-24 bg-primary mb-6"></div>
                 <p className="text-on-surface-variant text-lg max-w-2xl">
-                  Deploying the Battle Buddies protocol. A unified operating system for the tabletop industry.
+                  Deploying the Battle Beacon protocol. A unified operating system for the tabletop industry.
                 </p>
               </div>
               <div className="bg-surface-container-highest p-4 border border-outline-variant/20 rounded-lg shrink-0">
@@ -175,7 +174,7 @@ export default function Home() {
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold uppercase mb-4 text-on-surface">Performance Analytics</h3>
                   <p className="text-on-surface-variant mb-8 max-w-md">
-                    Track every roll, win, and loss. Automatic leaderboard integration ensures your glory is immortalized in data.
+                    Track your games, grow a standout player profile, and earn badges, awards, and bragging rights that show your progress.
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3 text-sm text-primary">
@@ -184,7 +183,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-primary">
                       <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                      Army Power Rankings
+                      Badges &amp; Player Awards
                     </li>
                   </ul>
                 </div>
@@ -283,7 +282,7 @@ export default function Home() {
                     <div>
                       <h4 className="text-xl font-bold uppercase text-on-surface mb-2">Digital Dossier</h4>
                       <p className="text-on-surface-variant">
-                        Every player receives a verified performance ID. Showcase your win streaks and climb the regional rankings.
+                        Every player gets a unique profile to showcase win streaks, awards, badges, and early adopter bragging rights.
                       </p>
                     </div>
                   </div>
@@ -303,7 +302,7 @@ export default function Home() {
               <span className="text-slate-500">•</span>
               <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">ARMORY_RESTOCK: 15:00_UTC</span>
               <span className="text-slate-500">•</span>
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">PLAYER_SIGMA_ASCENDED_TO_PLATINUM</span>
+              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">EARLY_ADOPTER_BADGE: FIRST_WAVE_UNLOCKED</span>
               <span className="text-slate-500">•</span>
               <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">LIVE_INTEL: SECTOR_7_TOURNAMENT_ACTIVE</span>
             </div>
@@ -315,7 +314,7 @@ export default function Home() {
               <span className="text-slate-500">•</span>
               <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">ARMORY_RESTOCK: 15:00_UTC</span>
               <span className="text-slate-500">•</span>
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">PLAYER_SIGMA_ASCENDED_TO_PLATINUM</span>
+              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">EARLY_ADOPTER_BADGE: FIRST_WAVE_UNLOCKED</span>
               <span className="text-slate-500">•</span>
               <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">LIVE_INTEL: SECTOR_7_TOURNAMENT_ACTIVE</span>
             </div>

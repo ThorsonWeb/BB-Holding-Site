@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BeaconFormEmbed from "@/components/BeaconFormEmbed";
 import Footer from "@/components/Footer";
 
 export default function JoinPage() {
@@ -14,7 +15,7 @@ export default function JoinPage() {
             <img
               alt="Tactical Gaming Environment"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeoUO_stCQSfZr9iGdkfBlaTaRQZG2bo7Bkrw0TbQZjHbGRYY2yNXqO3ZoWUZUSDFSoAv1pQl_vahBE_ypRwnOX0AB7k7WYVfHRej4mj42XdlSFzJtwkIfTMfpzaIk-NXVxllCDGGnl9iSi9yO9aCl6BUPTnlB0qlE99vDKfq7frpeShqlf7PffRCxeeS_rmX56xbKntEHE0iWZ_7X0edzLr5wNIhzuVuO2GYLz3kM2KaFPLYi1S06RQO1hYCAGdljFkITay8C8Ig"
+              src="/homescreen.jpeg"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-12 w-full">
@@ -41,7 +42,7 @@ export default function JoinPage() {
           <div className="lg:col-span-7 p-8 lg:p-16 flex flex-col justify-center">
             <div className="mb-10 text-center lg:text-left">
               <Link href="/" className="font-headline text-3xl font-black text-primary italic tracking-tighter mb-2 hover:underline">
-                BATTLE BUDDIES
+                BATTLE BEACON
               </Link>
               <p className="text-on-surface-variant font-medium tracking-wide uppercase text-[10px]">Secure Gateway: Initialization Protocol</p>
             </div>
@@ -57,51 +58,7 @@ export default function JoinPage() {
               </div>
             </div>
 
-            <form className="space-y-5">
-              <div className="space-y-1">
-                <label className="font-headline text-[10px] font-bold uppercase tracking-widest text-on-surface-variant block ml-1">Codename / Full Name</label>
-                <input
-                  className="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 text-on-surface focus:ring-0 focus:border-primary placeholder:text-on-surface-variant/30 font-medium py-3 px-4 transition-all rounded-t-lg outline-none"
-                  placeholder="John 'Striker' Doe"
-                  type="text"
-                />
-              </div>
-              <div className="space-y-1">
-                <label className="font-headline text-[10px] font-bold uppercase tracking-widest text-on-surface-variant block ml-1">Communication Channel (Email)</label>
-                <input
-                  className="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 text-on-surface focus:ring-0 focus:border-primary placeholder:text-on-surface-variant/30 font-medium py-3 px-4 transition-all rounded-t-lg outline-none"
-                  placeholder="commander@sector.net"
-                  type="email"
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className="space-y-1">
-                  <label className="font-headline text-[10px] font-bold uppercase tracking-widest text-on-surface-variant block ml-1">Access Key (Password)</label>
-                  <input
-                    className="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 text-on-surface focus:ring-0 focus:border-primary placeholder:text-on-surface-variant/30 font-medium py-3 px-4 transition-all rounded-t-lg outline-none"
-                    placeholder="••••••••"
-                    type="password"
-                  />
-                </div>
-                <div className="space-y-1">
-                  <label className="font-headline text-[10px] font-bold uppercase tracking-widest text-on-surface-variant block ml-1">Primary Game / System</label>
-                  <select className="w-full bg-surface-container-highest border-0 border-b border-outline-variant/30 text-on-surface focus:ring-0 focus:border-primary font-medium py-3 px-4 transition-all rounded-t-lg appearance-none outline-none">
-                    <option>Warhammer 40,000</option>
-                    <option>Magic: The Gathering</option>
-                    <option>Star Wars: Shatterpoint</option>
-                    <option>Dungeons &amp; Dragons</option>
-                  </select>
-                </div>
-              </div>
-              <div className="pt-4">
-                <button
-                  type="button"
-                  className="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-headline font-bold uppercase py-4 rounded-lg tracking-[0.15em] shadow-[0_8px_24px_rgba(129,236,255,0.2)] hover:shadow-[0_12px_32px_rgba(129,236,255,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-                >
-                  Join the Front Line
-                </button>
-              </div>
-            </form>
+            <BeaconFormEmbed />
 
             <div className="relative my-10">
               <div className="absolute inset-0 flex items-center">

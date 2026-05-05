@@ -57,7 +57,7 @@ export default function RoadmapPage() {
               <div className="lg:w-1/2 lg:pl-16 order-3 lg:order-3 w-full">
                 <img
                   className="w-full h-64 object-cover rounded-xl opacity-60 grayscale hover:grayscale-0 transition-all duration-700 object-top"
-                  alt="Current deployment: Battle Buddies mobile interface featuring tactical live briefings"
+                  alt="Current deployment: Battle Beacon mobile interface featuring tactical live briefings"
                   src="https://lh3.googleusercontent.com/aida/ADBb0uh6sUgWR90kWUyQbGGNKUSxG1lkSHGGNqxaxB3nHuHq-sXw1ECI3gVIfv7wsYR3un6SaWw-aUYuD5DAvVwlVi-StBl3Lk9gDz1MRY6-dJpSvfPB4g08shoS5Q3A-jRcJwQefvCIkEUy-pDWhQyFrkDZE2Co39YnViTaCOpn1CEXTit7f4ckaVXiaT1cSl25gtZcvKlxp_Tp1ZufDELg7d3zMhqcN9j2Sg-XMfiDrI0wmj_8aG71Ba0HVJ32YZ9D8Yybt2gsxWO3Ag"
                 />
               </div>
@@ -181,7 +181,7 @@ export default function RoadmapPage() {
                 Request a <span className="text-secondary">Feature</span>
               </h2>
               <p className="text-on-surface-variant mb-8 text-lg font-body">
-                Do you have tactical intelligence that could improve the Battle Buddies platform? Submit your feature proposal directly to High Command.
+                Do you have tactical intelligence that could improve the Battle Beacon platform? Submit your feature proposal directly to High Command.
               </p>
               <div className="flex items-center gap-4 text-primary font-headline font-bold uppercase tracking-widest text-sm">
                 <span className="material-symbols-outlined">forum</span>

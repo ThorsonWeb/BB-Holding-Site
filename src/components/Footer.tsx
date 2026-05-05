@@ -6,10 +6,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-8 gap-6">
         <div className="flex flex-col items-center md:items-start gap-1">
           <div className="text-lg font-bold text-slate-500 font-headline uppercase tracking-widest">
-            BATTLE <span className="text-primary">BUDDIES</span>
+            BATTLE <span className="text-primary">BEACON</span>
           </div>
           <p className="font-body text-[10px] md:text-xs tracking-widest uppercase text-slate-500 opacity-80 mt-2">
-            © 2024 BATTLE BUDDIES COMMAND. ALL RIGHTS RESERVED.
+            © 2024 BATTLE BEACON COMMAND. ALL RIGHTS RESERVED.
           </p>
         </div>
 

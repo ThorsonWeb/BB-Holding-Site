@@ -13,7 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "BATTLE BUDDIES | Level Up Your Tabletop Game",
+  title: "BATTLE BEACON | Level Up Your Tabletop Game",
   description: "The definitive tactical command deck for players.",
 };
 
