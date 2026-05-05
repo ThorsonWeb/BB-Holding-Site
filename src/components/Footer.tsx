@@ -8,8 +8,8 @@ export default function Footer() {
           <div className="text-lg font-bold text-slate-500 font-headline uppercase tracking-widest">
             BATTLE <span className="text-primary">BEACON</span>
           </div>
-          <p className="font-body text-[10px] md:text-xs tracking-widest uppercase text-slate-500 opacity-80 mt-2">
-            © 2024 BATTLE BEACON COMMAND. ALL RIGHTS RESERVED.
+          <p className="font-body text-[10px] md:text-xs text-slate-500 opacity-80 mt-2 max-w-md text-center md:text-left">
+            © 2026 Table Top Sports Ltd. Battle Beacon is a trading name of TableTop Sports Ltd, company number 17163028.
           </p>
         </div>
 
@@ -17,14 +17,8 @@ export default function Footer() {
           <Link href="#" className="text-slate-500 hover:text-primary transition-colors font-body text-xs tracking-widest uppercase">
             Terms of Engagement
           </Link>
-          <Link href="#" className="text-slate-500 hover:text-primary transition-colors font-body text-xs tracking-widest uppercase">
-            Privacy Protocol
-          </Link>
-          <Link href="#" className="text-slate-500 hover:text-primary transition-colors font-body text-xs tracking-widest uppercase">
-            Support
-          </Link>
-          <Link href="#" className="text-slate-500 hover:text-primary transition-colors font-body text-xs tracking-widest uppercase">
-            HQ
+          <Link href="/privacy" className="text-slate-500 hover:text-primary transition-colors font-body text-xs tracking-widest uppercase">
+            Privacy Notice
           </Link>
         </div>
       </div>

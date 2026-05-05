@@ -3,6 +3,51 @@ import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import Link from "next/link";
 
+const homepageTickerItems = [
+  "FIND MORE GAMES NEAR YOU",
+  "GET NOTIFIED ABOUT NEW GAMES AND EVENTS AT YOUR FAVOURITE STORES",
+  "EARN AN EXCLUSIVE EARLY SIGNUP BADGE",
+  "BUILD A PLAYER PROFILE WITH AWARDS, BADGES, AND BRAGGING RIGHTS",
+  "BEACON CRM: BOOKINGS, EVENTS, CRM, AUTOMATIONS, AND FORMS",
+  "MORE TABLES BOOKED, MORE EVENTS RUN, MORE PLAYERS IN STORE",
+];
+
+const venueProtocolItems = [
+  {
+    title: "More Tables Booked",
+    description:
+      "Turn table availability into confirmed bookings with an easy booking system built for busy local gaming venues.",
+  },
+  {
+    title: "More Events Run",
+    description:
+      "Use Beacon CRM to manage bookings, events, payments, customer records, automations, and forms in one place.",
+  },
+  {
+    title: "Stronger Customer Loyalty",
+    description:
+      "Keep players engaged with better communication, follow-ups, and repeat visits that grow your community over time.",
+  },
+];
+
+const playerProtocolItems = [
+  {
+    title: "Find More Games",
+    description:
+      "See local games, open tables, and venue events in one place so it is easier to get involved.",
+  },
+  {
+    title: "Play More Games",
+    description:
+      "Get notified when your favourite stores post new games and events so you never miss a good opportunity to play.",
+  },
+  {
+    title: "Win More Games",
+    description:
+      "Track your results, build your profile, and unlock awards, badges, and early adopter bragging rights as you improve.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -22,28 +67,28 @@ export default function Home() {
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border-l-2 border-primary mb-6">
                 <span className="text-primary font-headline font-bold text-xs tracking-widest uppercase">
-                  System Initialization Complete
+                  For Players &amp; Venues
                 </span>
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-on-surface tracking-tighter leading-[1.1] md:leading-[0.9] uppercase mb-6">
-                From Fog of War <br />
-                <span className="text-primary italic">To Tactical Command</span>
+                More Games. <br />
+                <span className="text-primary italic">Better Events.</span>
               </h1>
               <p className="text-lg md:text-xl text-on-surface-variant mb-10 leading-relaxed font-body max-w-2xl">
-                The tabletop ecosystem is fractured. Disjointed chats, lost scores, and empty venues are relics of the past. Battle Beacon centralizes the skirmish, empowering players and shop owners with military-grade management tools.
+                Battle Beacon helps players find more games, play more often, track progress, and earn bragging rights. For venues, Beacon CRM helps fill tables, run better events, improve customer loyalty, and keep local communities coming back.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/join"
                   className="px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold uppercase rounded-lg shadow-lg active:scale-95 transition-transform text-center"
                 >
-                  Initialize Deployment
+                  Sign Up Early
                 </Link>
                 <Link
-                  href="/for-players"
+                  href="/for-venues"
                   className="px-8 py-4 bg-transparent border border-outline-variant text-primary font-headline font-bold uppercase rounded-lg hover:bg-primary/5 transition-all text-center"
                 >
-                  For Players
+                  For Venues
                 </Link>
               </div>
             </div>
@@ -69,7 +114,7 @@ export default function Home() {
                 </h2>
                 <div className="h-1 w-24 bg-error mb-6"></div>
                 <p className="text-on-surface-variant text-lg">
-                  Legacy systems are failing your community. Manual processes lead to critical failure points in event execution and player retention.
+                  Players miss games, venues miss bookings, and disconnected tools make every event harder to run than it should be.
                 </p>
               </div>
             </div>
@@ -151,16 +196,16 @@ export default function Home() {
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold uppercase mb-4 text-on-surface">Unified Discovery &amp; Booking</h3>
                   <p className="text-on-surface-variant mb-8 max-w-md">
-                    Browse local tournaments, book a table, and secure your spot in seconds. One app, every venue, zero friction.
+                    Help players find games faster and make it simple for venues to turn interest into table bookings and event signups.
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3 text-sm text-primary">
                       <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                      Instant Registration
+                      Quick Table Booking
                     </li>
                     <li className="flex items-center gap-3 text-sm text-primary">
                       <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                      QR Code Check-in
+                      Fast Event Sign-up
                     </li>
                   </ul>
                 </div>
@@ -174,16 +219,16 @@ export default function Home() {
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold uppercase mb-4 text-on-surface">Performance Analytics</h3>
                   <p className="text-on-surface-variant mb-8 max-w-md">
-                    Track your games, grow a standout player profile, and earn badges, awards, and bragging rights that show your progress.
+                    Give players more reasons to come back with profiles, stat tracking, awards, badges, and an exclusive early signup badge.
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3 text-sm text-primary">
                       <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                      Live Win/Loss Ratios
+                      Unique Player Profiles
                     </li>
                     <li className="flex items-center gap-3 text-sm text-primary">
                       <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                      Badges &amp; Player Awards
+                      Badges, Awards &amp; Bragging Rights
                     </li>
                   </ul>
                 </div>
@@ -197,16 +242,16 @@ export default function Home() {
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold uppercase mb-4 text-on-surface">Venue CRM &amp; Automation</h3>
                   <p className="text-on-surface-variant mb-8 max-w-md">
-                    Automated tournament pairings, automated customer engagement, and real-time inventory hooks for tournament packs.
+                    Beacon CRM gives venues one place to manage bookings, events, CRM, automations, and forms without juggling multiple tools.
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3 text-sm text-primary">
                       <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                      Player Retention Tools
+                      Booking &amp; Event Management
                     </li>
                     <li className="flex items-center gap-3 text-sm text-primary">
                       <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                      Revenue Heatmaps
+                      CRM, Automations &amp; Forms
                     </li>
                   </ul>
                 </div>
@@ -220,16 +265,16 @@ export default function Home() {
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold uppercase mb-4 text-on-surface">Tactical Radar</h3>
                   <p className="text-on-surface-variant mb-8 max-w-md">
-                    Real-time notifications for local skirmishes. If a game is happening in your sector, your deck will alert you immediately.
+                    Keep players connected to their favourite stores with instant alerts for newly posted games, fresh events, and open tables.
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3 text-sm text-primary">
                       <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                      Geofenced Alerts
+                      Favourite Store Alerts
                     </li>
                     <li className="flex items-center gap-3 text-sm text-primary">
                       <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                      LFG Matchmaking
+                      New Game &amp; Event Notifications
                     </li>
                   </ul>
                 </div>
@@ -249,17 +294,17 @@ export default function Home() {
                   <img
                     alt="App Screens"
                     className="rounded-2xl w-full"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiXQq_jvI9mYdsK2QK9sU1fYgiht5ghpx7q3HWzfFmWLOUQWdPE3LGECcP4uzq7fH2nsnNo6Y7QTIdRyOihfh1TJfKLY9T8FlKC7Ln2KziCOwk0I3E6KaTZyykIW1xfiFWNMCoE4Fm8ysJMKQAZSdotFpKRFEThlx9BZsLZ0CrBIY3UqdSyd0L5Fri6ZBkI8nQZ8-jZeWIJGKc9D07ql9sHCCkFv3zkGOwXu5Go50JAGceUtptlKqVq1IzCuVLHbQ1SIakAuvlvj4"
+                    src="/homescreen.jpeg"
                   />
                 </div>
               </div>
 
               <div className="lg:w-1/2 w-full">
                 <h2 className="text-4xl md:text-5xl font-bold uppercase text-on-surface tracking-tight mb-8 leading-none">
-                  The Command <span className="text-secondary">Interface</span>
+                  One Platform. <span className="text-secondary">Real Momentum.</span>
                 </h2>
                 <p className="text-on-surface-variant text-lg mb-10 leading-relaxed">
-                  Our dashboard isn&apos;t just a list—it&apos;s your tactical HUD. Experience seamless transitions from global venue searching to granular player performance data.
+                  Battle Beacon gives players a better way to discover games and improve over time, while giving venues a smarter way to manage events and grow loyalty.
                 </p>
 
                 <div className="space-y-8">
@@ -268,9 +313,9 @@ export default function Home() {
                       <span className="material-symbols-outlined">explore</span>
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold uppercase text-on-surface mb-2">Venue Recon</h4>
+                      <h4 className="text-xl font-bold uppercase text-on-surface mb-2">Smart Venue Discovery</h4>
                       <p className="text-on-surface-variant">
-                        Intelligent map views showing live activity, table availability, and community ratings for every shop in your sector.
+                        Show players where games are happening, which stores have space, and what events are worth booking into next.
                       </p>
                     </div>
                   </div>
@@ -280,9 +325,9 @@ export default function Home() {
                       <span className="material-symbols-outlined">leaderboard</span>
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold uppercase text-on-surface mb-2">Digital Dossier</h4>
+                      <h4 className="text-xl font-bold uppercase text-on-surface mb-2">Player Profile &amp; Rewards</h4>
                       <p className="text-on-surface-variant">
-                        Every player gets a unique profile to showcase win streaks, awards, badges, and early adopter bragging rights.
+                        Every player gets a unique profile to track progress, unlock rewards, and show off badges, awards, and early adopter status.
                       </p>
                     </div>
                   </div>
@@ -296,27 +341,19 @@ export default function Home() {
         <div className="w-full bg-surface-container-lowest py-4 border-y border-primary/10 overflow-hidden">
           <div className="flex whitespace-nowrap animate-[marquee_30s_linear_infinite] w-fit">
             <div className="flex items-center px-8 gap-12">
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">LIVE_INTEL: SECTOR_7_TOURNAMENT_ACTIVE</span>
-              <span className="text-slate-500">•</span>
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">NEW_VENUE: GALAXY_GAMES_ONLINE</span>
-              <span className="text-slate-500">•</span>
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">ARMORY_RESTOCK: 15:00_UTC</span>
-              <span className="text-slate-500">•</span>
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">EARLY_ADOPTER_BADGE: FIRST_WAVE_UNLOCKED</span>
-              <span className="text-slate-500">•</span>
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">LIVE_INTEL: SECTOR_7_TOURNAMENT_ACTIVE</span>
+              {homepageTickerItems.map((item) => (
+                <span key={item} className="text-primary font-headline text-sm font-bold tracking-widest uppercase">
+                  {item}
+                </span>
+              ))}
             </div>
             {/* Duplicate for seamless scrolling */}
             <div className="flex items-center px-8 gap-12" aria-hidden="true">
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">LIVE_INTEL: SECTOR_7_TOURNAMENT_ACTIVE</span>
-              <span className="text-slate-500">•</span>
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">NEW_VENUE: GALAXY_GAMES_ONLINE</span>
-              <span className="text-slate-500">•</span>
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">ARMORY_RESTOCK: 15:00_UTC</span>
-              <span className="text-slate-500">•</span>
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">EARLY_ADOPTER_BADGE: FIRST_WAVE_UNLOCKED</span>
-              <span className="text-slate-500">•</span>
-              <span className="text-primary font-headline text-sm font-bold tracking-widest uppercase">LIVE_INTEL: SECTOR_7_TOURNAMENT_ACTIVE</span>
+              {homepageTickerItems.map((item) => (
+                <span key={`${item}-duplicate`} className="text-primary font-headline text-sm font-bold tracking-widest uppercase">
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -329,20 +366,17 @@ export default function Home() {
               <div className="inline-block px-3 py-1 bg-primary/10 text-primary font-headline font-bold text-xs uppercase mb-6">
                 Venue Protocol
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold uppercase mb-8 text-on-surface">Dominance for Owners</h2>
+              <h2 className="text-3xl md:text-4xl font-bold uppercase mb-4 text-on-surface">Growth for Venues</h2>
+              <p className="text-on-surface-variant text-lg mb-8 max-w-xl">
+                Beacon CRM helps venues book more tables, run more events, improve customer loyalty, and keep more players engaged in store.
+              </p>
               <div className="space-y-6">
-                <div className="p-6 bg-surface-container rounded-xl">
-                  <h4 className="text-lg font-bold text-primary uppercase mb-2">Custom Themes</h4>
-                  <p className="text-on-surface-variant text-sm">
-                    Reskin your shop’s digital presence with custom neon palettes and industrial themes to match your physical aesthetic.
-                  </p>
-                </div>
-                <div className="p-6 bg-surface-container rounded-xl">
-                  <h4 className="text-lg font-bold text-primary uppercase mb-2">Advanced Telemetry</h4>
-                  <p className="text-on-surface-variant text-sm">
-                    Know your peak hours, most popular game systems, and player lifetime value with industrial-grade analytics.
-                  </p>
-                </div>
+                {venueProtocolItems.map((item) => (
+                  <div key={item.title} className="p-6 bg-surface-container rounded-xl">
+                    <h4 className="text-lg font-bold text-primary uppercase mb-2">{item.title}</h4>
+                    <p className="text-on-surface-variant text-sm">{item.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -351,20 +385,17 @@ export default function Home() {
               <div className="inline-block px-3 py-1 bg-secondary/10 text-secondary font-headline font-bold text-xs uppercase mb-6">
                 Player Protocol
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold uppercase mb-8 text-on-surface">Prestige for Players</h2>
+              <h2 className="text-3xl md:text-4xl font-bold uppercase mb-4 text-on-surface">Momentum for Players</h2>
+              <p className="text-on-surface-variant text-lg mb-8 max-w-xl">
+                Find more games, play more games, win more games, and stay connected to the stores and communities you care about most.
+              </p>
               <div className="space-y-6">
-                <div className="p-6 bg-surface-container rounded-xl border border-secondary/20">
-                  <h4 className="text-lg font-bold text-secondary uppercase mb-2">Bragging Rights</h4>
-                  <p className="text-on-surface-variant text-sm">
-                    Shareable victory cards and automated social media integration for your most epic tabletop triumphs.
-                  </p>
-                </div>
-                <div className="p-6 bg-surface-container rounded-xl border border-secondary/20">
-                  <h4 className="text-lg font-bold text-secondary uppercase mb-2">Points Shop</h4>
-                  <p className="text-on-surface-variant text-sm">
-                    Earn Credits for every match played. Redeem for exclusive digital cosmetic tags or discounts at partner venues.
-                  </p>
-                </div>
+                {playerProtocolItems.map((item) => (
+                  <div key={item.title} className="p-6 bg-surface-container rounded-xl border border-secondary/20">
+                    <h4 className="text-lg font-bold text-secondary uppercase mb-2">{item.title}</h4>
+                    <p className="text-on-surface-variant text-sm">{item.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -382,23 +413,23 @@ export default function Home() {
           </div>
           <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8 text-center">
             <h2 className="text-5xl md:text-6xl font-black uppercase text-on-surface mb-8 tracking-tighter">
-              Secure Your Sector
+              Join Before Launch
             </h2>
             <p className="text-lg md:text-xl text-on-surface-variant mb-12 font-body">
-              Join the elite network of tabletop generals. Deployment is imminent. Are you ready to take command?
+              Sign up early to claim your place in the first wave of Battle Beacon players and venues, and unlock the early adopter badge before launch.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
                 href="/join"
                 className="px-12 py-5 bg-primary text-on-primary font-headline font-black text-xl uppercase rounded-lg shadow-[0_0_30px_rgba(129,236,255,0.4)] hover:scale-105 transition-transform"
               >
-                Register Venue
+                Sign Up as a Venue
               </Link>
               <Link
                 href="/join"
                 className="px-12 py-5 bg-secondary text-on-secondary font-headline font-black text-xl uppercase rounded-lg shadow-[0_0_30px_rgba(255,81,250,0.4)] hover:scale-105 transition-transform"
               >
-                Create Player ID
+                Sign Up as a Player
               </Link>
             </div>
           </div>
