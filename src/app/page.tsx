@@ -12,6 +12,22 @@ const homepageTickerItems = [
   "MORE TABLES BOOKED, MORE EVENTS RUN, MORE PLAYERS IN STORE",
 ];
 
+const supportedGames = [
+  { label: "Warhammer 40", className: "text-primary" },
+  { label: "Pokemon", className: "text-secondary" },
+  { label: "Age of Sigmar", className: "text-tertiary" },
+  { label: "Killteam", className: "text-primary-container" },
+  { label: "Spearhead", className: "text-secondary" },
+  { label: "Bolt Action", className: "text-primary" },
+  { label: "Trench Crusade", className: "text-tertiary" },
+  { label: "D&D", className: "text-primary-container" },
+  { label: "Magic the Gathering", className: "text-secondary" },
+  { label: "Star Wars Legion", className: "text-primary" },
+  { label: "Legion", className: "text-tertiary" },
+  { label: "Board Games", className: "text-primary-container" },
+  { label: "Card Games", className: "text-secondary" },
+];
+
 const venueProtocolItems = [
   {
     title: "More Tables Booked",
@@ -53,6 +69,31 @@ export default function Home() {
     <>
       <TopNavBar />
       <main className="flex-grow pt-16 md:pt-20">
+        <div className="w-full overflow-hidden border-y border-primary/10 bg-surface-container-lowest py-4">
+          <div className="flex w-max min-w-full animate-[marquee_32s_linear_infinite] whitespace-nowrap py-4">
+            <div className="flex items-center px-8 gap-12">
+              {supportedGames.map((game) => (
+                <span
+                  key={game.label}
+                  className={`font-headline text-sm font-bold tracking-widest uppercase ${game.className}`}
+                >
+                  {game.label}
+                </span>
+              ))}
+            </div>
+            <div className="flex items-center px-8 gap-12" aria-hidden="true">
+              {supportedGames.map((game) => (
+                <span
+                  key={`${game.label}-duplicate`}
+                  className={`font-headline text-sm font-bold tracking-widest uppercase ${game.className}`}
+                >
+                  {game.label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Hero Section */}
         <section className="relative h-screen min-h-[800px] flex items-center overflow-hidden">
           <div className="absolute inset-0 z-0">

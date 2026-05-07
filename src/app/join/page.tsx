@@ -1,11 +1,14 @@
 import Link from "next/link";
 import BeaconFormEmbed from "@/components/BeaconFormEmbed";
 import Footer from "@/components/Footer";
+import TopNavBar from "@/components/TopNavBar";
+import MobileBottomNav from "@/components/MobileBottomNav";
 
 export default function JoinPage() {
   return (
     <div className="bg-surface font-body text-on-surface selection:bg-primary selection:text-on-primary-fixed overflow-x-hidden min-h-screen flex flex-col">
-      <main className="relative flex-grow flex items-center justify-center tactical-grid p-6 lg:p-12 mb-16">
+      <TopNavBar />
+      <main className="relative flex-grow flex items-center justify-center tactical-grid px-6 pb-6 pt-24 md:pt-28 lg:px-12 lg:pb-12 mb-16">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 blur-[120px] rounded-full"></div>
@@ -47,42 +50,13 @@ export default function JoinPage() {
               <p className="text-on-surface-variant font-medium tracking-wide uppercase text-[10px]">Secure Gateway: Initialization Protocol</p>
             </div>
 
-            <div className="mb-8">
-              <div className="grid grid-cols-2 p-1 bg-surface-container-highest rounded-lg relative">
-                <button className="relative z-10 py-3 text-xs font-headline font-bold uppercase tracking-widest text-on-primary-fixed bg-primary rounded-md transition-all">
-                  Player
-                </button>
-                <button className="relative z-10 py-3 text-xs font-headline font-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-all">
-                  Shop Owner
-                </button>
-              </div>
-            </div>
-
             <BeaconFormEmbed />
 
-            <div className="relative my-10">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-outline-variant/20"></div>
-              </div>
-              <div className="relative flex justify-center text-[10px] uppercase font-headline font-bold tracking-[0.3em] text-on-surface-variant">
-                <span className="bg-surface-container-low px-4">Satellite Authentication</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-3 gap-4">
-              <button className="flex items-center justify-center py-3 bg-surface-container-high border border-outline-variant/10 rounded-lg hover:bg-surface-container-highest transition-all group">
-                <span className="material-symbols-outlined text-xl text-on-surface-variant group-hover:text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>account_circle</span>
-              </button>
-              <button className="flex items-center justify-center py-3 bg-surface-container-high border border-outline-variant/10 rounded-lg hover:bg-surface-container-highest transition-all group">
-                <span className="material-symbols-outlined text-xl text-on-surface-variant group-hover:text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>sports_esports</span>
-              </button>
-              <button className="flex items-center justify-center py-3 bg-surface-container-high border border-outline-variant/10 rounded-lg hover:bg-surface-container-highest transition-all group">
-                <span className="material-symbols-outlined text-xl text-on-surface-variant group-hover:text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>laptop_mac</span>
-              </button>
-            </div>
-
             <p className="mt-12 text-center text-[11px] text-on-surface-variant font-medium">
-              By initializing your session, you agree to the <Link className="text-primary hover:underline" href="#">Strategic Privacy Protocol</Link> and <Link className="text-primary hover:underline" href="#">Terms of Service</Link>.
+              By initializing your session, you agree to the{" "}
+              <Link className="text-primary hover:underline" href="/privacy">
+                Privacy Policy
+              </Link>.
             </p>
           </div>
         </div>
@@ -100,6 +74,7 @@ export default function JoinPage() {
       <div className="hidden md:block">
         <Footer />
       </div>
+      <MobileBottomNav />
     </div>
   );
 }

@@ -222,7 +222,7 @@ export default function ForPlayersPage() {
                   <img
                     alt="Venue 1"
                     className="w-full h-full object-cover object-bottom scale-150"
-                    src="https://lh3.googleusercontent.com/aida/ADBb0uh6sUgWR90kWUyQbGGNKUSxG1lkSHGGNqxaxB3nHuHq-sXw1ECI3gVIfv7wsYR3un6SaWw-aUYuD5DAvVwlVi-StBl3Lk9gDz1MRY6-dJpSvfPB4g08shoS5Q3A-jRcJwQefvCIkEUy-pDWhQyFrkDZE2Co39YnViTaCOpn1CEXTit7f4ckaVXiaT1cSl25gtZcvKlxp_Tp1ZufDELg7d3zMhqcN9j2Sg-XMfiDrI0wmj_8aG71Ba0HVJ32YZ9D8Yybt2gsxWO3Ag"
+                    src="https://pub-891f30df07134fc0a4846b9569f8d1d3.r2.dev/005dcc96-abf2-486c-8989-a0fb6f6425cf/c55e027b-de9d-4bfb-9d90-46727abbc54f/venuetgs.png"
                   />
                 </div>
                 <div className="aspect-video rounded-lg overflow-hidden border border-outline-variant/30 group-hover:border-primary/50 transition-all opacity-80">
@@ -307,23 +307,35 @@ export default function ForPlayersPage() {
             <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/5 blur-3xl rounded-full"></div>
             <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-6 uppercase tracking-tighter relative z-10">Ready to Deploy?</h2>
             <p className="text-on-surface-variant text-lg mb-10 relative z-10 max-w-2xl mx-auto">
-              Join 10,000+ players already dominating the tabletop meta. Download the Battle Beacon Command app today and secure your victory streak.
+              Join 10,000+ players already dominating the tabletop meta. The Battle Beacon app is coming soon, so sign up for news and be first to know when deployment begins.
             </p>
             <div className="flex flex-wrap justify-center gap-6 relative z-10">
-              <button className="flex items-center gap-3 px-8 py-4 bg-surface-container-highest rounded-lg border border-outline-variant hover:border-primary transition-all group">
-                <span className="material-symbols-outlined text-3xl group-hover:text-primary transition-colors">phone_iphone</span>
+              <button
+                disabled
+                className="flex items-center gap-3 px-8 py-4 bg-surface-container-highest rounded-lg border border-outline-variant/60 opacity-60 cursor-not-allowed"
+              >
+                <span className="material-symbols-outlined text-3xl text-on-surface-variant">phone_iphone</span>
                 <div className="text-left">
-                  <p className="text-[10px] text-on-surface-variant uppercase font-bold">Available on</p>
+                  <p className="text-[10px] text-secondary uppercase font-bold">Coming Soon</p>
                   <p className="text-lg font-headline font-bold text-on-surface leading-tight">App Store</p>
                 </div>
               </button>
-              <button className="flex items-center gap-3 px-8 py-4 bg-surface-container-highest rounded-lg border border-outline-variant hover:border-primary transition-all group">
-                <span className="material-symbols-outlined text-3xl group-hover:text-primary transition-colors">play_arrow</span>
+              <button
+                disabled
+                className="flex items-center gap-3 px-8 py-4 bg-surface-container-highest rounded-lg border border-outline-variant/60 opacity-60 cursor-not-allowed"
+              >
+                <span className="material-symbols-outlined text-3xl text-on-surface-variant">play_arrow</span>
                 <div className="text-left">
-                  <p className="text-[10px] text-on-surface-variant uppercase font-bold">Get it on</p>
+                  <p className="text-[10px] text-secondary uppercase font-bold">Coming Soon</p>
                   <p className="text-lg font-headline font-bold text-on-surface leading-tight">Google Play</p>
                 </div>
               </button>
+              <Link
+                href="/join"
+                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-headline font-bold rounded-lg scale-100 hover:scale-105 active:scale-95 transition-all neon-glow-primary uppercase tracking-tight"
+              >
+                Sign Up for News
+              </Link>
             </div>
           </div>
         </section>
