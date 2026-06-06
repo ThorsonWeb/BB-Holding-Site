@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Battle Beacon | Deploy. Dominate. Repeat.",
+    "description": "The definitive tactical command deck for Warhammer players and local gaming stores. Find games, run events, earn bragging rights."
+  },
+  "hero": {
+    "badge": "For Players & Venues",
+    "headline": "Deploy.",
+    "headlineAccent": "Dominate. Repeat.",
+    "subheadline": "Battle Beacon gives Warhammer players one command hub to find games, run events, and track every campaign. For venues, Beacon CRM fills tables, runs tournaments, and keeps your community mobilised.",
+    "ctaPrimary": "Join the Vanguard",
+    "ctaSecondary": "For Venues"
+  },
+  "pain": {
+    "sectionHeading": "The Chaos of the Old Way",
+    "sectionSubheading": "Players miss games, venues miss bookings, and disconnected tools make every event harder to run than it should be.",
+    "items": [
+      {
+        "icon": "cloud_off",
+        "title": "Fragmented Intel",
+        "description": "WhatsApp chains and Discord threads get buried. Critical game postings, tournament slots, and store events disappear into the noise before you see them."
+      },
+      {
+        "icon": "edit_document",
+        "title": "Paper Tracking",
+        "description": "Manual score sheets create data loss and human error. Battle records vanish the moment the game ends. Your campaign history exists nowhere."
+      },
+      {
+        "icon": "storefront",
+        "title": "Ghost Venues",
+        "description": "Store owners struggle to fill tables without real-time visibility into their local player base's schedule and intent. Seats go empty, events get cancelled."
+      },
+      {
+        "icon": "person_off",
+        "title": "Isolated Commanders",
+        "description": "Without a centralised hub, finding regular opponents and consistent games across your local sector is a tactical nightmare."
+      }
+    ]
+  },
+  "solution": {
+    "sectionHeading": "Tactical Command Restored.",
+    "sectionSubheading": "Deploying the Battle Beacon protocol. A unified operating system for the tabletop industry.",
+    "items": [
+      {
+        "icon": "hub",
+        "title": "Unified Discovery & Booking",
+        "description": "See local games, open tables, and venue events in one command hub so it is easier to get into the fight.",
+        "bullets": ["Quick Table Booking", "Fast Tournament Sign-up"]
+      },
+      {
+        "icon": "analytics",
+        "title": "Battle Records & Achievements",
+        "description": "Build a player profile with tracked results, rankings, awards, and badges. Earn an exclusive early adopter badge available only to the first wave.",
+        "bullets": ["Unique Player Profiles", "Badges, Awards & Bragging Rights"]
+      },
+      {
+        "icon": "dashboard_customize",
+        "title": "Venue CRM & Automation",
+        "description": "Beacon CRM gives stores one place to manage bookings, events, customer records, automations, and forms without juggling multiple tools.",
+        "bullets": ["Booking & Event Management", "CRM, Automations & Forms"]
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Join Before Launch",
+    "subheading": "Sign up early to claim your place in the first wave of Battle Beacon players and venues, and unlock the early adopter badge before launch.",
+    "buttonPlayer": "Join as a Player",
+    "buttonVenue": "Register Your Venue"
+  }
+}

@@ -1,0 +1,49 @@
+/* Pokémon / TCG theme — vivid yellow primary (Pikachu), bold red secondary (Pokéball), light background. */
+:root {
+  --color-primary: #ffd600 !important;
+  --color-on-primary: #1a1200 !important;
+  --color-primary-container: #ffe033 !important;
+  --color-on-primary-container: #1a1200 !important;
+  --color-primary-fixed: #ffe033 !important;
+  --color-primary-fixed-dim: #e6c000 !important;
+  --color-primary-dim: #e6c000 !important;
+
+  --color-secondary: #cc0000 !important;
+  --color-on-secondary: #ffffff !important;
+  --color-secondary-container: #e53935 !important;
+  --color-on-secondary-container: #ffffff !important;
+  --color-secondary-dim: #b71c1c !important;
+
+  --color-tertiary: #1565c0 !important;
+  --color-on-tertiary: #ffffff !important;
+  --color-tertiary-container: #1976d2 !important;
+  --color-on-tertiary-container: #e3f2fd !important;
+
+  --color-background: #f5f5f5 !important;
+  --color-surface: #ffffff !important;
+  --color-surface-container-lowest: #f0f0f0 !important;
+  --color-surface-container-low: #f5f5f5 !important;
+  --color-surface-container: #ebebeb !important;
+  --color-surface-container-high: #e0e0e0 !important;
+  --color-surface-container-highest: #d6d6d6 !important;
+  --color-surface-bright: #ffffff !important;
+  --color-surface-dim: #e8e8e8 !important;
+  --color-surface-variant: #e8e8e8 !important;
+  --color-surface-tint: #ffd600 !important;
+
+  --color-outline: #999999 !important;
+  --color-outline-variant: #dddddd !important;
+
+  --color-on-surface: #1a1a1a !important;
+  --color-on-surface-variant: #555555 !important;
+  --color-on-background: #1a1a1a !important;
+
+  --color-error: #b91c1c !important;
+  --color-error-container: #fecaca !important;
+  --color-on-error: #ffffff !important;
+  --color-on-error-container: #7f1d1d !important;
+
+  --color-inverse-surface: #1a1a1a !important;
+  --color-inverse-on-surface: #f5f5f5 !important;
+  --color-inverse-primary: #7a5f00 !important;
+}

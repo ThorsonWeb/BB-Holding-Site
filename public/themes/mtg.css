@@ -1,0 +1,47 @@
+/* Magic: The Gathering theme — dark cinematic, card-gold primary, deep violet secondary. */
+:root {
+  --color-primary: #c9a227 !important;
+  --color-on-primary: #1a0e00 !important;
+  --color-primary-container: #d4b23a !important;
+  --color-on-primary-container: #1a0e00 !important;
+  --color-primary-fixed: #d4b23a !important;
+  --color-primary-fixed-dim: #b08c1e !important;
+  --color-primary-dim: #b08c1e !important;
+
+  --color-secondary: #6d28d9 !important;
+  --color-on-secondary: #ffffff !important;
+  --color-secondary-container: #7c3aed !important;
+  --color-on-secondary-container: #ede9fe !important;
+  --color-secondary-dim: #5b21b6 !important;
+
+  --color-tertiary: #1d4ed8 !important;
+  --color-on-tertiary: #ffffff !important;
+  --color-tertiary-container: #2563eb !important;
+  --color-on-tertiary-container: #dbeafe !important;
+
+  --color-background: #0c0b14 !important;
+  --color-surface: #0f0e18 !important;
+  --color-surface-container-lowest: #070612 !important;
+  --color-surface-container-low: #11101c !important;
+  --color-surface-container: #161422 !important;
+  --color-surface-container-high: #1c1a2a !important;
+  --color-surface-container-highest: #222033 !important;
+  --color-surface-bright: #2a2840 !important;
+  --color-surface-dim: #0c0b14 !important;
+  --color-surface-variant: #222033 !important;
+  --color-surface-tint: #c9a227 !important;
+
+  --color-outline: #6b6880 !important;
+  --color-outline-variant: #3d3a52 !important;
+
+  --color-on-surface: #ede9fe !important;
+  --color-on-surface-variant: #a09cb8 !important;
+  --color-on-background: #ede9fe !important;
+
+  --color-error: #ef4444 !important;
+  --color-error-container: #7f1d1d !important;
+  --color-on-error: #ffffff !important;
+  --color-on-error-container: #fecaca !important;
+
+  --color-inverse-primary: #6b4f0a !important;
+}

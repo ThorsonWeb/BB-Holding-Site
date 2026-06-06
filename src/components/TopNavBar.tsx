@@ -13,12 +13,13 @@ export default function TopNavBar() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#0a0e14]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)] [font-family:var(--font-space-grotesk)]">
+    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.3)] [font-family:var(--font-space-grotesk)]">
       <div className="flex justify-between items-center px-6 md:px-8 h-16 md:h-20 w-full max-w-none">
         <div className="flex items-center gap-4">
           <Link
             href="/for-players"
-            className="flex items-center gap-3 text-2xl font-black italic tracking-tighter text-[#00E5FF] drop-shadow-[0_0_8px_rgba(0,229,255,0.4)] font-headline uppercase"
+            className="flex items-center gap-3 text-2xl font-black italic tracking-tighter text-primary font-headline uppercase"
+            style={{ filter: "drop-shadow(0 0 8px var(--color-primary))" }}
           >
             <Image
               src="/bb-logo.jpeg"
@@ -40,10 +41,10 @@ export default function TopNavBar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`font-headline font-bold tracking-tight uppercase transition-all hover:text-cyan-300 hover:bg-white/5 px-3 py-2 ${
+                className={`font-headline font-bold tracking-tight uppercase transition-all hover:bg-white/5 px-3 py-2 ${
                   isActive
-                    ? "text-[#00E5FF] border-b-2 border-[#00E5FF] pb-1"
-                    : "text-slate-400"
+                    ? "text-primary border-b-2 border-primary pb-1"
+                    : "text-slate-400 hover:text-primary"
                 }`}
               >
                 {item.label}

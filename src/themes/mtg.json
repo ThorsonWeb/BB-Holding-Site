@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Battle Beacon | Master Your Local Meta.",
+    "description": "Battle Beacon connects players with every Friday Night, draft, and pre-release at their local game stores. For stores, Beacon CRM manages seatings, events, and player engagement in one place."
+  },
+  "hero": {
+    "badge": "For Players & Game Stores",
+    "headline": "Master Your",
+    "headlineAccent": "Local Meta.",
+    "subheadline": "Battle Beacon connects players with every Friday Night, draft, and pre-release at their local game stores. For stores, Beacon CRM manages seatings, events, and player engagement in one place.",
+    "ctaPrimary": "Join the Network",
+    "ctaSecondary": "For Game Stores"
+  },
+  "pain": {
+    "sectionHeading": "The Current Meta is Broken",
+    "sectionSubheading": "Events go unannounced, match records are lost, and stores waste time on admin instead of building their communities.",
+    "items": [
+      {
+        "icon": "cloud_off",
+        "title": "Missing FNM Slots",
+        "description": "Friday Night events and draft nights fill up before you hear about them. Announcements are buried in Discord servers or Facebook pages you forgot to check."
+      },
+      {
+        "icon": "edit_document",
+        "title": "No Competitive Record",
+        "description": "Your match wins, format history, and milestones exist only in memory. Nothing to show for years of competitive play across formats."
+      },
+      {
+        "icon": "storefront",
+        "title": "Stores Fill Events Manually",
+        "description": "Coordinating seatings, communicating with players, and managing prizes across multiple platforms costs stores time they could spend on the floor."
+      },
+      {
+        "icon": "person_search",
+        "title": "Hard to Find Opponents",
+        "description": "Getting games outside of FNM means hoping someone replies to a Discord post before the evening is over."
+      }
+    ]
+  },
+  "solution": {
+    "sectionHeading": "One Platform. Every Format.",
+    "sectionSubheading": "The command layer your local game store community has been missing.",
+    "items": [
+      {
+        "icon": "calendar_month",
+        "title": "Never Miss an Event",
+        "description": "See every FNM, draft, pre-release, and casual session at local stores in one place. Set alerts so you are always first to claim a seat.",
+        "bullets": ["FNM & Draft Night Alerts", "Pre-Release Notifications"]
+      },
+      {
+        "icon": "leaderboard",
+        "title": "Build Your Record",
+        "description": "Track wins across every format, earn badges, and build a competitive profile that captures your full history in the game.",
+        "bullets": ["Multi-Format Match Tracking", "Competitive Badges & Achievements"]
+      },
+      {
+        "icon": "dashboard_customize",
+        "title": "Store Event Tools",
+        "description": "Beacon CRM gives stores one system for seatings, prizes, player comms, and marketing without juggling separate tools.",
+        "bullets": ["Event & Seat Management", "Player CRM & Automation"]
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Get In Before Launch",
+    "subheading": "Sign up early for your exclusive early adopter badge and be first notified when Battle Beacon goes live at your local game store.",
+    "buttonPlayer": "I'm a Player",
+    "buttonVenue": "I Run a Store"
+  }
+}

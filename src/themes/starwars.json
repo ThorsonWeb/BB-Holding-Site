@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Battle Beacon | Build Your Deck. Conquer Your Galaxy.",
+    "description": "Battle Beacon helps Star Wars: Unlimited players find local events, track their competitive journey, and stay connected to their game stores."
+  },
+  "hero": {
+    "badge": "For Players & Game Stores",
+    "headline": "Build Your Deck.",
+    "headlineAccent": "Conquer Your Galaxy.",
+    "subheadline": "Battle Beacon helps Star Wars: Unlimited players find local events, track their competitive journey, and stay connected to their game stores. For stores, Beacon CRM fills events and keeps your player base engaged.",
+    "ctaPrimary": "Join the Alliance",
+    "ctaSecondary": "For Game Stores"
+  },
+  "pain": {
+    "sectionHeading": "The Empire Has the Advantage",
+    "sectionSubheading": "Events go unannounced, results go untracked, and stores struggle to reach the players who are ready to play.",
+    "items": [
+      {
+        "icon": "search_off",
+        "title": "Events Are Hard to Find",
+        "description": "Pre-releases, league nights, and store championships are scattered across Discord servers and store websites that players forget to monitor."
+      },
+      {
+        "icon": "edit_document",
+        "title": "No Competitive Record",
+        "description": "Match wins, tournament finishes, and deck performance have no permanent home. Your competitive history disappears after every event."
+      },
+      {
+        "icon": "storefront",
+        "title": "Stores Miss Signups",
+        "description": "Game stores struggle to fill event seats without a reliable way to reach their player base and promote upcoming organised play."
+      },
+      {
+        "icon": "groups",
+        "title": "Scattered Communities",
+        "description": "Finding players for casual games, testing sessions, and weekly events across formats takes more effort than it should."
+      }
+    ]
+  },
+  "solution": {
+    "sectionHeading": "Strike Back. One Platform.",
+    "sectionSubheading": "Everything players and stores need to connect, compete, and grow.",
+    "items": [
+      {
+        "icon": "hub",
+        "title": "Find Events Near You",
+        "description": "See pre-releases, league nights, and store championships at local stores in one place so you never miss a spot.",
+        "bullets": ["Event Listings & Alerts", "Store & League Discovery"]
+      },
+      {
+        "icon": "analytics",
+        "title": "Track Your Journey",
+        "description": "Log results, build a player profile, earn badges, and track your competitive record across every tournament and format.",
+        "bullets": ["Tournament History & Stats", "Competitive Badges & Achievements"]
+      },
+      {
+        "icon": "dashboard_customize",
+        "title": "Store Operations & CRM",
+        "description": "Beacon CRM gives game stores one place to manage events, seatings, player communications, and marketing automation.",
+        "bullets": ["Event & Seat Management", "Player CRM & Outreach"]
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Join Before Launch",
+    "subheading": "Sign up early to claim your exclusive early adopter badge and be first to know when Battle Beacon goes live in your local game store.",
+    "buttonPlayer": "I'm a Player",
+    "buttonVenue": "I Run a Store"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Battle Beacon | Roll for Initiative.",
+    "description": "Battle Beacon helps board game and roleplaying fans find local game nights, discover store events, and stay connected to the communities they love."
+  },
+  "hero": {
+    "badge": "For Players & Game Stores",
+    "headline": "Roll for",
+    "headlineAccent": "Initiative.",
+    "subheadline": "Battle Beacon helps board game and roleplaying fans find local game nights, discover store events, and stay connected to the communities they love. For stores, Beacon CRM fills tables and keeps players coming back.",
+    "ctaPrimary": "Join the Adventure",
+    "ctaSecondary": "For Game Stores"
+  },
+  "pain": {
+    "sectionHeading": "The Old Way Fails the Party",
+    "sectionSubheading": "Game nights go unannounced, groups stay scattered, and stores miss the players who are ready to sit down and play.",
+    "items": [
+      {
+        "icon": "event_busy",
+        "title": "Game Nights Are Hard to Find",
+        "description": "Board game meetups, D&D one-shots, and open table nights are posted in Facebook groups and Discord servers that half the community misses entirely."
+      },
+      {
+        "icon": "groups",
+        "title": "No Regular Group",
+        "description": "Building a consistent group for campaign play, open gaming, or weekly meetups is harder than it should be without a dedicated place to connect."
+      },
+      {
+        "icon": "storefront",
+        "title": "Stores Miss Interest",
+        "description": "Game stores run incredible events but struggle to reach players who don't already know to check the store calendar manually."
+      },
+      {
+        "icon": "edit_document",
+        "title": "Nothing Gets Tracked",
+        "description": "Campaign milestones, table wins, and event history go unrecorded. There's no way to celebrate progress or remember everything you've played."
+      }
+    ]
+  },
+  "solution": {
+    "sectionHeading": "One Hub. Every Table.",
+    "sectionSubheading": "Everything players and stores need to find games, build community, and fill every seat.",
+    "items": [
+      {
+        "icon": "hub",
+        "title": "Find Game Nights Near You",
+        "description": "Discover open table nights, D&D sessions, board game meetups, and store events in one place so it is easier to say yes more often.",
+        "bullets": ["Open Table Discovery", "Event & Meetup Listings"]
+      },
+      {
+        "icon": "analytics",
+        "title": "Build Your Player Profile",
+        "description": "Track the games you've played, earn badges, unlock achievements, and build a profile that captures your full tabletop journey.",
+        "bullets": ["Game History & Achievements", "Player Badges & Bragging Rights"]
+      },
+      {
+        "icon": "dashboard_customize",
+        "title": "Store Tools & Automation",
+        "description": "Beacon CRM gives stores one platform to run events, manage bookings, communicate with players, and automate the admin that takes up too much time.",
+        "bullets": ["Event & Table Booking", "Player CRM & Marketing Automation"]
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Join Before Launch",
+    "subheading": "Sign up early to claim your exclusive early adopter badge and be first to hear when Battle Beacon launches at a game store near you.",
+    "buttonPlayer": "I'm a Player",
+    "buttonVenue": "I Run a Store"
+  }
+}

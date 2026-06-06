@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Battle Beacon | More Games. Better Events.",
+    "description": "Battle Beacon helps players find more games and play more often. For venues, Beacon CRM fills tables and runs better events."
+  },
+  "hero": {
+    "badge": "For Players & Venues",
+    "headline": "More Games.",
+    "headlineAccent": "Better Events.",
+    "subheadline": "Battle Beacon helps players find more games, play more often, and track their progress. For venues, Beacon CRM fills tables, runs better events, and keeps local gaming communities coming back.",
+    "ctaPrimary": "Sign Up Early",
+    "ctaSecondary": "For Venues"
+  },
+  "pain": {
+    "sectionHeading": "The Problem With How It Works Now",
+    "sectionSubheading": "Players miss games, venues miss bookings, and disconnected tools make every event harder to run than it should be.",
+    "items": [
+      {
+        "icon": "cloud_off",
+        "title": "Fragmented Communication",
+        "description": "WhatsApp groups and Discord pings get buried in the noise. Players miss game postings and venue announcements before they ever see them."
+      },
+      {
+        "icon": "edit_document",
+        "title": "No Match Records",
+        "description": "Manual score sheets and word of mouth are the only way to track results. History disappears the moment the game ends."
+      },
+      {
+        "icon": "storefront",
+        "title": "Venues Miss Bookings",
+        "description": "Store owners have no reliable way to reach their local player base and turn interest into confirmed bookings and event signups."
+      },
+      {
+        "icon": "person_off",
+        "title": "Isolated Players",
+        "description": "Without a shared hub, finding regular opponents and staying connected to local gaming communities is harder than it should be."
+      }
+    ]
+  },
+  "solution": {
+    "sectionHeading": "One Platform. Real Momentum.",
+    "sectionSubheading": "A unified system for players to find games and venues to fill them.",
+    "items": [
+      {
+        "icon": "hub",
+        "title": "Unified Discovery & Booking",
+        "description": "Help players find games faster and make it simple for venues to turn interest into table bookings and event signups.",
+        "bullets": ["Quick Table Booking", "Fast Event Sign-up"]
+      },
+      {
+        "icon": "analytics",
+        "title": "Player Profiles & Achievements",
+        "description": "Give players more reasons to come back with profiles, stat tracking, awards, badges, and an exclusive early signup badge.",
+        "bullets": ["Unique Player Profiles", "Badges, Awards & Bragging Rights"]
+      },
+      {
+        "icon": "dashboard_customize",
+        "title": "Venue CRM & Automation",
+        "description": "Beacon CRM gives venues one place to manage bookings, events, customer engagement, and automations without juggling multiple tools.",
+        "bullets": ["Booking & Event Management", "CRM, Automations & Forms"]
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Join Before Launch",
+    "subheading": "Sign up early to claim your place in the first wave of Battle Beacon players and venues, and unlock the early adopter badge before launch.",
+    "buttonPlayer": "Sign Up as a Player",
+    "buttonVenue": "Sign Up as a Venue"
+  }
+}

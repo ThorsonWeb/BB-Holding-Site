@@ -1,0 +1,47 @@
+/* Star Wars: Unlimited theme — deep space black, Force blue primary, warm gold secondary. */
+:root {
+  --color-primary: #3b82f6 !important;
+  --color-on-primary: #ffffff !important;
+  --color-primary-container: #2563eb !important;
+  --color-on-primary-container: #dbeafe !important;
+  --color-primary-fixed: #2563eb !important;
+  --color-primary-fixed-dim: #1d4ed8 !important;
+  --color-primary-dim: #1d4ed8 !important;
+
+  --color-secondary: #f59e0b !important;
+  --color-on-secondary: #1a1200 !important;
+  --color-secondary-container: #d97706 !important;
+  --color-on-secondary-container: #1a1200 !important;
+  --color-secondary-dim: #b45309 !important;
+
+  --color-tertiary: #dc2626 !important;
+  --color-on-tertiary: #ffffff !important;
+  --color-tertiary-container: #b91c1c !important;
+  --color-on-tertiary-container: #fee2e2 !important;
+
+  --color-background: #02040a !important;
+  --color-surface: #060c18 !important;
+  --color-surface-container-lowest: #000002 !important;
+  --color-surface-container-low: #08101e !important;
+  --color-surface-container: #0d1628 !important;
+  --color-surface-container-high: #121d32 !important;
+  --color-surface-container-highest: #17243c !important;
+  --color-surface-bright: #1e2e4a !important;
+  --color-surface-dim: #02040a !important;
+  --color-surface-variant: #17243c !important;
+  --color-surface-tint: #3b82f6 !important;
+
+  --color-outline: #4a5e7a !important;
+  --color-outline-variant: #263348 !important;
+
+  --color-on-surface: #e8f0fe !important;
+  --color-on-surface-variant: #94a8c4 !important;
+  --color-on-background: #e8f0fe !important;
+
+  --color-error: #ef4444 !important;
+  --color-error-container: #7f1d1d !important;
+  --color-on-error: #ffffff !important;
+  --color-on-error-container: #fecaca !important;
+
+  --color-inverse-primary: #1e3a8a !important;
+}

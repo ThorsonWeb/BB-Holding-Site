@@ -1,0 +1,46 @@
+/* Warhammer 40,000 theme — tactical dark, cyan & magenta.
+   Mirrors the base Battle Beacon palette exactly. */
+:root {
+  --color-primary: #81ecff !important;
+  --color-on-primary: #005762 !important;
+  --color-primary-container: #00e3fd !important;
+  --color-on-primary-container: #004d57 !important;
+  --color-primary-fixed: #00e3fd !important;
+  --color-primary-fixed-dim: #00d4ec !important;
+  --color-primary-dim: #00d4ec !important;
+
+  --color-secondary: #ff51fa !important;
+  --color-on-secondary: #400040 !important;
+  --color-secondary-container: #a900a9 !important;
+  --color-on-secondary-container: #fff5f9 !important;
+  --color-secondary-dim: #ff51fa !important;
+
+  --color-tertiary: #8eff71 !important;
+  --color-on-tertiary: #0d6100 !important;
+  --color-tertiary-container: #2ff801 !important;
+  --color-on-tertiary-container: #0b5800 !important;
+
+  --color-background: #0a0e14 !important;
+  --color-surface: #0a0e14 !important;
+  --color-surface-container-lowest: #000000 !important;
+  --color-surface-container-low: #0f141a !important;
+  --color-surface-container: #151a21 !important;
+  --color-surface-container-high: #1b2028 !important;
+  --color-surface-container-highest: #20262f !important;
+  --color-surface-bright: #262c36 !important;
+  --color-surface-dim: #0a0e14 !important;
+  --color-surface-variant: #20262f !important;
+  --color-surface-tint: #81ecff !important;
+
+  --color-outline: #72757d !important;
+  --color-outline-variant: #44484f !important;
+
+  --color-on-surface: #f1f3fc !important;
+  --color-on-surface-variant: #a8abb3 !important;
+  --color-on-background: #f1f3fc !important;
+
+  --color-error: #ff716c !important;
+  --color-error-container: #9f0519 !important;
+  --color-on-error: #490006 !important;
+  --color-on-error-container: #ffa8a3 !important;
+}

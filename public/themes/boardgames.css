@@ -1,0 +1,47 @@
+/* Board Games & D&D theme — warm dark, D&D crimson primary, amber gold secondary. */
+:root {
+  --color-primary: #dc2626 !important;
+  --color-on-primary: #ffffff !important;
+  --color-primary-container: #ef4444 !important;
+  --color-on-primary-container: #ffffff !important;
+  --color-primary-fixed: #ef4444 !important;
+  --color-primary-fixed-dim: #b91c1c !important;
+  --color-primary-dim: #b91c1c !important;
+
+  --color-secondary: #d97706 !important;
+  --color-on-secondary: #1a0e00 !important;
+  --color-secondary-container: #f59e0b !important;
+  --color-on-secondary-container: #1a0e00 !important;
+  --color-secondary-dim: #b45309 !important;
+
+  --color-tertiary: #7c3aed !important;
+  --color-on-tertiary: #ffffff !important;
+  --color-tertiary-container: #6d28d9 !important;
+  --color-on-tertiary-container: #ede9fe !important;
+
+  --color-background: #0a0806 !important;
+  --color-surface: #0f0b08 !important;
+  --color-surface-container-lowest: #050402 !important;
+  --color-surface-container-low: #130f0b !important;
+  --color-surface-container: #1a1410 !important;
+  --color-surface-container-high: #211a15 !important;
+  --color-surface-container-highest: #28201a !important;
+  --color-surface-bright: #332720 !important;
+  --color-surface-dim: #0a0806 !important;
+  --color-surface-variant: #28201a !important;
+  --color-surface-tint: #dc2626 !important;
+
+  --color-outline: #7a6858 !important;
+  --color-outline-variant: #4a3828 !important;
+
+  --color-on-surface: #f5ede8 !important;
+  --color-on-surface-variant: #b8a898 !important;
+  --color-on-background: #f5ede8 !important;
+
+  --color-error: #f87171 !important;
+  --color-error-container: #7f1d1d !important;
+  --color-on-error: #ffffff !important;
+  --color-on-error-container: #fecaca !important;
+
+  --color-inverse-primary: #7f1d1d !important;
+}
