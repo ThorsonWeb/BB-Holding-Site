@@ -1,6 +1,7 @@
 import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
+import GameSelector from "@/components/GameSelector";
 import Link from "next/link";
 
 const homepageTickerItems = [
@@ -132,6 +133,7 @@ export default function Home() {
                   For Venues
                 </Link>
               </div>
+              <GameSelector />
             </div>
           </div>
 

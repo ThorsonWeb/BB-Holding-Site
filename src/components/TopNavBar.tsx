@@ -2,15 +2,43 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, useRef, useEffect } from "react";
+
+const GAMES = [
+  { label: "Warhammer 40,000", theme: "40k" },
+  { label: "Pokémon TCG", theme: "pokemon" },
+  { label: "Magic: The Gathering", theme: "mtg" },
+  { label: "Star Wars: Unlimited", theme: "starwars" },
+  { label: "Board Games & D&D", theme: "boardgames" },
+];
 
 export default function TopNavBar() {
   const pathname = usePathname();
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const navItems = [
     { href: "/for-players", label: "For Players" },
     { href: "/for-venues", label: "For Venues" },
     { href: "/roadmap", label: "Roadmap" },
   ];
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  function selectGame(theme: string) {
+    setOpen(false);
+    router.push(`/landing?theme=${theme}`);
+  }
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.3)] [font-family:var(--font-space-grotesk)]">
@@ -36,7 +64,6 @@ export default function TopNavBar() {
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
-
             return (
               <Link
                 key={item.href}
@@ -51,6 +78,36 @@ export default function TopNavBar() {
               </Link>
             );
           })}
+
+          {/* Game picker dropdown */}
+          <div ref={dropdownRef} className="relative">
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="flex items-center gap-1.5 font-headline font-bold tracking-tight uppercase text-slate-400 hover:text-primary hover:bg-white/5 px-3 py-2 transition-all"
+            >
+              Pick Your Game
+              <span
+                className="material-symbols-outlined text-base leading-none transition-transform"
+                style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+              >
+                expand_more
+              </span>
+            </button>
+
+            {open && (
+              <div className="absolute right-0 top-full mt-2 w-56 bg-surface-container-high border border-outline-variant/30 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden">
+                {GAMES.map((game) => (
+                  <button
+                    key={game.theme}
+                    onClick={() => selectGame(game.theme)}
+                    className="w-full text-left px-4 py-3 text-sm font-headline font-bold uppercase tracking-tight text-on-surface-variant hover:bg-primary/10 hover:text-primary transition-colors"
+                  >
+                    {game.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="flex items-center">
