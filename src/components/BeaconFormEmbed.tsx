@@ -202,22 +202,17 @@ export default function BeaconFormEmbed() {
   useEffect(() => {
     injectOverrides();
 
-    const existingScript = document.getElementById(
-      BEACON_FORM_SCRIPT_ID,
-    ) as HTMLScriptElement | null;
-
-    if (existingScript) {
-      injectOverrides();
-      return;
-    }
+    // Always remove and re-add the script so it re-executes against the
+    // current #beacon-form element (client-side navigation gives it a new
+    // DOM node that the cached script instance has never seen).
+    const existing = document.getElementById(BEACON_FORM_SCRIPT_ID);
+    if (existing) existing.remove();
 
     const script = document.createElement("script");
     script.id = BEACON_FORM_SCRIPT_ID;
     script.src = BEACON_FORM_SCRIPT_SRC;
     script.async = true;
-    script.onload = () => {
-      injectOverrides();
-    };
+    script.onload = () => injectOverrides();
 
     document.body.appendChild(script);
   }, []);

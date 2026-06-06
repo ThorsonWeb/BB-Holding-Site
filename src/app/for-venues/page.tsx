@@ -2,6 +2,7 @@ import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import Link from "next/link";
+import JoinLink from "@/components/JoinLink";
 
 export default function ForVenuesPage() {
   return (
@@ -12,12 +13,7 @@ export default function ForVenuesPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(129,236,255,0.12),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,81,250,0.12),transparent_35%)]"></div>
           <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
             <div className="max-w-3xl">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1">
-                <span className="h-2 w-2 rounded-full bg-primary"></span>
-                <span className="font-headline text-[10px] font-bold uppercase tracking-widest text-primary">
-                  For Venues
-                </span>
-              </div>
+              <p className="font-headline text-xs font-bold uppercase tracking-widest text-primary mb-4">Game Stores</p>
               <h1 className="mb-6 font-headline text-5xl font-bold uppercase tracking-tighter text-on-surface md:text-7xl">
                 Grow your venue with <span className="text-primary italic">Beacon CRM</span>
               </h1>
@@ -25,12 +21,9 @@ export default function ForVenuesPage() {
                 Battle Beacon helps venue owners manage table bookings, paid events, marketing, customer engagement, and day-to-day operations in one easy-to-use CRM built for local gaming communities.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Link
-                  href="/join"
-                  className="rounded-lg bg-gradient-to-r from-primary to-primary-container px-8 py-4 text-center font-headline font-bold uppercase tracking-tight text-on-primary-container transition-all hover:scale-105 active:scale-95"
-                >
+                <JoinLink className="rounded-lg bg-gradient-to-r from-primary to-primary-container px-8 py-4 text-center font-headline font-bold uppercase tracking-tight text-on-primary-container transition-all hover:scale-105 active:scale-95">
                   Sign Up
-                </Link>
+                </JoinLink>
                 <Link
                   href="/roadmap"
                   className="rounded-lg border border-outline-variant px-8 py-4 text-center font-headline font-bold uppercase tracking-tight text-on-surface transition-all hover:bg-surface-container-high"
@@ -84,7 +77,7 @@ export default function ForVenuesPage() {
           <div className="mx-auto max-w-7xl">
             <div className="mb-14 max-w-3xl">
               <h2 className="mb-4 font-headline text-4xl font-bold uppercase tracking-tight text-on-surface md:text-5xl">
-                Built for modern <span className="text-primary">venue operations</span>
+                Everything your store needs <span className="text-primary">in one place</span>
               </h2>
               <p className="text-lg text-on-surface-variant">
                 Beacon CRM is designed to replace clunky combinations of booking apps, event tools, forms, and marketing systems with one connected platform.
@@ -139,10 +132,10 @@ export default function ForVenuesPage() {
           <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:items-start">
             <div>
               <h2 className="mb-4 font-headline text-4xl font-bold uppercase tracking-tight text-on-surface md:text-5xl">
-                Widgets that make your <span className="text-secondary">community visible</span>
+                Put live venue content <span className="text-secondary">on your site</span>
               </h2>
               <p className="mb-8 text-lg text-on-surface-variant">
-                Easily embeddable widgets help you advertise what is happening in your venue without manual updates on every page.
+                Drop embeddable widgets onto any page to show what is happening at your store — events, availability, booking links — without touching them again.
               </p>
               <div className="space-y-5">
                 <div className="rounded-xl bg-surface-container p-6">
@@ -237,12 +230,9 @@ export default function ForVenuesPage() {
               Bring bookings, events, payments, forms, marketing, and customer engagement into one platform that is built for local gaming stores.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Link
-                href="/join"
-                className="rounded-lg bg-primary px-10 py-4 font-headline font-bold uppercase tracking-tight text-on-primary transition-transform hover:scale-105"
-              >
+              <JoinLink className="rounded-lg bg-primary px-10 py-4 font-headline font-bold uppercase tracking-tight text-on-primary transition-transform hover:scale-105">
                 Sign Up
-              </Link>
+              </JoinLink>
               <Link
                 href="/for-players"
                 className="rounded-lg border border-outline-variant px-10 py-4 font-headline font-bold uppercase tracking-tight text-on-surface transition-colors hover:bg-surface-container-high"

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import JoinLink from "@/components/JoinLink";
 import { useState, useRef, useEffect } from "react";
 
 const GAMES = [
@@ -20,8 +21,8 @@ export default function TopNavBar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
-    { href: "/for-players", label: "For Players" },
-    { href: "/for-venues", label: "For Venues" },
+    { href: "/for-players", label: "Players" },
+    { href: "/for-venues", label: "Game Stores" },
     { href: "/roadmap", label: "Roadmap" },
   ];
 
@@ -111,9 +112,9 @@ export default function TopNavBar() {
         </div>
 
         <div className="flex items-center">
-          <Link href="/join" className="inline-flex bg-primary-container text-on-primary-container font-headline font-bold uppercase px-6 py-2 rounded-lg active:scale-95 duration-200">
+          <JoinLink className="inline-flex bg-primary-container text-on-primary-container font-headline font-bold uppercase px-6 py-2 rounded-lg active:scale-95 duration-200">
             Sign Up
-          </Link>
+          </JoinLink>
         </div>
       </div>
     </nav>

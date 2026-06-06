@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import GameSelector from "@/components/GameSelector";
 import Link from "next/link";
+import JoinLink from "@/components/JoinLink";
 
 const homepageTickerItems = [
   "FIND MORE GAMES NEAR YOU",
@@ -109,7 +110,7 @@ export default function Home() {
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border-l-2 border-primary mb-6">
                 <span className="text-primary font-headline font-bold text-xs tracking-widest uppercase">
-                  For Players &amp; Venues
+                  Players &amp; Stores
                 </span>
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-on-surface tracking-tighter leading-[1.1] md:leading-[0.9] uppercase mb-6">
@@ -120,17 +121,14 @@ export default function Home() {
                 Battle Beacon helps players find more games, play more often, track progress, and earn bragging rights. For venues, Beacon CRM helps fill tables, run better events, improve customer loyalty, and keep local communities coming back.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/join"
-                  className="px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold uppercase rounded-lg shadow-lg active:scale-95 transition-transform text-center"
-                >
+                <JoinLink className="px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold uppercase rounded-lg shadow-lg active:scale-95 transition-transform text-center">
                   Sign Up Early
-                </Link>
+                </JoinLink>
                 <Link
                   href="/for-venues"
                   className="px-8 py-4 bg-transparent border border-outline-variant text-primary font-headline font-bold uppercase rounded-lg hover:bg-primary/5 transition-all text-center"
                 >
-                  For Venues
+                  Game Stores
                 </Link>
               </div>
               <GameSelector />
@@ -462,18 +460,12 @@ export default function Home() {
               Sign up early to claim your place in the first wave of Battle Beacon players and venues, and unlock the early adopter badge before launch.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link
-                href="/join"
-                className="px-12 py-5 bg-primary text-on-primary font-headline font-black text-xl uppercase rounded-lg shadow-[0_0_30px_rgba(129,236,255,0.4)] hover:scale-105 transition-transform"
-              >
+              <JoinLink className="px-12 py-5 bg-primary text-on-primary font-headline font-black text-xl uppercase rounded-lg shadow-[0_0_30px_rgba(129,236,255,0.4)] hover:scale-105 transition-transform">
                 Sign Up as a Venue
-              </Link>
-              <Link
-                href="/join"
-                className="px-12 py-5 bg-secondary text-on-secondary font-headline font-black text-xl uppercase rounded-lg shadow-[0_0_30px_rgba(255,81,250,0.4)] hover:scale-105 transition-transform"
-              >
+              </JoinLink>
+              <JoinLink className="px-12 py-5 bg-secondary text-on-secondary font-headline font-black text-xl uppercase rounded-lg shadow-[0_0_30px_rgba(255,81,250,0.4)] hover:scale-105 transition-transform">
                 Sign Up as a Player
-              </Link>
+              </JoinLink>
             </div>
           </div>
         </section>

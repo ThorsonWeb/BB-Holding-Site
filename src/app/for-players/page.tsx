@@ -2,6 +2,7 @@ import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import Link from "next/link";
+import JoinLink from "@/components/JoinLink";
 
 const tickerItems = [
   {
@@ -58,12 +59,7 @@ export default function ForPlayersPage() {
           </div>
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             <div className="max-w-2xl relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
-                <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-                <span className="text-secondary text-[10px] font-headline font-bold tracking-widest uppercase">
-                  For Players
-                </span>
-              </div>
+              <p className="font-headline text-xs font-bold uppercase tracking-widest text-secondary mb-4">Players</p>
               <h1 className="text-5xl md:text-8xl font-headline font-bold tracking-tighter text-on-surface mb-6 leading-[1.1] md:leading-[0.9]">
                 LEVEL UP YOUR <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">
@@ -74,12 +70,9 @@ export default function ForPlayersPage() {
                 Battle Beacon helps you arrange games more easily, play more often, meet new players, build a profile you are proud of, earn badges and bragging rights, and support the local gaming stores you love.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/join"
-                  className="px-8 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-headline font-bold rounded-lg scale-100 hover:scale-105 active:scale-95 transition-all neon-glow-primary uppercase tracking-tight text-center"
-                >
+                <JoinLink className="px-8 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-headline font-bold rounded-lg scale-100 hover:scale-105 active:scale-95 transition-all neon-glow-primary uppercase tracking-tight text-center">
                   Join Battle Beacon
-                </Link>
+                </JoinLink>
                 <button className="px-8 py-4 bg-transparent border border-outline-variant text-on-surface font-headline font-bold rounded-lg hover:bg-surface-container-high transition-colors uppercase tracking-tight">
                   Download App
                 </button>
@@ -187,7 +180,7 @@ export default function ForPlayersPage() {
                 <span className="material-symbols-outlined text-secondary text-4xl mb-6">trending_up</span>
                 <h3 className="text-2xl font-headline font-bold text-on-surface mb-2 uppercase">14 Win Streak</h3>
                   <p className="text-on-surface-variant text-sm mb-6">
-                    Turn every game into progress with tracked results, profile stats, awards, badges, and more reasons to keep climbing.
+                    Every game builds your record. Results, achievements, and a profile worth showing off — all in one place.
                   </p>
               </div>
               <div className="space-y-3 relative z-10 mt-auto">
@@ -207,13 +200,13 @@ export default function ForPlayersPage() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-primary/10 border border-primary/20 mb-4">
                   <span className="text-primary text-[10px] font-headline font-bold tracking-widest uppercase">Local Gaming Stores</span>
                 </div>
-                <h3 className="text-4xl font-headline font-bold text-on-surface mb-4 uppercase">Strategic Venues</h3>
+                <h3 className="text-4xl font-headline font-bold text-on-surface mb-4 uppercase">Find Your Store</h3>
                   <p className="text-on-surface-variant text-lg max-w-2xl">
-                    Discover local gaming stores, see where games are happening, and support your favourite venues by booking tables and showing up for their events.
+                    See what's on at local game stores near you — open tables, game nights, upcoming events — and book in without the back-and-forth.
                   </p>
                 <div className="mt-8 flex gap-4">
                   <div className="flex items-center gap-2 text-primary font-headline font-bold uppercase text-xs cursor-pointer hover:underline">
-                    <span className="material-symbols-outlined text-lg">location_on</span> View Local Hubs
+                    <span className="material-symbols-outlined text-lg">location_on</span> Find Stores Near You
                   </div>
                 </div>
               </div>
@@ -243,7 +236,7 @@ export default function ForPlayersPage() {
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
               <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-8 uppercase tracking-tighter leading-tight">
-                YOUR <span className="text-primary">GAMING NETWORK</span> <br />IN YOUR POCKET
+                More games. <br /><span className="text-primary">Less friction.</span>
               </h2>
               <div className="space-y-8">
                 <div className="flex gap-6 items-start">
@@ -252,7 +245,7 @@ export default function ForPlayersPage() {
                   </div>
                   <div>
                     <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Find Games Nearby</h4>
-                    <p className="text-on-surface-variant">See local game sessions, store events, and open tables so it is easier to say yes to more games.</p>
+                    <p className="text-on-surface-variant">See what's on at stores near you this week — open tables, game nights, events — so picking up a game is actually easy.</p>
                   </div>
                 </div>
                 <div className="flex gap-6 items-start">
@@ -330,12 +323,9 @@ export default function ForPlayersPage() {
                   <p className="text-lg font-headline font-bold text-on-surface leading-tight">Google Play</p>
                 </div>
               </button>
-              <Link
-                href="/join"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-headline font-bold rounded-lg scale-100 hover:scale-105 active:scale-95 transition-all neon-glow-primary uppercase tracking-tight"
-              >
+              <JoinLink className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-headline font-bold rounded-lg scale-100 hover:scale-105 active:scale-95 transition-all neon-glow-primary uppercase tracking-tight">
                 Sign Up for News
-              </Link>
+              </JoinLink>
             </div>
           </div>
         </section>

@@ -1,7 +1,10 @@
 "use client";
 
+import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+
+const LINK_ID = "bb-theme-stylesheet";
 
 import defaultCopy from "@/themes/default.json";
 import copy40k from "@/themes/40k.json";
@@ -58,10 +61,19 @@ export default function LandingContent() {
   const themeKey = rawTheme in THEMES ? rawTheme : "default";
   const copy = THEMES[themeKey];
 
+  useEffect(() => {
+    let el = document.getElementById(LINK_ID) as HTMLLinkElement | null;
+    if (!el) {
+      el = document.createElement("link");
+      el.id = LINK_ID;
+      el.rel = "stylesheet";
+      document.head.appendChild(el);
+    }
+    el.href = `/themes/${themeKey}.css`;
+  }, [themeKey]);
+
   return (
     <>
-      {/* Theme stylesheet — React 19 hoists <link> to <head> */}
-      <link rel="stylesheet" href={`/themes/${themeKey}.css`} precedence="high" />
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -89,7 +101,7 @@ export default function LandingContent() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/join"
+                href={`/join?theme=${themeKey}`}
                 className="px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold uppercase rounded-lg shadow-lg active:scale-95 transition-transform text-center"
               >
                 {copy.hero.ctaPrimary}
@@ -213,13 +225,13 @@ export default function LandingContent() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
-              href="/join"
+              href={`/join?theme=${themeKey}`}
               className="px-12 py-5 bg-primary text-on-primary font-headline font-black text-xl uppercase rounded-lg hover:scale-105 transition-transform"
             >
               {copy.cta.buttonPlayer}
             </Link>
             <Link
-              href="/join"
+              href={`/join?theme=${themeKey}`}
               className="px-12 py-5 bg-secondary text-on-secondary font-headline font-black text-xl uppercase rounded-lg hover:scale-105 transition-transform"
             >
               {copy.cta.buttonVenue}

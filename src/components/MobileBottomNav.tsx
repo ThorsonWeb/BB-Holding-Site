@@ -8,12 +8,12 @@ export default function MobileBottomNav() {
   const navItems = [
     {
       href: "/for-players",
-      label: "For Players",
+      label: "Players",
       icon: "grid_view",
     },
     {
       href: "/for-venues",
-      label: "For Venues",
+      label: "Game Stores",
       icon: "storefront",
     },
     {

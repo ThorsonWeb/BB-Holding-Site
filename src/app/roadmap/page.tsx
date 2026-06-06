@@ -2,6 +2,7 @@ import Link from "next/link";
 import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
+import JoinLink from "@/components/JoinLink";
 
 const roadmapHighlights = [
   {
@@ -24,83 +25,91 @@ const roadmapHighlights = [
 const roadmapPhases = [
   {
     phase: "Phase 01",
-    label: "Deployment",
+    label: "Foundation",
     status: "Now Live",
     description:
-      "The foundation is already in the field: core discovery, core venue intelligence, and the first layer of player telemetry.",
+      "The core platform is live. Players can find local venues, create profiles, and start logging game results. This is the base everything else builds on.",
+    brief:
+      "Core discovery, venue search, and player profiles are already live. Players can find games and start building a record from day one.",
     accent: "tertiary",
     badgeClass: "bg-tertiary/10 text-tertiary border-tertiary/20",
     panelClass: "border-tertiary/25",
     icon: "check_circle",
     items: [
       {
-        title: "Matchmaking",
+        title: "Player Matchmaking",
         description:
-          "Automated player pairing based on competitive rankings and proximity.",
+          "Find opponents near you based on the games you play and your availability.",
       },
       {
-        title: "Venue Search",
+        title: "Venue Discovery",
         description:
-          "Locate verified LGS and community hubs in your operational sector.",
+          "Search for local game stores, see what's on, and find open tables.",
       },
       {
-        title: "Basic Stat Tracking",
-        description: "Win/loss telemetry for individual command records.",
+        title: "Result Tracking",
+        description: "Log wins and losses and start building your player profile.",
       },
     ],
   },
   {
     phase: "Phase 02",
-    label: "Logistics",
+    label: "Engagement",
     status: "In Development",
     description:
-      "The next deployment wave is focused on retention, squads, and deeper player identity systems that increase long-term engagement.",
+      "We're building the features that give players more reasons to keep coming back — a rewards system and tools to play together as a group.",
+    brief:
+      "A points rewards system and team management tools are in active development right now. These are the features that turn casual users into regulars.",
     accent: "primary",
     badgeClass: "bg-primary/10 text-primary border-primary/20",
     panelClass: "border-primary/25",
     icon: "engineering",
     items: [
       {
-        title: "Points Shop",
+        title: "Points & Rewards",
         description:
-          "Monetize your victories. Spend earned points on cosmetic digital assets.",
+          "Earn points for playing and spend them on profile upgrades and cosmetic rewards.",
       },
       {
-        title: "Team Management",
+        title: "Team & Squad Tools",
         description:
-          "Create and join gaming squads with shared telemetry and private channels.",
+          "Create a team, invite your regular group, and track results together.",
       },
     ],
   },
   {
     phase: "Phase 03",
-    label: "Expansion",
+    label: "Growth",
     status: "Next Up",
     description:
-      "After the current logistics wave, the roadmap shifts toward bigger event operations and venue-specific customization.",
+      "Once Phase 02 ships, the focus moves to giving venues more flexibility and improving the experience for stores running bigger events.",
+    brief:
+      "Planned for after Phase 02. Venue customisation and stronger tournament tooling for stores running leagues, championships, and bigger events.",
     accent: "secondary",
     badgeClass: "bg-secondary/10 text-secondary border-secondary/20",
     panelClass: "border-secondary/25",
     icon: "rocket_launch",
     items: [
       {
-        title: "Venue Custom Themes",
+        title: "Venue Branding",
         description:
-          "Personalize your shop portal with sector-specific visual skins.",
+          "Game stores can customise their profile and event pages to match their own brand.",
       },
       {
         title: "Tournament Brackets v2",
         description:
-          "Advanced double-elimination and Swiss pairings for massive events.",
+          "Double-elimination and Swiss pairings for stores running serious competitive events.",
       },
     ],
   },
   {
     phase: "Phase 04",
-    label: "Horizon",
+    label: "Scale",
     status: "Planned",
     description:
-      "Long-range plans focus on platform scale, deeper mobile systems, and a stronger competitive layer across the wider network.",
+      "Long-range plans to rebuild the mobile experience from the ground up and introduce global rankings that connect competitive players everywhere.",
+    brief:
+      "A rebuilt mobile app and global leaderboards are on the long-range plan. The goal is to connect every competitive player on the network, not just local ones.",
     accent: "outline",
     badgeClass: "bg-surface-container-high text-on-surface-variant border-outline-variant/30",
     panelClass: "border-outline-variant/30",
@@ -109,12 +118,12 @@ const roadmapPhases = [
       {
         title: "Mobile App v2",
         description:
-          "Complete tactical overhaul for field operations on iOS and Android.",
+          "A fully rebuilt iOS and Android app designed around how players actually use it.",
       },
       {
         title: "Global Leaderboards",
         description:
-          "Inter-sector competitive rankings for ultimate tabletop supremacy.",
+          "Competitive rankings that go beyond your local store and connect players across the whole network.",
       },
     ],
   },
@@ -133,23 +142,16 @@ export default function RoadmapPage() {
           <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24">
             <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 mb-6">
-                  <span className="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-                  <span className="font-headline text-[10px] font-bold uppercase tracking-[0.28em] text-primary">
-                    Strategic Roadmap
-                  </span>
-                </div>
+                <p className="font-headline text-xs font-bold uppercase tracking-[0.28em] text-primary mb-6">Product Roadmap</p>
 
                 <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-6 leading-[1.05]">
-                  Build the <span className="text-primary italic">Signal</span>.
+                  What&apos;s live.
                   <br />
-                  Expand the Network.
+                  <span className="text-primary italic">What&apos;s coming.</span>
                 </h1>
 
                 <p className="max-w-3xl text-lg md:text-xl leading-relaxed text-on-surface-variant">
-                  A clearer view of what is live, what is shipping next, and
-                  where Battle Beacon is heading as we build a stronger command
-                  system for players, stores, and events.
+                  A clear view of what is already in players&apos; hands, what we are building right now, and where Battle Beacon is headed for players, stores, and events.
                 </p>
               </div>
 
@@ -157,10 +159,10 @@ export default function RoadmapPage() {
                 <div className="flex items-center justify-between gap-4 mb-6">
                   <div>
                     <p className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-on-surface-variant">
-                      Mission Status
+                      Current Status
                     </p>
                     <h2 className="font-headline text-2xl font-bold uppercase text-on-surface mt-2">
-                      Roadmap Control
+                      Roadmap
                     </h2>
                   </div>
                   <span className="inline-flex items-center gap-2 rounded-full border border-tertiary/20 bg-tertiary/10 px-3 py-1 text-[10px] font-headline font-bold uppercase tracking-[0.22em] text-tertiary">
@@ -198,16 +200,14 @@ export default function RoadmapPage() {
           <div className="mb-12 md:mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-primary mb-3">
-                Phase Tracking
+                The Phases
               </p>
               <h2 className="font-headline text-4xl md:text-5xl font-bold uppercase tracking-tighter">
-                Tactical Timeline
+                Phase by Phase
               </h2>
             </div>
             <p className="max-w-2xl text-on-surface-variant text-base md:text-lg">
-              Each phase represents a tighter layer of product maturity, from
-              core discovery and operations to broader competitive systems and
-              platform-wide expansion.
+              Each phase ships a set of features, gets real feedback, and informs what comes next. Nothing is set in stone — we ship, we learn, we iterate.
             </p>
           </div>
 
@@ -332,12 +332,10 @@ export default function RoadmapPage() {
                               {phase.icon}
                             </span>
                             <p className="mt-5 font-headline text-sm font-bold uppercase tracking-[0.22em] text-on-surface-variant">
-                              {phase.phase} signal brief
+                              {phase.label}
                             </p>
                             <p className="mt-3 max-w-sm text-sm leading-relaxed text-on-surface-variant">
-                              Clean milestone status panel for this phase,
-                              focused on progress, priorities, and rollout
-                              readiness.
+                              {phase.brief}
                             </p>
                           </div>
                         </div>
@@ -361,17 +359,14 @@ export default function RoadmapPage() {
                 <span className="text-secondary"> Next Phase</span>
               </h2>
               <p className="text-on-surface-variant text-lg leading-relaxed mb-8">
-                Have tactical intelligence that could improve the platform?
-                Share feature requests, quality-of-life ideas, or event tooling
-                needs and we will fold them into future planning.
+                Got ideas for what we should build next? Share feature requests, quality-of-life improvements, or event tooling ideas and we will factor them into upcoming phases.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/join"
+                <JoinLink
                   className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-primary to-primary-dim px-6 py-3 font-headline font-bold uppercase tracking-wide text-on-primary-fixed transition-transform hover:scale-105 active:scale-95"
                 >
                   Sign Up for Updates
-                </Link>
+                </JoinLink>
                 <div className="inline-flex items-center gap-2 rounded-lg border border-outline-variant/20 px-4 py-3 text-sm text-on-surface-variant">
                   <span className="material-symbols-outlined text-primary">
                     forum
@@ -385,7 +380,7 @@ export default function RoadmapPage() {
               <form className="space-y-6">
                 <div>
                   <label className="block font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">
-                    Feature Intel Name
+                    Feature Name
                   </label>
                   <input
                     className="w-full rounded-xl border border-outline-variant/20 bg-surface-container-highest p-4 font-body text-on-surface placeholder:text-outline-variant/60 transition-all focus:border-primary focus:outline-none"
