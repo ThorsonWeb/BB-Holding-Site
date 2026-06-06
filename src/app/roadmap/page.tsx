@@ -348,66 +348,6 @@ export default function RoadmapPage() {
           </div>
         </section>
 
-        <section className="max-w-7xl mx-auto px-6 md:px-8 pb-10">
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] items-start rounded-3xl border border-outline-variant/15 bg-surface-container-low p-8 md:p-10 shadow-[0_20px_80px_rgba(0,0,0,0.28)]">
-            <div>
-              <p className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-secondary mb-4">
-                Community Input
-              </p>
-              <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-5">
-                Help Shape the
-                <span className="text-secondary"> Next Phase</span>
-              </h2>
-              <p className="text-on-surface-variant text-lg leading-relaxed mb-8">
-                Got ideas for what we should build next? Share feature requests, quality-of-life improvements, or event tooling ideas and we will factor them into upcoming phases.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <JoinLink
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-primary to-primary-dim px-6 py-3 font-headline font-bold uppercase tracking-wide text-on-primary-fixed transition-transform hover:scale-105 active:scale-95"
-                >
-                  Sign Up for Updates
-                </JoinLink>
-                <div className="inline-flex items-center gap-2 rounded-lg border border-outline-variant/20 px-4 py-3 text-sm text-on-surface-variant">
-                  <span className="material-symbols-outlined text-primary">
-                    forum
-                  </span>
-                  Active community review process
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-outline-variant/15 bg-surface-container p-6 md:p-8">
-              <form className="space-y-6">
-                <div>
-                  <label className="block font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">
-                    Feature Name
-                  </label>
-                  <input
-                    className="w-full rounded-xl border border-outline-variant/20 bg-surface-container-highest p-4 font-body text-on-surface placeholder:text-outline-variant/60 transition-all focus:border-primary focus:outline-none"
-                    placeholder="e.g. Paint Progress Tracker"
-                    type="text"
-                  />
-                </div>
-                <div>
-                  <label className="block font-headline text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">
-                    Operational Details
-                  </label>
-                  <textarea
-                    className="w-full resize-none rounded-xl border border-outline-variant/20 bg-surface-container-highest p-4 font-body text-on-surface placeholder:text-outline-variant/60 transition-all focus:border-primary focus:outline-none"
-                    placeholder="Describe the tactical advantage of this feature..."
-                    rows={5}
-                  ></textarea>
-                </div>
-                <button
-                  className="w-full rounded-xl bg-gradient-to-r from-primary to-primary-dim py-4 font-headline font-bold uppercase tracking-widest text-on-primary-fixed transition-all hover:shadow-[0_0_20px_rgba(129,236,255,0.35)] active:scale-95"
-                  type="button"
-                >
-                  Submit to Command
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
       <MobileBottomNav />

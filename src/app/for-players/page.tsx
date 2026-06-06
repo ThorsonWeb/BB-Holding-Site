@@ -73,8 +73,9 @@ export default function ForPlayersPage() {
                 <JoinLink className="px-8 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-headline font-bold rounded-lg scale-100 hover:scale-105 active:scale-95 transition-all neon-glow-primary uppercase tracking-tight text-center">
                   Join Battle Beacon
                 </JoinLink>
-                <button className="px-8 py-4 bg-transparent border border-outline-variant text-on-surface font-headline font-bold rounded-lg hover:bg-surface-container-high transition-colors uppercase tracking-tight">
-                  Download App
+                <button disabled className="px-8 py-4 bg-transparent border border-outline-variant text-on-surface-variant font-headline font-bold rounded-lg opacity-50 cursor-not-allowed uppercase tracking-tight flex flex-col items-center leading-tight">
+                  <span>Download App</span>
+                  <span className="text-[10px] normal-case tracking-normal font-normal">Coming soon</span>
                 </button>
               </div>
             </div>
