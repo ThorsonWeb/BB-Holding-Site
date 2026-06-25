@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const BEACON_FORM_SCRIPT_ID = "beacon-form-script";
 const BEACON_FORM_STYLE_ID = "beacon-form-style-overrides";
-const BEACON_FORM_SCRIPT_SRC = "https://beacon.thorsonweb.co.uk/embed/forms.js";
+const BEACON_FORM_SCRIPT_SRC = "https://beacon-crm.com/embed/forms.js";
 
 const BEACON_FORM_OVERRIDES = `
 #beacon-form.bform {
@@ -221,8 +221,8 @@ export default function BeaconFormEmbed() {
     <div className="rounded-xl border border-outline-variant/15 bg-surface-container p-4 md:p-6 shadow-[0_20px_40px_rgba(0,0,0,0.25)]">
       <div
         id="beacon-form"
-        data-form-key="ytoAt25qARrcK504-D2HGmq5gFYWhivUQnqHj1TOx6E"
-        data-host="https://beacon.thorsonweb.co.uk"
+        data-form-key="ItHlsfHiuBfX5VXNgv5FlzlRDqPGV9VQTIP4d73VuIs"
+        data-host="https://beacon-crm.com"
       ></div>
     </div>
   );
