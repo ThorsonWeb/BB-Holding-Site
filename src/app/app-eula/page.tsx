@@ -96,8 +96,9 @@ export default function AppEulaPage() {
                   third-party provider, didit.me, to definitively prove you meet this age requirement.
                 </SubPoint>
                 <SubPoint title="Account Security">
-                  You are responsible for maintaining the confidentiality of your account credentials and
-                  for all activities that occur under your account.
+                  The App uses passwordless email authentication. You are responsible for maintaining
+                  access to your registered email account and for all activity that occurs under your
+                  account.
                 </SubPoint>
               </Section>
 
@@ -152,7 +153,7 @@ export default function AppEulaPage() {
                 </SubPoint>
               </Section>
 
-              <Section number="6" title="Payments and Bookings">
+              <Section number="6" title="Payments, Bookings, and Venue Communications">
                 <SubPoint title="Processing">
                   All payments for table bookings or events are processed securely via Stripe.
                 </SubPoint>
@@ -160,6 +161,12 @@ export default function AppEulaPage() {
                   Booking cancellations and refunds are subject to the specific policies of the venue you
                   are booking with. Tabletop Sports Ltd does not hold funds and cannot unilaterally issue
                   refunds for third-party venue bookings.
+                </SubPoint>
+                <SubPoint title="Venue Marketing Opt-In">
+                  When booking at a venue, you may be offered the option to subscribe to that venue&apos;s
+                  mailing list. If you opt in, your contact details will be shared with that venue, who
+                  then becomes an independent data controller. Their use of your data is subsequently
+                  governed by their own privacy policy.
                 </SubPoint>
               </Section>
 
