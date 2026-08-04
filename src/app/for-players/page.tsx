@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
-import Link from "next/link";
+import Button from "@/components/Button";
 import JoinLink from "@/components/JoinLink";
+import Icon from "@/components/Icon";
+
+export const metadata: Metadata = {
+  title: "For Players",
+  description:
+    "Find more games, play more often, and track your progress with Battle Beacon. Discover local tabletop games, open tables, and store events near you.",
+};
 
 const tickerItems = [
   {
@@ -48,18 +56,12 @@ export default function ForPlayersPage() {
       <TopNavBar />
       <main className="flex-grow pt-16 md:pt-20">
         {/* Hero Section */}
-        <header className="relative pt-16 md:pt-24 pb-20 px-6 lg:px-24 overflow-hidden min-h-[90vh] flex items-center">
-          <div className="absolute top-0 right-0 -z-10 w-full lg:w-2/3 h-full opacity-30 pointer-events-none">
-            <div className="absolute inset-0 bg-gradient-to-l from-primary/20 via-background to-background"></div>
-            <img
-              alt="Tactical map"
-              className="w-full h-full object-cover grayscale mix-blend-screen"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRm_V-uCtaXOG2Ux9sUCAWk18b0s_RfyZUiv66v5Twr-crVYvitbgIFY_qLk627zAKbIL4QyNaIOKJDAzOUGORC5Z7c9e6uPPgEzl7ztteOI6i3OigKhS-yzv2AJCubTyxOK65aAN9-EDDLAPU-oDtvNzoo6-3QF_gk1ohcZ4d2gYtHoQ3wB7ChlCkH88CpZmIiaAYvdLyuAa9RCtdH4u9h7T8TabIMp-lSDqI0LNsi6QPxS3plU5V0S_uNIPnALlDcxo2YV0zknc"
-            />
+        <header className="relative pt-16 md:pt-24 pb-20 px-6 lg:px-24 overflow-hidden min-h-[90vh] flex items-center tactical-grid">
+          <div className="absolute inset-0 -z-10 pointer-events-none" aria-hidden="true">
+            <div className="absolute top-0 right-0 w-full lg:w-2/3 h-full bg-gradient-to-l from-primary/10 via-background to-background"></div>
           </div>
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             <div className="max-w-2xl relative z-10">
-              <p className="font-headline text-xs font-bold uppercase tracking-widest text-secondary mb-4">Players</p>
               <h1 className="text-5xl md:text-8xl font-headline font-bold tracking-tighter text-on-surface mb-6 leading-[1.1] md:leading-[0.9]">
                 LEVEL UP YOUR <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">
@@ -70,23 +72,18 @@ export default function ForPlayersPage() {
                 Battle Beacon helps you arrange games more easily, play more often, meet new players, build a profile you are proud of, earn badges and bragging rights, and support the local gaming stores you love.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <JoinLink className="px-8 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-headline font-bold rounded-lg scale-100 hover:scale-105 active:scale-95 transition-all neon-glow-primary uppercase tracking-tight text-center">
-                  Join Battle Beacon
-                </JoinLink>
-                <button disabled className="px-8 py-4 bg-transparent border border-outline-variant text-on-surface-variant font-headline font-bold rounded-lg opacity-50 cursor-not-allowed uppercase tracking-tight flex flex-col items-center leading-tight">
+                <JoinLink variant="primary">Join Battle Beacon</JoinLink>
+                <Button disabled className="flex-col items-center leading-tight">
                   <span>Download App</span>
                   <span className="text-[10px] normal-case tracking-normal font-normal">Coming soon</span>
-                </button>
+                </Button>
               </div>
             </div>
             <div className="hidden lg:flex justify-center items-center relative">
-              <div className="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full"></div>
+              <div className="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full" aria-hidden="true"></div>
               <div className="relative w-[320px] aspect-[9/19] rounded-[3rem] border-[8px] border-surface-container-highest shadow-2xl overflow-hidden animate-float">
-                <img
-                  alt="Battle Beacon app interface"
-                  className="w-full h-full object-cover"
-                  src="/homescreen.jpeg"
-                />
+                {/* TODO(asset): replace with a real Battle Beacon app screenshot */}
+                <img alt="Battle Beacon app interface" className="w-full h-full object-cover" src="/homescreen.jpeg" />
               </div>
             </div>
           </div>
@@ -107,7 +104,7 @@ export default function ForPlayersPage() {
                         : "text-on-surface-variant"
                   }`}
                 >
-                  <span className="material-symbols-outlined text-xs">{item.icon}</span>
+                  <Icon name={item.icon} className="text-xs" />
                   {item.label}
                 </span>
               ))}
@@ -125,7 +122,7 @@ export default function ForPlayersPage() {
                         : "text-on-surface-variant"
                   }`}
                 >
-                  <span className="material-symbols-outlined text-xs">{item.icon}</span>
+                  <Icon name={item.icon} className="text-xs" />
                   {item.label}
                 </span>
               ))}
@@ -138,24 +135,18 @@ export default function ForPlayersPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-7xl mx-auto">
             {/* Feature 1: Find Games & Host Games */}
             <div className="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all min-h-[300px]">
-              <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
-                <img
-                  alt="Deployments"
-                  className="w-full h-full object-cover object-center scale-150 transform translate-y-20"
-                  src="https://lh3.googleusercontent.com/aida/ADBb0uh6sUgWR90kWUyQbGGNKUSxG1lkSHGGNqxaxB3nHuHq-sXw1ECI3gVIfv7wsYR3un6SaWw-aUYuD5DAvVwlVi-StBl3Lk9gDz1MRY6-dJpSvfPB4g08shoS5Q3A-jRcJwQefvCIkEUy-pDWhQyFrkDZE2Co39YnViTaCOpn1CEXTit7f4ckaVXiaT1cSl25gtZcvKlxp_Tp1ZufDELg7d3zMhqcN9j2Sg-XMfiDrI0wmj_8aG71Ba0HVJ32YZ9D8Yybt2gsxWO3Ag"
-                />
-              </div>
+              <div className="absolute inset-0 opacity-40 tactical-grid" aria-hidden="true"></div>
               <div className="relative z-10 p-8 h-full flex flex-col justify-between">
                 <div>
                   <div className="flex gap-4 mb-6">
-                    <span className="px-4 py-2 rounded bg-[#C63F3F] text-white font-headline font-bold text-xs uppercase flex items-center gap-2">
-                      <span className="material-symbols-outlined text-sm">swords</span> Find Game
+                    <span className="px-4 py-2 rounded bg-error text-on-error font-headline font-bold text-xs uppercase flex items-center gap-2">
+                      <Icon name="swords" className="text-sm" /> Find Game
                     </span>
                     <span className="px-4 py-2 rounded bg-surface-container-highest border border-outline-variant/50 text-on-surface font-headline font-bold text-xs uppercase flex items-center gap-2">
-                      <span className="material-symbols-outlined text-sm">groups</span> Host Game
+                      <Icon name="groups" className="text-sm" /> Host Game
                     </span>
                   </div>
-                  <h3 className="text-3xl font-headline font-bold text-on-surface mb-4 uppercase">Arrange More Games</h3>
+                  <h2 className="text-3xl font-headline font-bold text-on-surface mb-4 uppercase">Arrange More Games</h2>
                   <p className="text-on-surface-variant text-lg max-w-md">
                     Find people to play with, organise your own game nights, and make it easier to get regular games in across the systems you play.
                   </p>
@@ -170,19 +161,12 @@ export default function ForPlayersPage() {
 
             {/* Feature 2: Win Streak */}
             <div className="md:col-span-4 rounded-xl bg-surface-container-high p-8 border border-outline-variant/10 relative overflow-hidden flex flex-col group min-h-[300px]">
-              <div className="absolute -right-4 top-1/2 -translate-y-1/2 opacity-5 scale-150 transform rotate-12 group-hover:opacity-10 transition-opacity pointer-events-none">
-                <img
-                  alt="Win Streak Data"
-                  className="w-48"
-                  src="https://lh3.googleusercontent.com/aida/ADBb0uh6sUgWR90kWUyQbGGNKUSxG1lkSHGGNqxaxB3nHuHq-sXw1ECI3gVIfv7wsYR3un6SaWw-aUYuD5DAvVwlVi-StBl3Lk9gDz1MRY6-dJpSvfPB4g08shoS5Q3A-jRcJwQefvCIkEUy-pDWhQyFrkDZE2Co39YnViTaCOpn1CEXTit7f4ckaVXiaT1cSl25gtZcvKlxp_Tp1ZufDELg7d3zMhqcN9j2Sg-XMfiDrI0wmj_8aG71Ba0HVJ32YZ9D8Yybt2gsxWO3Ag"
-                />
-              </div>
               <div className="mb-auto relative z-10">
-                <span className="material-symbols-outlined text-secondary text-4xl mb-6">trending_up</span>
-                <h3 className="text-2xl font-headline font-bold text-on-surface mb-2 uppercase">14 Win Streak</h3>
-                  <p className="text-on-surface-variant text-sm mb-6">
-                    Every game builds your record. Results, achievements, and a profile worth showing off — all in one place.
-                  </p>
+                <Icon name="trending_up" className="text-secondary text-4xl mb-6" />
+                <h2 className="text-2xl font-headline font-bold text-on-surface mb-2 uppercase">14 Win Streak</h2>
+                <p className="text-on-surface-variant text-sm mb-6">
+                  Every game builds your record. Results, achievements, and a profile worth showing off &mdash; all in one place.
+                </p>
               </div>
               <div className="space-y-3 relative z-10 mt-auto">
                 <div className="h-2 w-full bg-surface-container-lowest rounded-full overflow-hidden">
@@ -195,37 +179,29 @@ export default function ForPlayersPage() {
               </div>
             </div>
 
-            {/* Feature 3: Strategic Venues */}
+            {/* Feature 3: Find Your Store */}
             <div className="md:col-span-12 rounded-xl bg-surface-container p-8 border border-outline-variant/10 flex flex-col md:flex-row gap-8 items-center group overflow-hidden">
               <div className="flex-1 relative z-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-primary/10 border border-primary/20 mb-4">
                   <span className="text-primary text-[10px] font-headline font-bold tracking-widest uppercase">Local Gaming Stores</span>
                 </div>
-                <h3 className="text-4xl font-headline font-bold text-on-surface mb-4 uppercase">Find Your Store</h3>
-                  <p className="text-on-surface-variant text-lg max-w-2xl">
-                    See what's on at local game stores near you — open tables, game nights, upcoming events — and book in without the back-and-forth.
-                  </p>
+                <h2 className="text-4xl font-headline font-bold text-on-surface mb-4 uppercase">Find Your Store</h2>
+                <p className="text-on-surface-variant text-lg max-w-2xl">
+                  See what&apos;s on at local game stores near you &mdash; open tables, game nights, upcoming events &mdash; and book in without the back-and-forth.
+                </p>
                 <div className="mt-8 flex gap-4">
-                  <div className="flex items-center gap-2 text-primary font-headline font-bold uppercase text-xs cursor-pointer hover:underline">
-                    <span className="material-symbols-outlined text-lg">location_on</span> Find Stores Near You
-                  </div>
+                  <Button href="/for-venues" variant="outline" size="sm" className="gap-2">
+                    <Icon name="location_on" className="text-lg" />
+                    Find Stores Near You
+                  </Button>
                 </div>
               </div>
-              <div className="w-full md:w-1/2 grid grid-cols-2 gap-4 relative">
-                <div className="aspect-video rounded-lg overflow-hidden border border-outline-variant/30 group-hover:border-primary/50 transition-all">
-                  <img
-                    alt="Venue 1"
-                    className="w-full h-full object-cover object-bottom scale-150"
-                    src="https://pub-891f30df07134fc0a4846b9569f8d1d3.r2.dev/005dcc96-abf2-486c-8989-a0fb6f6425cf/c55e027b-de9d-4bfb-9d90-46727abbc54f/venuetgs.png"
-                  />
-                </div>
-                <div className="aspect-video rounded-lg overflow-hidden border border-outline-variant/30 group-hover:border-primary/50 transition-all opacity-80">
-                  <img
-                    alt="Venue 2"
-                    className="w-full h-full object-cover object-top scale-150"
-                    src="https://lh3.googleusercontent.com/aida/ADBb0uh6sUgWR90kWUyQbGGNKUSxG1lkSHGGNqxaxB3nHuHq-sXw1ECI3gVIfv7wsYR3un6SaWw-aUYuD5DAvVwlVi-StBl3Lk9gDz1MRY6-dJpSvfPB4g08shoS5Q3A-jRcJwQefvCIkEUy-pDWhQyFrkDZE2Co39YnViTaCOpn1CEXTit7f4ckaVXiaT1cSl25gtZcvKlxp_Tp1ZufDELg7d3zMhqcN9j2Sg-XMfiDrI0wmj_8aG71Ba0HVJ32YZ9D8Yybt2gsxWO3Ag"
-                  />
-                </div>
+              <div className="w-full md:w-1/2 aspect-video rounded-lg border border-outline-variant/30 bg-surface-container-high flex flex-col items-center justify-center gap-3 group-hover:border-primary/50 transition-all">
+                {/* TODO(asset): replace with real venue photography */}
+                <Icon name="storefront" className="text-5xl text-primary/50" />
+                <span className="text-xs font-headline font-bold uppercase tracking-widest text-on-surface-variant">
+                  Venue photos coming soon
+                </span>
               </div>
             </div>
           </div>
@@ -233,61 +209,51 @@ export default function ForPlayersPage() {
 
         {/* Showcase Section */}
         <section className="py-24 px-6 lg:px-24 bg-surface-container-low/30 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" aria-hidden="true"></div>
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-8 uppercase tracking-tighter leading-tight">
+              <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-10 uppercase tracking-tighter leading-tight">
                 More games. <br /><span className="text-primary">Less friction.</span>
               </h2>
-              <div className="space-y-8">
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 shrink-0 rounded-lg bg-surface-container-highest border border-primary/30 flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined">analytics</span>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Find Games Nearby</h4>
-                    <p className="text-on-surface-variant">See what's on at stores near you this week — open tables, game nights, events — so picking up a game is actually easy.</p>
-                  </div>
-                </div>
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 shrink-0 rounded-lg bg-surface-container-highest border border-secondary/30 flex items-center justify-center text-secondary">
-                    <span className="material-symbols-outlined">military_tech</span>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Track Your Progress</h4>
-                    <p className="text-on-surface-variant">Track results, unlock awards and badges, and build a player profile that shows off your tabletop journey.</p>
-                  </div>
-                </div>
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 shrink-0 rounded-lg bg-surface-container-highest border border-primary/30 flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined">workspace_premium</span>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Earn Early Adopter Status</h4>
-                    <p className="text-on-surface-variant">Join early to claim an exclusive signup badge that will only ever be available to the first wave of Battle Beacon players.</p>
-                  </div>
-                </div>
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 shrink-0 rounded-lg bg-surface-container-highest border border-tertiary/30 flex items-center justify-center text-tertiary">
-                    <span className="material-symbols-outlined">storefront</span>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Support Local Stores</h4>
-                    <p className="text-on-surface-variant">Book tables, stay in touch with your favourite venues, and help local stores build stronger gaming communities.</p>
-                  </div>
-                </div>
-              </div>
+              <ul className="divide-y divide-outline-variant/15 border-t border-outline-variant/15">
+                {[
+                  {
+                    num: "01",
+                    title: "Find Games Nearby",
+                    description: "See what's on at stores near you this week — open tables, game nights, events.",
+                  },
+                  {
+                    num: "02",
+                    title: "Track Your Progress",
+                    description: "Track results, unlock awards and badges, and build a player profile that shows off your journey.",
+                  },
+                  {
+                    num: "03",
+                    title: "Earn Early Adopter Status",
+                    description: "Join early to claim a signup badge only ever available to the first wave of players.",
+                  },
+                  {
+                    num: "04",
+                    title: "Support Local Stores",
+                    description: "Book tables, stay in touch with your favourite venues, and help local scenes grow.",
+                  },
+                ].map((step) => (
+                  <li key={step.num} className="flex gap-6 items-baseline py-6">
+                    <span className="ghost-numeral text-3xl w-10 shrink-0">{step.num}</span>
+                    <div>
+                      <h3 className="text-lg font-headline font-bold text-on-surface uppercase mb-1">{step.title}</h3>
+                      <p className="text-on-surface-variant text-sm leading-relaxed">{step.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="lg:w-1/2 relative flex justify-center">
-              {/* App Mockup Background Glow */}
-              <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full"></div>
+              <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full" aria-hidden="true"></div>
               <div className="relative w-[340px] aspect-[9/19] rounded-[3.5rem] p-4 bg-surface-container-highest border-[1px] border-outline-variant/30 shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden">
                 <div className="w-full h-full rounded-[2.5rem] overflow-hidden">
-                  <img
-                    alt="Full mobile UI showcase"
-                    className="w-full h-full object-cover"
-                    src="/hostgamescreen.jpeg"
-                  />
+                  {/* TODO(asset): replace with a real Battle Beacon app screenshot */}
+                  <img alt="Battle Beacon app showing a hosted game listing" className="w-full h-full object-cover" src="/hostgamescreen.jpeg" />
                 </div>
               </div>
             </div>
@@ -296,37 +262,29 @@ export default function ForPlayersPage() {
 
         {/* Call to Action */}
         <section className="py-24 px-6 text-center">
-          <div className="max-w-4xl mx-auto p-8 md:p-12 rounded-2xl bg-gradient-to-t from-surface-container-high to-surface border border-primary/20 relative overflow-hidden">
-            <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/5 blur-3xl rounded-full"></div>
-            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/5 blur-3xl rounded-full"></div>
-            <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-6 uppercase tracking-tighter relative z-10">Ready to Deploy?</h2>
+          <div className="max-w-4xl mx-auto p-8 md:p-14 diagonal-both bg-surface-container-high border border-primary/20 relative overflow-hidden tactical-grid">
+            <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 blur-3xl rounded-full" aria-hidden="true"></div>
+            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/10 blur-3xl rounded-full" aria-hidden="true"></div>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-6 uppercase tracking-tighter relative z-10">Ready to Play?</h2>
             <p className="text-on-surface-variant text-lg mb-10 relative z-10 max-w-2xl mx-auto">
-              Join 10,000+ players already dominating the tabletop meta. The Battle Beacon app is coming soon, so sign up for news and be first to know when deployment begins.
+              The Battle Beacon app is coming soon &mdash; sign up for news and be first to know when it launches.
             </p>
             <div className="flex flex-wrap justify-center gap-6 relative z-10">
-              <button
-                disabled
-                className="flex items-center gap-3 px-8 py-4 bg-surface-container-highest rounded-lg border border-outline-variant/60 opacity-60 cursor-not-allowed"
-              >
-                <span className="material-symbols-outlined text-3xl text-on-surface-variant">phone_iphone</span>
-                <div className="text-left">
-                  <p className="text-[10px] text-secondary uppercase font-bold">Coming Soon</p>
+              <Button disabled>
+                <Icon name="phone_iphone" className="text-3xl text-on-surface-variant" />
+                <div className="text-left normal-case">
+                  <p className="text-[10px] text-secondary uppercase font-bold tracking-tight">Coming Soon</p>
                   <p className="text-lg font-headline font-bold text-on-surface leading-tight">App Store</p>
                 </div>
-              </button>
-              <button
-                disabled
-                className="flex items-center gap-3 px-8 py-4 bg-surface-container-highest rounded-lg border border-outline-variant/60 opacity-60 cursor-not-allowed"
-              >
-                <span className="material-symbols-outlined text-3xl text-on-surface-variant">play_arrow</span>
-                <div className="text-left">
-                  <p className="text-[10px] text-secondary uppercase font-bold">Coming Soon</p>
+              </Button>
+              <Button disabled>
+                <Icon name="play_arrow" className="text-3xl text-on-surface-variant" />
+                <div className="text-left normal-case">
+                  <p className="text-[10px] text-secondary uppercase font-bold tracking-tight">Coming Soon</p>
                   <p className="text-lg font-headline font-bold text-on-surface leading-tight">Google Play</p>
                 </div>
-              </button>
-              <JoinLink className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-headline font-bold rounded-lg scale-100 hover:scale-105 active:scale-95 transition-all neon-glow-primary uppercase tracking-tight">
-                Sign Up for News
-              </JoinLink>
+              </Button>
+              <JoinLink variant="primary">Sign Up for News</JoinLink>
             </div>
           </div>
         </section>

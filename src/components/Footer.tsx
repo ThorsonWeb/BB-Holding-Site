@@ -14,11 +14,8 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-8">
-          <Link href="#" className="text-slate-500 hover:text-primary transition-colors font-body text-xs tracking-widest uppercase">
-            Terms of Engagement
-          </Link>
           <Link href="/privacy" className="text-slate-500 hover:text-primary transition-colors font-body text-xs tracking-widest uppercase">
-            Privacy Notice
+            Privacy Policy
           </Link>
         </div>
       </div>

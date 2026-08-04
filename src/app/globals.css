@@ -60,6 +60,7 @@
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-marquee: marquee 30s linear infinite;
+  --animate-glow-ring: glow-ring 2.2s ease-in-out infinite;
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -69,6 +70,19 @@
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  @keyframes glow-ring {
+    0%, 100% {
+      box-shadow:
+        0 0 0 0 color-mix(in srgb, var(--color-primary) 35%, transparent),
+        0 0 20px color-mix(in srgb, var(--color-primary) 35%, transparent);
+    }
+    50% {
+      box-shadow:
+        0 0 0 6px color-mix(in srgb, var(--color-primary) 0%, transparent),
+        0 0 32px color-mix(in srgb, var(--color-primary) 50%, transparent);
+    }
   }
 }
 
@@ -80,24 +94,41 @@
     background: rgba(15, 20, 26, 0.7);
     backdrop-filter: blur(16px);
   }
-  .neon-glow-primary, .neon-glow-cyan {
-    box-shadow: 0 0 15px rgba(129, 236, 255, 0.3);
-  }
-  .neon-text-secondary {
-    text-shadow: 0 0 8px rgba(255, 81, 250, 0.5);
+  .neon-glow-primary {
+    box-shadow: 0 0 15px color-mix(in srgb, var(--color-primary) 30%, transparent);
   }
   .neon-glow-magenta {
-    box-shadow: 0 0 20px rgba(255, 81, 250, 0.15);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--color-secondary) 15%, transparent);
+  }
+  .neon-text-secondary {
+    text-shadow: 0 0 8px color-mix(in srgb, var(--color-secondary) 50%, transparent);
   }
   .hide-scrollbar::-webkit-scrollbar { display: none; }
   .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   .tactical-grid {
-    background-image: linear-gradient(to right, rgba(129, 236, 255, 0.05) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(129, 236, 255, 0.05) 1px, transparent 1px);
+    background-image: linear-gradient(to right, color-mix(in srgb, var(--color-primary) 5%, transparent) 1px, transparent 1px),
+                      linear-gradient(to bottom, color-mix(in srgb, var(--color-primary) 5%, transparent) 1px, transparent 1px);
     background-size: 40px 40px;
   }
   .neon-glow-border {
-    box-shadow: inset 0 0 0 1px rgba(129, 236, 255, 0.1);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-primary) 10%, transparent);
+  }
+  .ghost-numeral {
+    font-family: var(--font-headline);
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    -webkit-text-stroke: 1px color-mix(in srgb, var(--color-primary) 25%, transparent);
+    color: transparent;
+  }
+  .diagonal-top {
+    clip-path: polygon(0 3.5vw, 100% 0, 100% 100%, 0 100%);
+  }
+  .diagonal-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.5vw), 0 100%);
+  }
+  .diagonal-both {
+    clip-path: polygon(0 3.5vw, 100% 0, 100% calc(100% - 3.5vw), 0 100%);
   }
 }
 
@@ -105,6 +136,20 @@ body {
   background-color: var(--color-background);
   color: var(--color-on-surface);
   overflow-x: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 #beacon-form.bform {

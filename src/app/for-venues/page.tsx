@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
-import Link from "next/link";
+import Button from "@/components/Button";
 import JoinLink from "@/components/JoinLink";
+import Icon from "@/components/Icon";
+
+export const metadata: Metadata = {
+  title: "Table Booking Software for Game Stores",
+  description:
+    "Let players book a table at your venue online with Beacon CRM. Manage table bookings, paid events, marketing, and customer engagement in one platform built for local gaming stores.",
+};
 
 export default function ForVenuesPage() {
   return (
@@ -10,33 +18,27 @@ export default function ForVenuesPage() {
       <TopNavBar />
       <main className="flex-grow pt-16 md:pt-20">
         <header className="relative overflow-hidden px-6 py-20 lg:px-24 lg:py-28">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(129,236,255,0.12),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,81,250,0.12),transparent_35%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(129,236,255,0.12),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,81,250,0.12),transparent_35%)]" aria-hidden="true"></div>
           <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
             <div className="max-w-3xl">
-              <p className="font-headline text-xs font-bold uppercase tracking-widest text-primary mb-4">Game Stores</p>
               <h1 className="mb-6 font-headline text-5xl font-bold uppercase tracking-tighter text-on-surface md:text-7xl">
-                Grow your venue with <span className="text-primary italic">Beacon CRM</span>
+                Let players book a table at your venue with <span className="text-primary italic">Beacon CRM</span>
               </h1>
               <p className="mb-10 max-w-2xl text-lg leading-relaxed text-on-surface-variant md:text-xl">
-                Battle Beacon helps venue owners manage table bookings, paid events, marketing, customer engagement, and day-to-day operations in one easy-to-use CRM built for local gaming communities.
+                Battle Beacon helps venue owners take table bookings online, run paid events, and manage marketing, customer engagement, and day-to-day operations in one easy-to-use CRM built for local gaming communities.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <JoinLink className="rounded-lg bg-gradient-to-r from-primary to-primary-container px-8 py-4 text-center font-headline font-bold uppercase tracking-tight text-on-primary-container transition-all hover:scale-105 active:scale-95">
-                  Sign Up
-                </JoinLink>
-                <Link
-                  href="/roadmap"
-                  className="rounded-lg border border-outline-variant px-8 py-4 text-center font-headline font-bold uppercase tracking-tight text-on-surface transition-all hover:bg-surface-container-high"
-                >
-                  View Roadmap
-                </Link>
+                <JoinLink variant="primary">Sign Up</JoinLink>
+                <Button href="/book-a-demo" variant="outline">
+                  Book a Demo
+                </Button>
               </div>
             </div>
 
             <div className="grid gap-4 rounded-3xl border border-outline-variant/20 bg-surface-container-low p-6 shadow-2xl">
               <div className="rounded-2xl border border-primary/20 bg-surface-container p-6">
                 <div className="mb-3 flex items-center gap-3">
-                  <span className="material-symbols-outlined text-primary">event_seat</span>
+                  <Icon name="event_seat" className="text-primary" />
                   <h2 className="font-headline text-lg font-bold uppercase text-on-surface">
                     Bookings and events
                   </h2>
@@ -48,7 +50,7 @@ export default function ForVenuesPage() {
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="rounded-2xl border border-outline-variant/20 bg-surface-container p-5">
                   <div className="mb-3 flex items-center gap-3">
-                    <span className="material-symbols-outlined text-secondary">forum</span>
+                    <Icon name="forum" className="text-secondary" />
                     <h2 className="font-headline text-sm font-bold uppercase text-on-surface">
                       Customer engagement
                     </h2>
@@ -59,7 +61,7 @@ export default function ForVenuesPage() {
                 </div>
                 <div className="rounded-2xl border border-outline-variant/20 bg-surface-container p-5">
                   <div className="mb-3 flex items-center gap-3">
-                    <span className="material-symbols-outlined text-tertiary">bolt</span>
+                    <Icon name="bolt" className="text-tertiary" />
                     <h2 className="font-headline text-sm font-bold uppercase text-on-surface">
                       Automation workflows
                     </h2>
@@ -77,54 +79,54 @@ export default function ForVenuesPage() {
           <div className="mx-auto max-w-7xl">
             <div className="mb-14 max-w-3xl">
               <h2 className="mb-4 font-headline text-4xl font-bold uppercase tracking-tight text-on-surface md:text-5xl">
-                Everything your store needs <span className="text-primary">in one place</span>
+                Everything your venue needs <span className="text-primary">in one place</span>
               </h2>
               <p className="text-lg text-on-surface-variant">
                 Beacon CRM is designed to replace clunky combinations of booking apps, event tools, forms, and marketing systems with one connected platform.
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              <div className="rounded-2xl border border-outline-variant/15 bg-surface-container p-8">
-                <span className="material-symbols-outlined mb-5 text-4xl text-primary">calendar_month</span>
-                <h3 className="mb-3 font-headline text-2xl font-bold uppercase text-on-surface">
-                  Event management
-                </h3>
-                <p className="text-sm leading-relaxed text-on-surface-variant">
-                  Create and manage casual nights, leagues, prereleases, tournaments, and special events from one calendar.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-outline-variant/15 bg-surface-container p-8">
-                <span className="material-symbols-outlined mb-5 text-4xl text-secondary">payments</span>
-                <h3 className="mb-3 font-headline text-2xl font-bold uppercase text-on-surface">
-                  Paid bookings
-                </h3>
-                <p className="text-sm leading-relaxed text-on-surface-variant">
-                  Let players reserve tables, buy tickets, and pay online through an integrated payment gateway that reduces admin.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-outline-variant/15 bg-surface-container p-8">
-                <span className="material-symbols-outlined mb-5 text-4xl text-tertiary">assignment</span>
-                <h3 className="mb-3 font-headline text-2xl font-bold uppercase text-on-surface">
-                  Smart forms
-                </h3>
-                <p className="text-sm leading-relaxed text-on-surface-variant">
-                  Create interest forms for new releases, upcoming activities, leagues, and community feedback without extra software.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-outline-variant/15 bg-surface-container p-8">
-                <span className="material-symbols-outlined mb-5 text-4xl text-primary">campaign</span>
-                <h3 className="mb-3 font-headline text-2xl font-bold uppercase text-on-surface">
-                  Marketing automation
-                </h3>
-                <p className="text-sm leading-relaxed text-on-surface-variant">
-                  Trigger email and customer engagement workflows that help fill events, promote products, and bring players back.
-                </p>
-              </div>
-            </div>
+            <ul className="grid gap-px bg-outline-variant/10 md:grid-cols-2 xl:grid-cols-4 rounded-2xl overflow-hidden border border-outline-variant/10">
+              {[
+                {
+                  num: "01",
+                  icon: "calendar_month",
+                  title: "Event management",
+                  description: "Create and manage casual nights, leagues, prereleases, tournaments, and special events from one calendar.",
+                },
+                {
+                  num: "02",
+                  icon: "payments",
+                  title: "Paid bookings",
+                  description: "Let players book a table, buy tickets, and pay online through an integrated payment gateway.",
+                },
+                {
+                  num: "03",
+                  icon: "assignment",
+                  title: "Smart forms",
+                  description: "Create interest forms for new releases, upcoming activities, leagues, and community feedback.",
+                },
+                {
+                  num: "04",
+                  icon: "campaign",
+                  title: "Marketing automation",
+                  description: "Trigger email and engagement workflows that help fill events, promote products, and bring players back.",
+                },
+              ].map((item) => (
+                <li key={item.num} className="bg-surface-container p-8 relative">
+                  <span className="ghost-numeral absolute top-4 right-6 text-4xl text-primary/15" aria-hidden="true">
+                    {item.num}
+                  </span>
+                  <Icon name={item.icon} className="mb-5 text-3xl text-primary relative" />
+                  <h3 className="mb-3 font-headline text-lg font-bold uppercase text-on-surface relative">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-on-surface-variant relative">
+                    {item.description}
+                  </p>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -135,7 +137,7 @@ export default function ForVenuesPage() {
                 Put live venue content <span className="text-secondary">on your site</span>
               </h2>
               <p className="mb-8 text-lg text-on-surface-variant">
-                Drop embeddable widgets onto any page to show what is happening at your store — events, availability, booking links — without touching them again.
+                Drop embeddable widgets onto any page to show what is happening at your store &mdash; events, availability, booking links &mdash; without touching them again.
               </p>
               <div className="space-y-5">
                 <div className="rounded-xl bg-surface-container p-6">
@@ -167,7 +169,7 @@ export default function ForVenuesPage() {
 
             <div className="rounded-3xl border border-outline-variant/15 bg-surface-container p-8 shadow-2xl">
               <div className="mb-8">
-                <div className="mb-4 inline-flex rounded-full bg-secondary/10 px-3 py-1">
+                <div className="mb-4 inline-flex rounded-full bg-secondary/25 px-3 py-1">
                   <span className="font-headline text-[10px] font-bold uppercase tracking-widest text-secondary">
                     Planned next
                   </span>
@@ -182,7 +184,7 @@ export default function ForVenuesPage() {
 
               <div className="space-y-4">
                 <div className="flex gap-4 rounded-xl border border-outline-variant/15 bg-surface-container-high p-5">
-                  <span className="material-symbols-outlined text-primary">storefront</span>
+                  <Icon name="storefront" className="text-primary" />
                   <div>
                     <h3 className="mb-1 font-headline text-lg font-bold uppercase text-on-surface">
                       Ecommerce platform
@@ -194,7 +196,7 @@ export default function ForVenuesPage() {
                 </div>
 
                 <div className="flex gap-4 rounded-xl border border-outline-variant/15 bg-surface-container-high p-5">
-                  <span className="material-symbols-outlined text-secondary">integration_instructions</span>
+                  <Icon name="integration_instructions" className="text-secondary" />
                   <div>
                     <h3 className="mb-1 font-headline text-lg font-bold uppercase text-on-surface">
                       Simpler tool stack
@@ -206,7 +208,7 @@ export default function ForVenuesPage() {
                 </div>
 
                 <div className="flex gap-4 rounded-xl border border-outline-variant/15 bg-surface-container-high p-5">
-                  <span className="material-symbols-outlined text-tertiary">groups</span>
+                  <Icon name="groups" className="text-tertiary" />
                   <div>
                     <h3 className="mb-1 font-headline text-lg font-bold uppercase text-on-surface">
                       Better customer relationships
@@ -222,7 +224,7 @@ export default function ForVenuesPage() {
         </section>
 
         <section className="px-6 py-24 lg:px-24">
-          <div className="mx-auto max-w-5xl rounded-3xl border border-primary/20 bg-gradient-to-t from-surface-container-high to-surface p-10 text-center shadow-2xl md:p-14">
+          <div className="mx-auto max-w-5xl diagonal-both border border-primary/20 bg-surface-container-high p-10 text-center shadow-2xl md:p-16 tactical-grid relative overflow-hidden">
             <h2 className="mb-5 font-headline text-4xl font-bold uppercase tracking-tighter text-on-surface md:text-5xl">
               Ready to run your venue through <span className="text-primary">Beacon CRM</span>?
             </h2>
@@ -230,15 +232,10 @@ export default function ForVenuesPage() {
               Bring bookings, events, payments, forms, marketing, and customer engagement into one platform that is built for local gaming stores.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <JoinLink className="rounded-lg bg-primary px-10 py-4 font-headline font-bold uppercase tracking-tight text-on-primary transition-transform hover:scale-105">
-                Sign Up
-              </JoinLink>
-              <Link
-                href="/for-players"
-                className="rounded-lg border border-outline-variant px-10 py-4 font-headline font-bold uppercase tracking-tight text-on-surface transition-colors hover:bg-surface-container-high"
-              >
-                View Player Side
-              </Link>
+              <JoinLink variant="primary" size="lg">Sign Up</JoinLink>
+              <Button href="/book-a-demo" variant="outline" size="lg">
+                Book a Demo
+              </Button>
             </div>
           </div>
         </section>

@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import JoinLink from "@/components/JoinLink";
-import { useState, useRef, useEffect } from "react";
+import Icon from "@/components/Icon";
+import { useEffect, useRef, useState } from "react";
 
 const GAMES = [
   { label: "Warhammer 40,000", theme: "40k" },
@@ -19,10 +20,12 @@ export default function TopNavBar() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   const navItems = [
     { href: "/for-players", label: "Players" },
-    { href: "/for-venues", label: "Game Stores" },
+    { href: "/for-venues", label: "Venues" },
+    { href: "/book-a-demo", label: "Book a Demo" },
     { href: "/roadmap", label: "Roadmap" },
   ];
 
@@ -32,9 +35,19 @@ export default function TopNavBar() {
         setOpen(false);
       }
     }
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape" && open) {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+    }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
 
   function selectGame(theme: string) {
     setOpen(false);
@@ -48,7 +61,6 @@ export default function TopNavBar() {
           <Link
             href="/for-players"
             className="flex items-center gap-3 text-2xl font-black italic tracking-tighter text-primary font-headline uppercase"
-            style={{ filter: "drop-shadow(0 0 8px var(--color-primary))" }}
           >
             <Image
               src="/bb-logo.jpeg"
@@ -83,23 +95,31 @@ export default function TopNavBar() {
           {/* Game picker dropdown */}
           <div ref={dropdownRef} className="relative">
             <button
+              ref={triggerRef}
               onClick={() => setOpen((v) => !v)}
+              aria-haspopup="menu"
+              aria-expanded={open}
+              aria-controls="game-picker-menu"
               className="flex items-center gap-1.5 font-headline font-bold tracking-tight uppercase text-slate-400 hover:text-primary hover:bg-white/5 px-3 py-2 transition-all"
             >
               Pick Your Game
-              <span
-                className="material-symbols-outlined text-base leading-none transition-transform"
+              <Icon
+                name="expand_more"
+                className="text-base leading-none transition-transform"
                 style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
-              >
-                expand_more
-              </span>
+              />
             </button>
 
             {open && (
-              <div className="absolute right-0 top-full mt-2 w-56 bg-surface-container-high border border-outline-variant/30 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden">
+              <div
+                id="game-picker-menu"
+                role="menu"
+                className="absolute right-0 top-full mt-2 w-56 bg-surface-container-high border border-outline-variant/30 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden"
+              >
                 {GAMES.map((game) => (
                   <button
                     key={game.theme}
+                    role="menuitem"
                     onClick={() => selectGame(game.theme)}
                     className="w-full text-left px-4 py-3 text-sm font-headline font-bold uppercase tracking-tight text-on-surface-variant hover:bg-primary/10 hover:text-primary transition-colors"
                   >
@@ -112,7 +132,7 @@ export default function TopNavBar() {
         </div>
 
         <div className="flex items-center">
-          <JoinLink className="inline-flex bg-primary-container text-on-primary-container font-headline font-bold uppercase px-6 py-2 rounded-lg active:scale-95 duration-200">
+          <JoinLink variant="solid" size="sm">
             Sign Up
           </JoinLink>
         </div>

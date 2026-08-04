@@ -1,23 +1,29 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
-import JoinLink from "@/components/JoinLink";
+import Icon from "@/components/Icon";
 
+export const metadata: Metadata = {
+  title: "Roadmap",
+  description: "See what's live today in Battle Beacon and what's coming next for players and venues.",
+};
+
+// TODO(client): replace placeholder roadmap phases/items below with real milestones before launch.
 const roadmapHighlights = [
   {
     label: "Current Focus",
-    value: "Phase 02",
+    value: "Phase 0X",
     tone: "text-primary border-primary/20 bg-primary/10",
   },
   {
     label: "Active Phases",
-    value: "4 Tracked",
-    tone: "text-secondary border-secondary/20 bg-secondary/10",
+    value: "X Tracked",
+    tone: "text-secondary border-secondary/40 bg-secondary/25",
   },
   {
     label: "Live Systems",
-    value: "Matchmaking + Venues",
+    value: "Placeholder",
     tone: "text-tertiary border-tertiary/20 bg-tertiary/10",
   },
 ];
@@ -28,27 +34,25 @@ const roadmapPhases = [
     label: "Foundation",
     status: "Now Live",
     description:
-      "The core platform is live. Players can find local venues, create profiles, and start logging game results. This is the base everything else builds on.",
+      "Placeholder summary of what shipped in this phase — replace with a real description before launch.",
     brief:
-      "Core discovery, venue search, and player profiles are already live. Players can find games and start building a record from day one.",
+      "Placeholder brief for this phase's live features.",
     accent: "tertiary",
     badgeClass: "bg-tertiary/10 text-tertiary border-tertiary/20",
     panelClass: "border-tertiary/25",
     icon: "check_circle",
     items: [
       {
-        title: "Player Matchmaking",
-        description:
-          "Find opponents near you based on the games you play and your availability.",
+        title: "Milestone Name",
+        description: "One-line description of what shipped — replace with real milestone details.",
       },
       {
-        title: "Venue Discovery",
-        description:
-          "Search for local game stores, see what's on, and find open tables.",
+        title: "Milestone Name",
+        description: "One-line description of what shipped — replace with real milestone details.",
       },
       {
-        title: "Result Tracking",
-        description: "Log wins and losses and start building your player profile.",
+        title: "Milestone Name",
+        description: "One-line description of what shipped — replace with real milestone details.",
       },
     ],
   },
@@ -57,23 +61,21 @@ const roadmapPhases = [
     label: "Engagement",
     status: "In Development",
     description:
-      "We're building the features that give players more reasons to keep coming back — a rewards system and tools to play together as a group.",
+      "Placeholder summary of what's currently in active development — replace with a real description before launch.",
     brief:
-      "A points rewards system and team management tools are in active development right now. These are the features that turn casual users into regulars.",
+      "Placeholder brief for this phase's in-progress features.",
     accent: "primary",
     badgeClass: "bg-primary/10 text-primary border-primary/20",
     panelClass: "border-primary/25",
     icon: "engineering",
     items: [
       {
-        title: "Points & Rewards",
-        description:
-          "Earn points for playing and spend them on profile upgrades and cosmetic rewards.",
+        title: "Milestone Name",
+        description: "One-line description of what's in progress — replace with real milestone details.",
       },
       {
-        title: "Team & Squad Tools",
-        description:
-          "Create a team, invite your regular group, and track results together.",
+        title: "Milestone Name",
+        description: "One-line description of what's in progress — replace with real milestone details.",
       },
     ],
   },
@@ -82,23 +84,21 @@ const roadmapPhases = [
     label: "Growth",
     status: "Next Up",
     description:
-      "Once Phase 02 ships, the focus moves to giving venues more flexibility and improving the experience for stores running bigger events.",
+      "Placeholder summary of what's planned next — replace with a real description before launch.",
     brief:
-      "Planned for after Phase 02. Venue customisation and stronger tournament tooling for stores running leagues, championships, and bigger events.",
+      "Placeholder brief for this phase's planned features.",
     accent: "secondary",
-    badgeClass: "bg-secondary/10 text-secondary border-secondary/20",
+    badgeClass: "bg-secondary/25 text-secondary border-secondary/40",
     panelClass: "border-secondary/25",
     icon: "rocket_launch",
     items: [
       {
-        title: "Venue Branding",
-        description:
-          "Game stores can customise their profile and event pages to match their own brand.",
+        title: "Milestone Name",
+        description: "One-line description of what's planned — replace with real milestone details.",
       },
       {
-        title: "Tournament Brackets v2",
-        description:
-          "Double-elimination and Swiss pairings for stores running serious competitive events.",
+        title: "Milestone Name",
+        description: "One-line description of what's planned — replace with real milestone details.",
       },
     ],
   },
@@ -107,23 +107,21 @@ const roadmapPhases = [
     label: "Scale",
     status: "Planned",
     description:
-      "Long-range plans to rebuild the mobile experience from the ground up and introduce global rankings that connect competitive players everywhere.",
+      "Placeholder summary of the longer-range plan — replace with a real description before launch.",
     brief:
-      "A rebuilt mobile app and global leaderboards are on the long-range plan. The goal is to connect every competitive player on the network, not just local ones.",
+      "Placeholder brief for this phase's long-range plans.",
     accent: "outline",
     badgeClass: "bg-surface-container-high text-on-surface-variant border-outline-variant/30",
     panelClass: "border-outline-variant/30",
     icon: "explore",
     items: [
       {
-        title: "Mobile App v2",
-        description:
-          "A fully rebuilt iOS and Android app designed around how players actually use it.",
+        title: "Milestone Name",
+        description: "One-line description of the long-range plan — replace with real milestone details.",
       },
       {
-        title: "Global Leaderboards",
-        description:
-          "Competitive rankings that go beyond your local store and connect players across the whole network.",
+        title: "Milestone Name",
+        description: "One-line description of the long-range plan — replace with real milestone details.",
       },
     ],
   },
@@ -135,15 +133,13 @@ export default function RoadmapPage() {
       <TopNavBar />
       <main className="flex-grow pt-24 pb-20">
         <section className="relative overflow-hidden border-b border-outline-variant/15">
-          <div className="absolute inset-0 tactical-grid opacity-40"></div>
-          <div className="absolute -top-24 left-0 h-64 w-64 rounded-full bg-primary/10 blur-[120px]"></div>
-          <div className="absolute right-0 top-16 h-72 w-72 rounded-full bg-secondary/10 blur-[140px]"></div>
+          <div className="absolute inset-0 tactical-grid opacity-40" aria-hidden="true"></div>
+          <div className="absolute -top-24 left-0 h-64 w-64 rounded-full bg-primary/10 blur-[120px]" aria-hidden="true"></div>
+          <div className="absolute right-0 top-16 h-72 w-72 rounded-full bg-secondary/10 blur-[140px]" aria-hidden="true"></div>
 
           <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24">
             <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
               <div>
-                <p className="font-headline text-xs font-bold uppercase tracking-[0.28em] text-primary mb-6">Product Roadmap</p>
-
                 <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-6 leading-[1.05]">
                   What&apos;s live.
                   <br />
@@ -166,12 +162,7 @@ export default function RoadmapPage() {
                     </h2>
                   </div>
                   <span className="inline-flex items-center gap-2 rounded-full border border-tertiary/20 bg-tertiary/10 px-3 py-1 text-[10px] font-headline font-bold uppercase tracking-[0.22em] text-tertiary">
-                    <span
-                      className="material-symbols-outlined text-sm"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
-                      check_circle
-                    </span>
+                    <Icon name="check_circle" className="text-sm" fill />
                     Active
                   </span>
                 </div>
@@ -199,9 +190,6 @@ export default function RoadmapPage() {
         <section className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24">
           <div className="mb-12 md:mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-primary mb-3">
-                The Phases
-              </p>
               <h2 className="font-headline text-4xl md:text-5xl font-bold uppercase tracking-tighter">
                 Phase by Phase
               </h2>
@@ -212,7 +200,7 @@ export default function RoadmapPage() {
           </div>
 
           <div className="relative">
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-gradient-to-b from-primary via-outline-variant/70 to-transparent"></div>
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-gradient-to-b from-primary via-outline-variant/70 to-transparent" aria-hidden="true"></div>
 
             <div className="space-y-10 md:space-y-14">
               {roadmapPhases.map((phase, index) => {
@@ -245,21 +233,22 @@ export default function RoadmapPage() {
                           </div>
 
                           <h3 className="font-headline text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4">
-                            {phase.status}
+                            {phase.label}
                           </h3>
                           <p className="text-on-surface-variant text-base md:text-lg leading-relaxed mb-8">
                             {phase.description}
                           </p>
 
                           <div className="space-y-4">
-                            {phase.items.map((item) => (
+                            {phase.items.map((item, itemIndex) => (
                               <div
-                                key={item.title}
+                                key={`${phase.phase}-${itemIndex}`}
                                 className="rounded-xl border border-outline-variant/15 bg-surface-container-high/60 p-5"
                               >
                                 <div className="flex items-start gap-3">
-                                  <span
-                                    className={`material-symbols-outlined mt-0.5 text-base ${
+                                  <Icon
+                                    name="arrow_forward"
+                                    className={`mt-0.5 text-base ${
                                       phase.accent === "tertiary"
                                         ? "text-tertiary"
                                         : phase.accent === "primary"
@@ -268,9 +257,7 @@ export default function RoadmapPage() {
                                             ? "text-secondary"
                                             : "text-on-surface-variant"
                                     }`}
-                                  >
-                                    arrow_forward
-                                  </span>
+                                  />
                                   <div>
                                     <h4 className="font-headline font-bold uppercase text-on-surface mb-1">
                                       {item.title}
@@ -290,22 +277,13 @@ export default function RoadmapPage() {
                         <div
                           className={`flex h-14 w-14 items-center justify-center rounded-full border-4 bg-surface-container ${indicatorBorderClass}`}
                         >
-                          <span
-                            className="material-symbols-outlined"
-                            style={
-                              phase.accent !== "outline"
-                                ? { fontVariationSettings: "'FILL' 1" }
-                                : undefined
-                            }
-                          >
-                            {phase.icon}
-                          </span>
+                          <Icon name={phase.icon} fill={phase.accent !== "outline"} />
                         </div>
                       </div>
 
                       <div className={isReversed ? "lg:order-1" : ""}>
                         <div className="relative flex min-h-[280px] h-full items-center justify-center overflow-hidden rounded-2xl border border-outline-variant/15 bg-surface-container-high shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
-                          <div className="absolute inset-0 opacity-20 tactical-grid"></div>
+                          <div className="absolute inset-0 opacity-20 tactical-grid" aria-hidden="true"></div>
                           <div
                             className={`absolute h-40 w-40 rounded-full blur-3xl ${
                               phase.accent === "tertiary"
@@ -316,10 +294,12 @@ export default function RoadmapPage() {
                                     ? "bg-secondary/10"
                                     : "bg-outline/10"
                             }`}
+                            aria-hidden="true"
                           ></div>
                           <div className="relative flex flex-col items-center text-center px-8">
-                            <span
-                              className={`material-symbols-outlined text-6xl ${
+                            <Icon
+                              name={phase.icon}
+                              className={`text-6xl ${
                                 phase.accent === "tertiary"
                                   ? "text-tertiary/70"
                                   : phase.accent === "primary"
@@ -328,9 +308,7 @@ export default function RoadmapPage() {
                                       ? "text-secondary/70"
                                       : "text-on-surface-variant/50"
                               }`}
-                            >
-                              {phase.icon}
-                            </span>
+                            />
                             <p className="mt-5 font-headline text-sm font-bold uppercase tracking-[0.22em] text-on-surface-variant">
                               {phase.label}
                             </p>
