@@ -71,7 +71,7 @@ const STYLE_OVERRIDES = `
 #beacon-calendar.bcal .bcal-type-info {
   margin: 1rem 1.75rem 0 !important;
   padding: 0.85rem 1.1rem !important;
-  border-radius: 0.75rem !important;
+  border-radius: 0 !important;
   background: rgba(129, 236, 255, 0.07) !important;
   border: 1px solid rgba(129, 236, 255, 0.18) !important;
   color: var(--color-on-surface) !important;
@@ -161,10 +161,25 @@ const STYLE_OVERRIDES = `
   transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s !important;
 }
 
-#beacon-calendar.bcal .bcal-slot:hover,
-#beacon-calendar.bcal .bcal-slot--selected {
+#beacon-calendar.bcal .bcal-slot:hover {
   border-color: rgba(129, 236, 255, 0.55) !important;
   box-shadow: 0 0 0 4px rgba(129, 236, 255, 0.12) !important;
+}
+
+/* Selected slot — the widget's own selected state only swaps text color, so
+   call it out with the same blue border-bottom + glow used on the selected
+   table-type tab and the submit button. */
+#beacon-calendar.bcal .bcal-slot[aria-selected="true"] {
+  background: var(--color-surface-container-highest) !important;
+  color: var(--color-primary) !important;
+  border-color: rgba(68, 72, 79, 0.35) !important;
+  border-bottom: 3px solid var(--color-primary) !important;
+  box-shadow: 0 4px 16px rgba(129, 236, 255, 0.28) !important;
+}
+
+#beacon-calendar.bcal .bcal-slot[aria-selected="true"] .bcal-slot-info {
+  color: var(--color-primary) !important;
+  opacity: 0.8 !important;
 }
 
 #beacon-calendar.bcal .bcal-no-slots {
@@ -191,7 +206,7 @@ const STYLE_OVERRIDES = `
   border: 1px solid rgba(68, 72, 79, 0.35) !important;
   background: var(--color-surface-container-highest) !important;
   color: var(--color-on-surface) !important;
-  border-radius: 0.9rem !important;
+  border-radius: 0 !important;
   padding: 0.8rem 0.95rem !important;
   font-size: 0.9rem !important;
   transition: border-color 0.15s, box-shadow 0.15s, background 0.15s !important;
