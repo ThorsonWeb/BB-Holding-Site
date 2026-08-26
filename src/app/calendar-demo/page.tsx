@@ -3,6 +3,7 @@ import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import BookingCalendarEmbed from "@/components/BookingCalendarEmbed";
+import Icon from "@/components/Icon";
 
 export const metadata: Metadata = {
   title: "Booking Calendar Demo",
@@ -33,6 +34,13 @@ export default function CalendarDemoPage() {
               embedKey="kPUc1Gh0sE1FMpE3K_CYUi6saikjl8Um6ilnFOthPoE"
               host="https://beacon-crm.com"
             />
+          </div>
+
+          <div className="mx-auto mt-6 flex max-w-5xl items-center justify-center gap-2 text-center text-sm text-on-surface-variant">
+            <Icon name="code" className="text-primary" />
+            <p>
+              Easily customisable with CSS &mdash; this calendar blends in perfectly with our branding via a simple snippet, and yours can too.
+            </p>
           </div>
         </section>
       </main>

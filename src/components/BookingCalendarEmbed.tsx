@@ -30,6 +30,66 @@ const STYLE_OVERRIDES = `
   border-radius: 0 !important;
 }
 
+/* Table type: underlined tabs instead of the widget's default filled pills. */
+#beacon-calendar.bcal .bcal-type-tabs {
+  gap: 0 !important;
+  padding: 1rem 1.75rem 0 !important;
+  border-bottom: 1px solid rgba(68, 72, 79, 0.35) !important;
+}
+
+#beacon-calendar.bcal .bcal-type-tab {
+  height: auto !important;
+  padding: 0.65rem 1.1rem !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 2px solid transparent !important;
+  background: transparent !important;
+  color: var(--color-on-surface-variant) !important;
+  font-family: var(--font-space-grotesk), sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  margin-bottom: -1px !important;
+  transition: color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+#beacon-calendar.bcal .bcal-type-tab:hover {
+  color: var(--color-on-surface) !important;
+  border-color: rgba(129, 236, 255, 0.4) !important;
+}
+
+#beacon-calendar.bcal .bcal-type-tab[aria-selected="true"] {
+  background: transparent !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 4px 16px rgba(129, 236, 255, 0.28) !important;
+}
+
+/* Price/duration/capacity summary line for the selected table type — called
+   out as a highlighted bar since it's the key info a booker scans for. */
+#beacon-calendar.bcal .bcal-type-info {
+  margin: 1rem 1.75rem 0 !important;
+  padding: 0.85rem 1.1rem !important;
+  border-radius: 0.75rem !important;
+  background: rgba(129, 236, 255, 0.07) !important;
+  border: 1px solid rgba(129, 236, 255, 0.18) !important;
+  color: var(--color-on-surface) !important;
+  font-family: var(--font-plus-jakarta-sans), sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* This demo books a table slot directly — no game-system picker or table-count
+   quota needed. Hidden rather than removed since the widget renders this
+   markup itself at runtime. */
+#beacon-calendar.bcal .bcal-field:has(select[name="gameSystem"]),
+#beacon-calendar.bcal .bcal-field:has(input[name="gameSystem"]),
+#beacon-calendar.bcal .bcal-field:has(input[name="tablesRequested"]) {
+  display: none !important;
+}
+
 #beacon-calendar.bcal .bcal-layout {
   min-height: 0 !important;
   gap: 2.5rem !important;
@@ -38,14 +98,23 @@ const STYLE_OVERRIDES = `
 #beacon-calendar.bcal .bcal-calendar-panel {
   flex: 0.85 !important;
   border-right: 1px solid rgba(68, 72, 79, 0.35) !important;
-  padding: 0 2rem 0 0 !important;
+  padding: 1.5rem 2rem 1.5rem 0 !important;
 }
 
 #beacon-calendar.bcal .bcal-booking-panel {
   flex: 1.3 !important;
-  padding: 0 !important;
+  padding: 1.5rem 0 !important;
   max-height: none !important;
   overflow-y: visible !important;
+}
+
+/* Squared-off day cells instead of the widget's default circular numerals. */
+#beacon-calendar.bcal .bcal-day-num {
+  border-radius: 0.5rem !important;
+}
+
+#beacon-calendar.bcal .bcal-month-nav button {
+  border-radius: 0.5rem !important;
 }
 
 #beacon-calendar.bcal .bcal-title {
@@ -181,7 +250,7 @@ const STYLE_OVERRIDES = `
   #beacon-calendar.bcal .bcal-calendar-panel {
     border-right: none !important;
     border-bottom: 1px solid rgba(68, 72, 79, 0.35) !important;
-    padding: 0 0 1.5rem 0 !important;
+    padding: 1.5rem 0 !important;
   }
 
   #beacon-calendar.bcal .bcal-form {
