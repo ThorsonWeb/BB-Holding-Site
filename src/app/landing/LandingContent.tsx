@@ -2,7 +2,9 @@
 
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
+import Button from "@/components/Button";
+import JoinLink from "@/components/JoinLink";
+import Icon from "@/components/Icon";
 
 const LINK_ID = "bb-theme-stylesheet";
 
@@ -77,19 +79,13 @@ export default function LandingContent() {
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0 tactical-grid opacity-30" />
-        <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-primary/10 via-transparent to-transparent z-0" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full z-0" />
+        <div className="absolute inset-0 z-0 tactical-grid opacity-30" aria-hidden="true" />
+        <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-primary/10 via-transparent to-transparent z-0" aria-hidden="true" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full z-0" aria-hidden="true" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full py-24">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border-l-2 border-primary mb-6">
-              <span className="text-primary font-headline font-bold text-xs tracking-widest uppercase">
-                {copy.hero.badge}
-              </span>
-            </div>
-
-            <h1 className="text-5xl md:text-7xl font-black text-on-surface tracking-tighter leading-[1.1] md:leading-[0.9] uppercase mb-6">
+            <h1 className="text-6xl md:text-8xl font-black text-on-surface tracking-tighter leading-[0.92] uppercase mb-8">
               {copy.hero.headline}
               <br />
               <span className="text-primary italic">{copy.hero.headlineAccent}</span>
@@ -100,109 +96,79 @@ export default function LandingContent() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href={`/join?theme=${themeKey}`}
-                className="px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold uppercase rounded-lg shadow-lg active:scale-95 transition-transform text-center"
-              >
-                {copy.hero.ctaPrimary}
-              </Link>
-              <Link
-                href="/for-venues"
-                className="px-8 py-4 bg-transparent border border-outline-variant text-primary font-headline font-bold uppercase rounded-lg hover:bg-primary/5 transition-all text-center"
-              >
+              <JoinLink variant="primary">{copy.hero.ctaPrimary}</JoinLink>
+              <Button href="/for-venues" variant="outline">
                 {copy.hero.ctaSecondary}
-              </Link>
+              </Button>
             </div>
-          </div>
-        </div>
-
-        <div className="absolute right-8 bottom-8 text-right hidden xl:block z-10">
-          <div className="text-on-surface-variant font-headline text-xs tracking-tighter uppercase space-y-1 opacity-40">
-            <p>LAT: 51.5074° N</p>
-            <p>LONG: 0.1278° W</p>
-            <p>STATUS: OPERATIONAL</p>
           </div>
         </div>
       </section>
 
       {/* Pain points */}
-      <section className="py-24 bg-surface relative overflow-hidden">
+      <section className="py-24 bg-surface-container-lowest relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="mb-16 max-w-3xl">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase text-on-surface tracking-tight mb-4">
+          <div className="max-w-2xl mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold uppercase text-on-surface tracking-tight leading-[0.95] mb-4">
               {copy.pain.sectionHeading}
             </h2>
-            <div className="h-1 w-24 bg-error mb-6" />
             <p className="text-on-surface-variant text-lg">
               {copy.pain.sectionSubheading}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {copy.pain.items.map((item) => (
-              <div
-                key={item.title}
-                className="bg-surface-container-low p-8 border-l-2 border-error/30 hover:border-error transition-all group"
-              >
-                <div className="mb-6">
-                  <span className="material-symbols-outlined text-error text-4xl group-hover:scale-110 transition-transform block">
-                    {item.icon}
-                  </span>
+          <ul className="divide-y divide-outline-variant/15 border-t border-b border-outline-variant/15">
+            {copy.pain.items.map((item, index) => (
+              <li key={item.title} className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-baseline py-8">
+                <span className="md:col-span-2 ghost-numeral text-4xl md:text-5xl text-error/40" style={{ WebkitTextStroke: "1px color-mix(in srgb, var(--color-error) 40%, transparent)" }}>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="md:col-span-3 flex items-center gap-3">
+                  <Icon name={item.icon} className="text-error text-2xl" />
+                  <h3 className="text-lg font-bold uppercase text-on-surface">{item.title}</h3>
                 </div>
-                <h3 className="text-xl font-bold uppercase mb-3 text-on-surface">
-                  {item.title}
-                </h3>
-                <p className="text-on-surface-variant text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
+                <p className="md:col-span-7 text-on-surface-variant text-base leading-relaxed">{item.description}</p>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       {/* Solution */}
-      <section className="py-24 bg-surface-container-low relative">
+      <section className="py-24 bg-surface relative">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase text-primary tracking-tight mb-4">
+          <div className="mb-16 max-w-2xl">
+            <h2 className="text-4xl md:text-6xl font-bold uppercase text-primary tracking-tight leading-[0.95] mb-4">
               {copy.solution.sectionHeading}
             </h2>
-            <div className="h-1 w-24 bg-primary mb-6" />
             <p className="text-on-surface-variant text-lg max-w-2xl">
               {copy.solution.sectionSubheading}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {copy.solution.items.map((item) => (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+            {copy.solution.items.map((item, index) => (
               <div
                 key={item.title}
-                className="bg-surface-container p-10 rounded-xl relative overflow-hidden group"
+                className={`${index === 0 ? "lg:col-span-12" : "lg:col-span-6"} bg-surface-container-low rounded-2xl p-8 md:p-10 border border-outline-variant/15 hover:border-primary/30 transition-colors`}
               >
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
-                  <span className="material-symbols-outlined text-9xl text-primary">
-                    {item.icon}
-                  </span>
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <Icon name={item.icon} />
+                  </div>
+                  <h3 className="text-xl font-bold uppercase text-on-surface">{item.title}</h3>
                 </div>
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-bold uppercase mb-4 text-on-surface">
-                    {item.title}
-                  </h3>
-                  <p className="text-on-surface-variant mb-8">{item.description}</p>
-                  <ul className="space-y-3">
-                    {item.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-center gap-3 text-sm text-secondary">
-                        <span
-                          className="material-symbols-outlined text-sm"
-                          style={{ fontVariationSettings: "'FILL' 1" }}
-                        >
-                          check_circle
-                        </span>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
+                <p className="text-on-surface-variant mb-6 max-w-md">{item.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {item.bullets.map((bullet) => (
+                    <span
+                      key={bullet}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-bold uppercase text-primary"
+                    >
+                      <Icon name="check_circle" className="text-xs" fill />
+                      {bullet}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
@@ -211,31 +177,19 @@ export default function LandingContent() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 tactical-grid opacity-20 z-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-surface via-surface/80 to-surface z-0" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 blur-[120px] rounded-full z-0" />
+      <section className="py-32 relative overflow-hidden diagonal-both bg-surface-container-high tactical-grid">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] bg-primary/10 blur-[160px] rounded-full" aria-hidden="true" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8 text-center">
-          <h2 className="text-5xl md:text-6xl font-black uppercase text-on-surface mb-8 tracking-tighter">
+          <h2 className="text-5xl md:text-7xl font-black uppercase text-on-surface mb-8 tracking-tighter">
             {copy.cta.heading}
           </h2>
           <p className="text-lg md:text-xl text-on-surface-variant mb-12 font-body max-w-2xl mx-auto">
             {copy.cta.subheading}
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link
-              href={`/join?theme=${themeKey}`}
-              className="px-12 py-5 bg-primary text-on-primary font-headline font-black text-xl uppercase rounded-lg hover:scale-105 transition-transform"
-            >
-              {copy.cta.buttonPlayer}
-            </Link>
-            <Link
-              href={`/join?theme=${themeKey}`}
-              className="px-12 py-5 bg-secondary text-on-secondary font-headline font-black text-xl uppercase rounded-lg hover:scale-105 transition-transform"
-            >
-              {copy.cta.buttonVenue}
-            </Link>
+            <JoinLink variant="primary" size="lg">{copy.cta.buttonPlayer}</JoinLink>
+            <JoinLink variant="accent" size="lg">{copy.cta.buttonVenue}</JoinLink>
           </div>
         </div>
       </section>

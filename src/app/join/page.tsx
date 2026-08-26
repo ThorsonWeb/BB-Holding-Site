@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
 import BeaconFormEmbed from "@/components/BeaconFormEmbed";
@@ -6,27 +7,34 @@ import TopNavBar from "@/components/TopNavBar";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import ThemeLoader from "@/components/ThemeLoader";
 
+export const metadata: Metadata = {
+  title: "Sign Up",
+  description: "Sign up for early access to Battle Beacon and claim your exclusive early adopter badge before launch.",
+  alternates: { canonical: "/join" },
+};
+
 export default function JoinPage() {
   return (
     <div className="bg-surface font-body text-on-surface selection:bg-primary selection:text-on-primary-fixed overflow-x-hidden min-h-screen flex flex-col">
       <Suspense><ThemeLoader /></Suspense>
       <TopNavBar />
       <main className="relative flex-grow flex items-center justify-center tactical-grid px-6 pb-6 pt-24 md:pt-28 lg:px-12 lg:pb-12 mb-16">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 blur-[120px] rounded-full"></div>
         </div>
         <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-0 bg-surface-container-low rounded-xl overflow-hidden relative z-10 shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
           <div className="lg:col-span-5 hidden lg:block relative overflow-hidden group">
+            {/* TODO(asset): replace with real venue/game-night photography */}
             <img
-              alt="Tactical Gaming Environment"
+              alt="Battle Beacon app home screen"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               src="/homescreen.jpeg"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-surface from-15% via-surface/90 via-55% to-surface/20" aria-hidden="true"></div>
             <div className="absolute bottom-0 left-0 p-12 w-full">
               <div className="mb-6">
-                <p className="font-headline text-xl font-black text-primary leading-tight tracking-tight uppercase animate-pulse">
+                <p className="font-headline text-xl font-black text-primary leading-tight tracking-tight uppercase">
                   Early access is open.<br />
                   <span className="text-white">Get in before launch.</span>
                 </p>
@@ -44,10 +52,10 @@ export default function JoinPage() {
 
           <div className="lg:col-span-7 p-8 lg:p-16 flex flex-col justify-center">
             <div className="mb-10 text-center lg:text-left">
-              <Link href="/" className="font-headline text-3xl font-black text-primary italic tracking-tighter mb-2 hover:underline">
+              <Link href="/" className="block font-headline text-3xl font-black text-primary italic tracking-tighter mb-2 hover:underline">
                 BATTLE BEACON
               </Link>
-              <p className="text-on-surface-variant font-medium tracking-wide uppercase text-[10px]">Early Access Sign Up</p>
+              <h1 className="text-on-surface-variant font-medium tracking-wide uppercase text-[10px]">Early Access Sign Up</h1>
             </div>
 
             <BeaconFormEmbed />
