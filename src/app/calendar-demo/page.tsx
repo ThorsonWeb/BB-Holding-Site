@@ -29,6 +29,13 @@ export default function CalendarDemoPage() {
         </header>
 
         <section className="px-6 pb-24 lg:px-24">
+          <div className="mx-auto mb-6 flex max-w-5xl items-start gap-3 rounded-xl border border-error/30 bg-error-container/15 p-4 text-sm text-on-surface">
+            <Icon name="warning" className="mt-0.5 shrink-0 text-error" />
+            <p>
+              This venue doesn&apos;t exist &mdash; it&apos;s a demo calendar only. Any bookings made here will not be honoured.
+            </p>
+          </div>
+
           <div className="mx-auto max-w-5xl rounded-3xl border border-outline-variant/15 bg-surface-container p-6 shadow-2xl md:p-10">
             <BookingCalendarEmbed
               embedKey="kPUc1Gh0sE1FMpE3K_CYUi6saikjl8Um6ilnFOthPoE"

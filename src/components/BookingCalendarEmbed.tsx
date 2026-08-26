@@ -97,12 +97,14 @@ const STYLE_OVERRIDES = `
 
 #beacon-calendar.bcal .bcal-calendar-panel {
   flex: 0.85 !important;
+  min-width: 0 !important;
   border-right: 1px solid rgba(68, 72, 79, 0.35) !important;
   padding: 1.5rem 2rem 1.5rem 0 !important;
 }
 
 #beacon-calendar.bcal .bcal-booking-panel {
   flex: 1.3 !important;
+  min-width: 0 !important;
   padding: 1.5rem 0 !important;
   max-height: none !important;
   overflow-y: visible !important;
@@ -153,7 +155,7 @@ const STYLE_OVERRIDES = `
 
 #beacon-calendar.bcal .bcal-slot {
   border: 1px solid rgba(68, 72, 79, 0.35) !important;
-  border-radius: 0.9rem !important;
+  border-radius: 0 !important;
   background: var(--color-surface-container-highest) !important;
   color: var(--color-on-surface) !important;
   font-family: var(--font-plus-jakarta-sans), sans-serif !important;
@@ -184,11 +186,28 @@ const STYLE_OVERRIDES = `
 
 #beacon-calendar.bcal .bcal-no-slots {
   border: 1px dashed rgba(68, 72, 79, 0.35) !important;
-  border-radius: 0.9rem !important;
+  border-radius: 0 !important;
 }
 
 #beacon-calendar.bcal .bcal-form {
   gap: 1.1rem !important;
+}
+
+/* Test-card notice — the widget renders its own form markup at runtime
+   (see the useEffect below), so this is injected as generated content
+   rather than a real DOM node, positioned above the fields via flex order. */
+#beacon-calendar.bcal .bcal-form::before {
+  content: "Demo mode: use test card 4242 4242 4242 4242, expiry 01/29, CVC 123. This booking runs on a Stripe test account, so no real payment is taken." !important;
+  display: block !important;
+  order: -1 !important;
+  padding: 0.85rem 1rem !important;
+  background: rgba(142, 255, 113, 0.08) !important;
+  border: 1px solid rgba(142, 255, 113, 0.3) !important;
+  color: var(--color-on-surface) !important;
+  font-family: var(--font-plus-jakarta-sans), sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
 }
 
 #beacon-calendar.bcal .bcal-field {
