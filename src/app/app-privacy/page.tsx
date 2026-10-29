@@ -17,7 +17,7 @@ function PolicyList({ items }: { items: string[] }) {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
+    <section className="rounded-md border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
       <h2 className="mb-6 text-3xl font-bold uppercase text-on-surface">{title}</h2>
       {children}
     </section>
@@ -176,7 +176,7 @@ export default function AppPrivacyPage() {
                   ].map(({ name, detail }) => (
                     <div
                       key={name}
-                      className="rounded-xl border border-outline-variant/15 bg-surface-container-high/60 p-5"
+                      className="rounded-md border border-outline-variant/15 bg-surface-container-high/60 p-5"
                     >
                       <p
                         className="font-bold text-on-surface"
@@ -263,7 +263,7 @@ export default function AppPrivacyPage() {
                   ].map(({ label, email }) => (
                     <div
                       key={label}
-                      className="rounded-xl border border-outline-variant/15 bg-surface-container-high/60 p-5"
+                      className="rounded-md border border-outline-variant/15 bg-surface-container-high/60 p-5"
                     >
                       <p className="text-xs font-bold uppercase tracking-wide text-on-surface-variant mb-2">
                         {label}
@@ -272,13 +272,13 @@ export default function AppPrivacyPage() {
                     </div>
                   ))}
                 </div>
-                <div className="rounded-xl border border-outline-variant/20 bg-surface-container p-6 mb-6">
+                <div className="rounded-md border border-outline-variant/20 bg-surface-container p-6 mb-6">
                   <p className="font-bold text-on-surface mb-1">Registered Address</p>
                   <p className="text-on-surface-variant">
                     Tabletop Sports Ltd, 31 Potternewton Lane, Leeds, England, LS7 3LW
                   </p>
                 </div>
-                <div className="rounded-xl border border-outline-variant/20 bg-surface-container p-6">
+                <div className="rounded-md border border-outline-variant/20 bg-surface-container p-6">
                   <p className="font-bold text-on-surface mb-2">Your Right to Complain</p>
                   <p className="text-on-surface-variant">
                     Under UK GDPR, if you believe we are mishandling your personal data, you have the right to lodge a complaint directly with the Information Commissioner&apos;s Office (ICO) at{" "}

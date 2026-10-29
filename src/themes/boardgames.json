@@ -7,7 +7,7 @@
     "badge": "For Players & Game Stores",
     "headline": "Roll for",
     "headlineAccent": "Initiative.",
-    "subheadline": "Battle Beacon helps board game and roleplaying fans find local game nights, discover store events, and stay connected to the communities they love. For stores, Beacon CRM fills tables and keeps players coming back.",
+    "subheadline": "Battle Beacon helps board game and roleplaying fans find local game nights, discover store events, and stay connected to the communities they love. For stores, NorthMark CRM fills tables and keeps players coming back.",
     "ctaPrimary": "Join the Adventure",
     "ctaSecondary": "For Game Stores"
   },
@@ -56,7 +56,7 @@
       {
         "icon": "dashboard_customize",
         "title": "Store Tools & Automation",
-        "description": "Beacon CRM gives stores one platform to run events, manage bookings, communicate with players, and automate the admin that takes up too much time.",
+        "description": "NorthMark CRM gives stores one platform to run events, manage bookings, communicate with players, and automate the admin that takes up too much time.",
         "bullets": ["Event & Table Booking", "Player CRM & Marketing Automation"]
       }
     ]

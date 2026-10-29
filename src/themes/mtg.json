@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "Battle Beacon | Master Your Local Meta.",
-    "description": "Battle Beacon connects players with every Friday Night, draft, and pre-release at their local game stores. For stores, Beacon CRM manages seatings, events, and player engagement in one place."
+    "description": "Battle Beacon connects players with every Friday Night, draft, and pre-release at their local game stores. For stores, NorthMark CRM manages seatings, events, and player engagement in one place."
   },
   "hero": {
     "badge": "For Players & Game Stores",
     "headline": "Master Your",
     "headlineAccent": "Local Meta.",
-    "subheadline": "Battle Beacon connects players with every Friday Night, draft, and pre-release at their local game stores. For stores, Beacon CRM manages seatings, events, and player engagement in one place.",
+    "subheadline": "Battle Beacon connects players with every Friday Night, draft, and pre-release at their local game stores. For stores, NorthMark CRM manages seatings, events, and player engagement in one place.",
     "ctaPrimary": "Join the Network",
     "ctaSecondary": "For Game Stores"
   },
@@ -56,7 +56,7 @@
       {
         "icon": "dashboard_customize",
         "title": "Store Event Tools",
-        "description": "Beacon CRM gives stores one system for seatings, prizes, player comms, and marketing without juggling separate tools.",
+        "description": "NorthMark CRM gives stores one system for seatings, prizes, player comms, and marketing without juggling separate tools.",
         "bullets": ["Event & Seat Management", "Player CRM & Automation"]
       }
     ]

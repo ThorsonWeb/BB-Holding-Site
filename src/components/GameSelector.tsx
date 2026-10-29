@@ -23,7 +23,7 @@ export default function GameSelector() {
           <button
             key={game.theme}
             onClick={() => router.push(`/landing?theme=${game.theme}`)}
-            className="px-4 py-2 rounded-lg border border-outline-variant/40 bg-surface-container text-on-surface-variant font-headline font-bold text-sm uppercase tracking-tight hover:border-primary hover:text-primary hover:bg-primary/5 active:scale-95 transition-all"
+            className="px-4 py-2 rounded-md border border-outline-variant/40 bg-surface-container text-on-surface-variant font-headline font-bold text-sm uppercase tracking-tight hover:border-primary hover:text-primary hover:bg-primary/5 active:scale-95 transition-all"
           >
             {game.label}
           </button>

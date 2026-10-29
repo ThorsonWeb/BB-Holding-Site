@@ -120,7 +120,7 @@ export default function PrivacyPage() {
             </div>
 
             <div className="grid gap-8 md:grid-cols-2">
-              <section className="rounded-2xl border border-outline-variant/20 bg-surface-container p-8">
+              <section className="rounded-md border border-outline-variant/20 bg-surface-container p-8">
                 <h2 className="mb-4 text-2xl font-bold uppercase text-on-surface">Contact Details</h2>
                 <div className="space-y-3 text-on-surface-variant">
                   <p>Email</p>
@@ -128,7 +128,7 @@ export default function PrivacyPage() {
                 </div>
               </section>
 
-              <section className="rounded-2xl border border-outline-variant/20 bg-surface-container p-8">
+              <section className="rounded-md border border-outline-variant/20 bg-surface-container p-8">
                 <h2 className="mb-4 text-2xl font-bold uppercase text-on-surface">Contents</h2>
                 <PolicyList
                   items={[
@@ -145,7 +145,7 @@ export default function PrivacyPage() {
             </div>
 
             <div className="mt-12 space-y-10">
-              <section className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
+              <section className="rounded-md border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
                 <h2 className="mb-8 text-3xl font-bold uppercase text-on-surface">
                   What Information We Collect, Use, and Why
                 </h2>
@@ -188,7 +188,7 @@ export default function PrivacyPage() {
                 </div>
               </section>
 
-              <section className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
+              <section className="rounded-md border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
                 <h2 className="mb-6 text-3xl font-bold uppercase text-on-surface">
                   Lawful Bases and Data Protection Rights
                 </h2>
@@ -207,7 +207,7 @@ export default function PrivacyPage() {
                 </p>
               </section>
 
-              <section className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
+              <section className="rounded-md border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
                 <h2 className="mb-8 text-3xl font-bold uppercase text-on-surface">
                   Our Lawful Bases for the Collection and Use of Your Data
                 </h2>
@@ -250,7 +250,7 @@ export default function PrivacyPage() {
                 </div>
               </section>
 
-              <section className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
+              <section className="rounded-md border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
                 <h2 className="mb-4 text-3xl font-bold uppercase text-on-surface">
                   Where We Get Personal Information From
                 </h2>
@@ -263,7 +263,7 @@ export default function PrivacyPage() {
                 />
               </section>
 
-              <section className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
+              <section className="rounded-md border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
                 <h2 className="mb-4 text-3xl font-bold uppercase text-on-surface">
                   How Long We Keep Information
                 </h2>
@@ -272,7 +272,7 @@ export default function PrivacyPage() {
                 </div>
               </section>
 
-              <section className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
+              <section className="rounded-md border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
                 <h2 className="mb-6 text-3xl font-bold uppercase text-on-surface">
                   Who We Share Information With
                 </h2>
@@ -306,7 +306,7 @@ export default function PrivacyPage() {
                 </div>
               </section>
 
-              <section className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
+              <section className="rounded-md border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
                 <h2 className="mb-6 text-3xl font-bold uppercase text-on-surface">How to Complain</h2>
                 <div className="space-y-4 text-on-surface-variant">
                   <p>
@@ -315,7 +315,7 @@ export default function PrivacyPage() {
                   <p>
                     If you remain unhappy with how we&apos;ve used your data after raising a complaint with us, you can also complain to the ICO.
                   </p>
-                  <div className="rounded-xl border border-outline-variant/20 bg-surface-container p-6">
+                  <div className="rounded-md border border-outline-variant/20 bg-surface-container p-6">
                     <p className="font-bold text-on-surface">Information Commissioner&apos;s Office</p>
                     <p>Wycliffe House</p>
                     <p>Water Lane</p>

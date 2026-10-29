@@ -108,7 +108,7 @@ export default function AppFeedbackPage() {
                   {testAreas.map((area) => (
                     <li
                       key={area.label}
-                      className={`flex items-start gap-4 p-4 rounded-xl bg-surface-container border ${
+                      className={`flex items-start gap-4 p-4 rounded-md bg-surface-container border ${
                         area.color === "primary"
                           ? "border-primary/10 hover:border-primary/25"
                           : "border-secondary/10 hover:border-secondary/25"

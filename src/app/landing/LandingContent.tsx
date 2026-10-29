@@ -150,7 +150,7 @@ export default function LandingContent() {
             {copy.solution.items.map((item, index) => (
               <div
                 key={item.title}
-                className={`${index === 0 ? "lg:col-span-12" : "lg:col-span-6"} bg-surface-container-low rounded-2xl p-8 md:p-10 border border-outline-variant/15 hover:border-primary/30 transition-colors`}
+                className={`${index === 0 ? "lg:col-span-12" : "lg:col-span-6"} bg-surface-container-low rounded-md p-8 md:p-10 border border-outline-variant/15 hover:border-primary/30 transition-colors`}
               >
                 <div className="flex items-center gap-4 mb-5">
                   <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">

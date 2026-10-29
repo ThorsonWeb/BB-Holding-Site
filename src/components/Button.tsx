@@ -9,12 +9,12 @@ const BASE =
 
 const VARIANT_CLASSES: Record<Variant, string> = {
   primary:
-    "rounded-lg bg-primary text-on-primary shadow-[0_0_20px_color-mix(in_srgb,var(--color-primary)_35%,transparent)] hover:animate-[glow-ring_1.4s_ease-in-out_infinite] hover:-translate-y-0.5 active:translate-y-0",
+    "rounded-md bg-primary text-on-primary shadow-[0_0_20px_color-mix(in_srgb,var(--color-primary)_35%,transparent)] hover:animate-[glow-ring_1.4s_ease-in-out_infinite] hover:-translate-y-0.5 active:translate-y-0",
   accent:
-    "rounded-lg bg-secondary text-on-secondary shadow-[0_0_20px_color-mix(in_srgb,var(--color-secondary)_35%,transparent)] hover:shadow-[0_0_36px_color-mix(in_srgb,var(--color-secondary)_55%,transparent)] hover:-translate-y-0.5 active:translate-y-0",
-  solid: "rounded-lg bg-surface-container-highest text-on-surface border border-outline-variant/40 hover:border-primary/50 active:translate-y-0",
+    "rounded-md bg-secondary text-on-secondary shadow-[0_0_20px_color-mix(in_srgb,var(--color-secondary)_35%,transparent)] hover:shadow-[0_0_36px_color-mix(in_srgb,var(--color-secondary)_55%,transparent)] hover:-translate-y-0.5 active:translate-y-0",
+  solid: "rounded-md bg-surface-container-highest text-on-surface border border-outline-variant/40 hover:border-primary/50 active:translate-y-0",
   outline:
-    "rounded-lg bg-transparent border border-outline-variant/60 text-on-surface-variant hover:border-primary hover:text-primary active:translate-y-0",
+    "rounded-md bg-transparent border border-outline-variant/60 text-on-surface-variant hover:border-primary hover:text-primary active:translate-y-0",
 };
 
 const SIZE_CLASSES: Record<Size, string> = {

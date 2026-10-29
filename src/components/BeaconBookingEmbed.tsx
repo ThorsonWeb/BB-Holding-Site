@@ -19,8 +19,8 @@ const BEACON_BOOKING_OVERRIDES = `
   --bcal-text-light: var(--color-on-surface-variant) !important;
   --bcal-border: rgba(68, 72, 79, 0.7) !important;
   --bcal-border-light: rgba(68, 72, 79, 0.35) !important;
-  --bcal-radius: 14px !important;
-  --bcal-font: var(--font-plus-jakarta-sans), sans-serif !important;
+  --bcal-radius: var(--radius-md) !important;
+  --bcal-font: var(--font-body) !important;
   max-width: none !important;
   border: 0 !important;
   background: transparent !important;
@@ -31,7 +31,7 @@ const BEACON_BOOKING_OVERRIDES = `
 #beacon-booking.bcalendar .bcal-title {
   margin: 0 0 0.5rem !important;
   color: var(--color-on-surface) !important;
-  font-family: var(--font-space-grotesk), sans-serif !important;
+  font-family: var(--font-headline) !important;
   font-size: 1.9rem !important;
   font-weight: 800 !important;
   line-height: 1 !important;
@@ -41,7 +41,7 @@ const BEACON_BOOKING_OVERRIDES = `
 
 #beacon-booking.bcalendar .bcal-slot {
   border: 1px solid rgba(68, 72, 79, 0.35) !important;
-  border-radius: 0.9rem !important;
+  border-radius: var(--radius-md) !important;
   background: var(--color-surface-container-highest) !important;
   color: var(--color-on-surface) !important;
 }
@@ -55,10 +55,10 @@ const BEACON_BOOKING_OVERRIDES = `
 #beacon-booking.bcalendar .bcal-submit {
   margin-top: 0.9rem !important;
   padding: 1rem 1.25rem !important;
-  border-radius: 0.9rem !important;
+  border-radius: var(--radius-md) !important;
   background: linear-gradient(to right, var(--color-primary), var(--color-primary-container)) !important;
   color: var(--color-on-primary-fixed) !important;
-  font-family: var(--font-space-grotesk), sans-serif !important;
+  font-family: var(--font-headline) !important;
   font-size: 0.9rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.16em !important;
@@ -103,7 +103,7 @@ export default function BeaconBookingEmbed() {
   }, []);
 
   return (
-    <div className="rounded-xl border border-outline-variant/15 bg-surface-container p-4 md:p-6 shadow-[0_20px_40px_rgba(0,0,0,0.25)]">
+    <div className="rounded-md border border-outline-variant/15 bg-surface-container p-4 md:p-6 shadow-[0_20px_40px_rgba(0,0,0,0.25)]">
       <div
         id="beacon-booking"
         // PLACEHOLDER: swap for the real booking key once provided.

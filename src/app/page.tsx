@@ -5,6 +5,8 @@ import GameSelector from "@/components/GameSelector";
 import Icon from "@/components/Icon";
 import Button from "@/components/Button";
 import JoinLink from "@/components/JoinLink";
+import { BrowserShot, PhoneShot } from "@/components/Screenshot";
+import { NORTHMARK_URL } from "@/content/links";
 
 const softwareApplicationJsonLd = {
   "@context": "https://schema.org",
@@ -13,16 +15,18 @@ const softwareApplicationJsonLd = {
   applicationCategory: "LifestyleApplication",
   operatingSystem: "iOS, Android",
   description:
-    "Battle Beacon helps tabletop players find more games and book more tables. Beacon CRM helps venues fill tables, run events, and grow their local gaming community.",
+    "Battle Beacon helps tabletop players find a game, book the table and track their results. NorthMark CRM helps venues fill tables, run events and bring players back.",
 };
 
 const homepageTickerItems = [
-  "FIND MORE GAMES NEAR YOU",
-  "GET NOTIFIED ABOUT NEW GAMES AND EVENTS AT YOUR FAVOURITE STORES",
-  "EARN AN EXCLUSIVE EARLY SIGNUP BADGE",
-  "BUILD A PLAYER PROFILE WITH AWARDS, BADGES, AND BRAGGING RIGHTS",
-  "BEACON CRM: BOOKINGS, EVENTS, CRM, AUTOMATIONS, AND FORMS",
-  "MORE TABLES BOOKED, MORE EVENTS RUN, MORE PLAYERS IN STORE",
+  "GAME ON IN THREE TAPS",
+  "FIND OPEN GAMES NEAR YOU TONIGHT",
+  "HOST A GAME, THE TABLE BOOKS ITSELF",
+  "EVERY WIN GOES ON YOUR RECORD",
+  "EARLY SIGN-UPS GET AN EXCLUSIVE BADGE",
+  "STORES: FILL YOUR QUIET NIGHTS",
+  "PAID UPFRONT, FEWER NO-SHOWS",
+  "POWERED BY NORTHMARK CRM",
 ];
 
 const supportedGames = [
@@ -41,103 +45,118 @@ const supportedGames = [
 const painPoints = [
   {
     num: "01",
-    icon: "cloud_off",
-    title: "Fragmented Communication",
+    who: "Players",
+    icon: "forum",
+    title: "“Anyone up for a game Friday?”",
     description:
-      "WhatsApp groups and Discord pings get buried in the noise. Players miss game postings before they ever see them.",
+      "The message sinks in a 200-person group chat. Two replies turn up on Sunday. Friday's gone.",
   },
   {
     num: "02",
-    icon: "edit_document",
-    title: "No Match Records",
+    who: "Players",
+    icon: "table_restaurant",
+    title: "“Is there a table free?”",
     description:
-      "Manual score sheets and word of mouth are the only way to track results. History disappears the moment the game ends.",
+      "Nobody picks up the phone, so you carry your army across town and every table's taken.",
   },
   {
     num: "03",
-    icon: "storefront",
-    title: "Venues Miss Bookings",
-    description:
-      "Store owners have no reliable way to reach their local player base and turn interest into confirmed bookings.",
+    who: "Players",
+    icon: "sticky_note_2",
+    title: "“Who won last time?”",
+    description: "Results live on scraps of paper and in people's memories. Mostly in arguments.",
   },
   {
     num: "04",
-    icon: "person_off",
-    title: "Isolated Players",
+    who: "Venues",
+    icon: "event_busy",
+    title: "“Why is Tuesday so quiet?”",
     description:
-      "Without a shared hub, finding regular opponents and staying connected to local gaming communities is harder than it should be.",
+      "There are players nearby who'd come in tonight. They just don't know you've got space.",
+  },
+  {
+    num: "05",
+    who: "Venues",
+    icon: "receipt_long",
+    title: "“Has everyone paid for Saturday?”",
+    description:
+      "Sign-ups in a spreadsheet, payments in three different apps, and a handful of no-shows on the day.",
   },
 ];
 
-const solutionItems = [
+const appHighlights = [
   {
-    icon: "hub",
-    title: "Unified Discovery & Booking",
+    id: "app-find-game",
+    title: "Find a game",
     description:
-      "Help players find games faster and make it simple for venues to turn interest into table bookings and event signups.",
-    bullets: ["Quick Table Booking", "Fast Event Sign-up"],
-    span: "lg:col-span-7",
+      "Pop in your postcode and see every open game near you: what's being played, who's hosting and how many seats are left.",
+    accent: "text-primary",
   },
   {
-    icon: "notifications_active",
-    title: "Live Store Alerts",
+    id: "app-host-game",
+    title: "Book the table",
     description:
-      "Instant alerts for newly posted games, fresh events, and open tables at the stores you follow.",
-    bullets: ["Favourite Store Alerts"],
-    span: "lg:col-span-5",
+      "Pick a store, a table and a time. Your game goes live for players to join, and the table's booked for you.",
+    accent: "text-secondary",
   },
   {
-    icon: "analytics",
-    title: "Player Profiles & Achievements",
+    id: "app-profile",
+    title: "Play & rank up",
     description:
-      "Profiles, stat tracking, awards, badges, and an exclusive early signup badge.",
-    bullets: ["Unique Player Profiles"],
-    span: "lg:col-span-5",
-  },
-  {
-    icon: "dashboard_customize",
-    title: "Venue CRM & Automation",
-    description:
-      "One place to manage bookings, events, customer engagement, and automations without juggling multiple tools.",
-    bullets: ["Booking & Event Management", "CRM, Automations & Forms"],
-    span: "lg:col-span-7",
-  },
-];
-
-const venueBenefits = [
-  {
-    title: "More Tables Booked",
-    description:
-      "Turn table availability into confirmed bookings with an easy booking system built for busy local gaming venues.",
-  },
-  {
-    title: "More Events Run",
-    description:
-      "Use Beacon CRM to manage bookings, events, payments, customer records, automations, and forms in one place.",
-  },
-  {
-    title: "Stronger Customer Loyalty",
-    description:
-      "Keep players engaged with better communication, follow-ups, and repeat visits that grow your community over time.",
+      "Log the result in seconds. Every win, award and point stacks up on a profile that follows you to every table.",
+    accent: "text-tertiary",
   },
 ];
 
 const playerBenefits = [
+  { icon: "casino", title: "Play more often", description: "Open games near you, any night of the week." },
+  { icon: "group_add", title: "Meet new opponents", description: "Then keep them, with friend codes, messages and private invites." },
+  { icon: "notifications_active", title: "Never miss an event", description: "Tournaments and launch nights land on your phone first." },
+  { icon: "military_tech", title: "Bragging rights that stick", description: "A lifetime record and awards everyone can see." },
+];
+
+const venueBenefits = [
+  { icon: "event_seat", title: "Fill your quiet nights", description: "Every open table is shown live to players nearby." },
+  { icon: "payments", title: "Get paid upfront", description: "Tables and tickets are paid at booking, so no-shows cost you less." },
+  { icon: "confirmation_number", title: "Events that sell themselves", description: "Publish once. Players sign up and pay without a single message." },
+  { icon: "autorenew", title: "Regulars who come back", description: "Awards, reminders and win-backs go out on autopilot." },
+];
+
+const connectSteps = [
   {
-    title: "Find More Games",
-    description:
-      "See local games, open tables, and venue events in one place so it is easier to get involved.",
+    icon: "edit_calendar",
+    title: "The store opens it up",
+    description: "Tables, opening hours and events go live in NorthMark CRM.",
   },
   {
-    title: "Play More Games",
-    description:
-      "Get notified when your favourite stores post new games and events so you never miss a good opportunity to play.",
+    icon: "notifications_active",
+    title: "Players nearby see it",
+    description: "Open slots and events pop up in Battle Beacon straight away.",
   },
   {
-    title: "Win More Games",
-    description:
-      "Track your results, build your profile, and unlock awards, badges, and early adopter bragging rights as you improve.",
+    icon: "credit_card",
+    title: "They book and pay",
+    description: "Seats and tables are paid upfront, so nobody's left holding an empty table.",
   },
+  {
+    icon: "swords",
+    title: "Game day runs itself",
+    description: "Check-in, rounds, pairings and results, all from the app.",
+  },
+  {
+    icon: "military_tech",
+    title: "Everyone comes back",
+    description: "Awards land on player profiles and NorthMark sends the “see you next week”.",
+  },
+];
+
+const venuePoints = [
+  { icon: "event_seat", label: "Table bookings with live slots" },
+  { icon: "payments", label: "Payments at booking" },
+  { icon: "confirmation_number", label: "Ticketed events and tournaments" },
+  { icon: "contacts", label: "Customer records, forms and pipelines" },
+  { icon: "account_tree", label: "Automated follow-up workflows" },
+  { icon: "emoji_events", label: "Awards and leaderboards" },
 ];
 
 export default function Home() {
@@ -174,20 +193,20 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Hero — asymmetric split, no boxed pill badge */}
+        {/* Hero — copy left, the app itself on the right */}
         <section className="relative overflow-hidden bg-surface pt-16 pb-24 md:pt-24 md:pb-32">
-          <div className="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
             <div className="lg:col-span-7">
-              <h1 className="text-6xl md:text-8xl font-black text-on-surface tracking-tighter leading-[0.92] uppercase mb-8">
+              <h1 className="text-5xl md:text-7xl text-on-surface leading-[1.02] uppercase mb-8">
                 More games.
                 <br />
-                <span className="text-primary italic">Better events.</span>
+                <span className="text-primary italic">Fuller tables.</span>
               </h1>
               <p className="text-lg md:text-xl text-on-surface-variant mb-10 leading-relaxed font-body max-w-xl">
-                Battle Beacon helps players find more games, play more often, track progress, and earn bragging rights. For venues, Beacon CRM helps fill tables, run better events, and keep local communities coming back.
+                Battle Beacon finds you a game at a store near you, books the table and keeps score. Stores run it all from NorthMark CRM, so every open table gets seen and every seat gets filled.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <JoinLink variant="primary">Sign Up Early</JoinLink>
+                <JoinLink variant="primary">Get Early Access</JoinLink>
                 <Button href="/for-venues" variant="outline">
                   For Venues
                 </Button>
@@ -195,18 +214,17 @@ export default function Home() {
               <GameSelector />
             </div>
 
-            <div className="lg:col-span-5 relative">
-              <div
-                className="relative aspect-[4/5] rounded-[2rem] diagonal-both bg-gradient-to-br from-surface-container-high via-surface-container to-surface-container-low border border-outline-variant/20 overflow-hidden tactical-grid"
-              >
-                <div className="absolute -top-16 -right-16 w-64 h-64 bg-primary/20 blur-[100px] rounded-full" aria-hidden="true" />
-                <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full" aria-hidden="true" />
-                <div className="relative z-10 h-full flex flex-col items-center justify-center gap-6 p-8 text-center">
-                  <span className="ghost-numeral text-[7rem] md:text-[9rem]">01</span>
-                  <p className="font-headline font-bold uppercase tracking-[0.2em] text-on-surface-variant text-sm max-w-[16rem]">
-                    One system for every table, every game, every venue
-                  </p>
-                </div>
+            <div className="lg:col-span-5 relative flex justify-center">
+              <div className="absolute -top-16 -right-8 w-64 h-64 bg-primary/20 blur-[100px] rounded-full" aria-hidden="true" />
+              <div className="absolute -bottom-16 -left-8 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full" aria-hidden="true" />
+              <PhoneShot id="app-dashboard" className="relative max-w-[300px] neon-glow-primary" />
+              <div className="absolute top-[18%] left-0 glass-panel border border-outline-variant/30 rounded-md px-4 py-3 shadow-2xl" aria-hidden="true">
+                <p className="font-label text-[10px] uppercase tracking-wider text-on-surface-variant">Table booked</p>
+                <p className="font-headline text-sm text-on-surface">Fri · 19:00</p>
+              </div>
+              <div className="absolute bottom-[16%] right-0 glass-panel border border-secondary/40 rounded-md px-4 py-3 shadow-2xl" aria-hidden="true">
+                <p className="font-label text-[10px] uppercase tracking-wider text-secondary">Player joined</p>
+                <p className="font-headline text-sm text-on-surface">3 / 4 seats</p>
               </div>
             </div>
           </div>
@@ -215,9 +233,10 @@ export default function Home() {
         {/* Pain points — editorial numbered list, not a card grid */}
         <section className="py-24 bg-surface-container-lowest relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-8">
-            <div className="max-w-2xl mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold uppercase text-on-surface tracking-tight leading-[0.95]">
-                How it works now isn&apos;t working.
+            <div className="max-w-3xl mb-16">
+              <p className="mb-4 font-label text-xs font-bold uppercase tracking-[0.2em] text-error">Sound familiar?</p>
+              <h2 className="text-4xl md:text-5xl uppercase text-on-surface leading-[1.02]">
+                Getting a game shouldn&apos;t be <span className="text-error">this hard.</span>
               </h2>
             </div>
 
@@ -227,104 +246,52 @@ export default function Home() {
                   <span className="md:col-span-2 ghost-numeral text-4xl md:text-5xl text-error/40" style={{ WebkitTextStroke: "1px color-mix(in srgb, var(--color-error) 40%, transparent)" }}>
                     {item.num}
                   </span>
-                  <div className="md:col-span-3 flex items-center gap-3">
-                    <Icon name={item.icon} className="text-error text-2xl" />
-                    <h3 className="text-lg font-bold uppercase text-on-surface">{item.title}</h3>
+                  <div className="md:col-span-5">
+                    <p className="mb-2 flex items-center gap-2 font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant">
+                      <Icon name={item.icon} className="text-base text-error" />
+                      {item.who}
+                    </p>
+                    <h3 className="text-lg md:text-xl text-on-surface">{item.title}</h3>
                   </div>
-                  <p className="md:col-span-7 text-on-surface-variant text-base leading-relaxed">{item.description}</p>
+                  <p className="md:col-span-5 text-on-surface-variant text-base leading-relaxed">{item.description}</p>
                 </li>
               ))}
             </ul>
+
+            <p className="mt-16 text-2xl md:text-3xl font-headline uppercase text-on-surface">
+              Battle Beacon <span className="text-primary">fixes all five.</span>
+            </p>
           </div>
         </section>
 
-        {/* Solution — asymmetric bento, icon inline (not giant faded corner glyph) */}
+        {/* Inside the app */}
         <section className="py-24 bg-surface relative">
           <div className="max-w-7xl mx-auto px-6 md:px-8">
-            <div className="mb-16 max-w-2xl">
-              <h2 className="text-4xl md:text-6xl font-bold uppercase text-on-surface tracking-tight leading-[0.95]">
-                One platform. <span className="text-primary">Real momentum.</span>
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-              {solutionItems.map((item) => (
-                <div
-                  key={item.title}
-                  className={`${item.span} bg-surface-container-low rounded-2xl p-8 md:p-10 border border-outline-variant/15 hover:border-primary/30 transition-colors`}
-                >
-                  <div className="flex items-center gap-4 mb-5">
-                    <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                      <Icon name={item.icon} />
-                    </div>
-                    <h3 className="text-xl font-bold uppercase text-on-surface">{item.title}</h3>
-                  </div>
-                  <p className="text-on-surface-variant mb-6 max-w-md">{item.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {item.bullets.map((bullet) => (
-                      <span
-                        key={bullet}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-bold uppercase text-primary"
-                      >
-                        <Icon name="check_circle" className="text-xs" fill />
-                        {bullet}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Deep Dive Section */}
-        <section className="py-24 bg-surface-container-lowest">
-          <div className="max-w-7xl mx-auto px-6 md:px-8">
-            <div className="flex flex-col lg:flex-row items-center gap-16">
-              <div className="lg:w-1/2 relative w-full">
-                <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 blur-3xl rounded-full" aria-hidden="true"></div>
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary/10 blur-3xl rounded-full" aria-hidden="true"></div>
-                <div className="relative z-10 p-4 bg-surface-container-high rounded-[2rem] diagonal-top border border-outline-variant/30 shadow-2xl">
-                  {/* TODO(asset): replace with a real Battle Beacon app screenshot */}
-                  <img alt="Battle Beacon app home screen" className="rounded-[1.5rem] w-full" src="/homescreen.jpeg" />
-                </div>
-              </div>
-
-              <div className="lg:w-1/2 w-full">
-                <h2 className="text-4xl md:text-5xl font-bold uppercase text-on-surface tracking-tight mb-8 leading-none">
-                  One app. <span className="text-secondary">Every game night.</span>
+            <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-2xl">
+                <p className="mb-4 font-label text-xs font-bold uppercase tracking-[0.2em] text-secondary">How it works</p>
+                <h2 className="text-4xl md:text-5xl uppercase text-on-surface leading-[1.02] mb-6">
+                  Game on in <span className="text-primary">three taps.</span>
                 </h2>
-                <p className="text-on-surface-variant text-lg mb-10 leading-relaxed">
-                  Battle Beacon gives players a better way to discover games and improve over time, while giving venues a smarter way to manage events and grow loyalty.
+                <p className="text-lg text-on-surface-variant leading-relaxed">
+                  No group chats, no phone calls, no score sheets. Just you, a table and someone to play.
                 </p>
-
-                <div className="space-y-8">
-                  <div className="flex gap-6">
-                    <div className="w-12 h-12 flex-shrink-0 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center">
-                      <Icon name="explore" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold uppercase text-on-surface mb-2">Smart Venue Discovery</h3>
-                      <p className="text-on-surface-variant">
-                        Show players where games are happening, which stores have space, and what events are worth booking into next.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-6">
-                    <div className="w-12 h-12 flex-shrink-0 bg-secondary text-on-secondary rounded-full flex items-center justify-center">
-                      <Icon name="leaderboard" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold uppercase text-on-surface mb-2">Player Profile &amp; Rewards</h3>
-                      <p className="text-on-surface-variant">
-                        Every player gets a unique profile to track progress, unlock rewards, and show off badges, awards, and early adopter status.
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
+              <Button href="/for-players" variant="outline" className="self-start md:self-auto">
+                Every App Feature
+              </Button>
             </div>
+
+            <ul className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
+              {appHighlights.map((item, i) => (
+                <li key={item.id} className="flex flex-col items-center text-center">
+                  <PhoneShot id={item.id} className="mb-8 max-w-[260px]" />
+                  <p className="mb-2 font-label text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant">Step {i + 1}</p>
+                  <h3 className={`mb-2 text-xl uppercase ${item.accent}`}>{item.title}</h3>
+                  <p className="max-w-xs text-on-surface-variant">{item.description}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -333,14 +300,14 @@ export default function Home() {
           <div className="flex whitespace-nowrap animate-[marquee_30s_linear_infinite] w-fit">
             <div className="flex items-center px-8 gap-12">
               {homepageTickerItems.map((item) => (
-                <span key={item} className="text-primary font-headline text-sm font-bold tracking-widest uppercase">
+                <span key={item} className="text-primary font-headline text-sm tracking-widest uppercase">
                   {item}
                 </span>
               ))}
             </div>
             <div className="flex items-center px-8 gap-12" aria-hidden="true">
               {homepageTickerItems.map((item) => (
-                <span key={`${item}-duplicate`} className="text-primary font-headline text-sm font-bold tracking-widest uppercase">
+                <span key={`${item}-duplicate`} className="text-primary font-headline text-sm tracking-widest uppercase">
                   {item}
                 </span>
               ))}
@@ -348,39 +315,121 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Venue vs Player Benefits */}
+        {/* Benefits for both sides of the table */}
         <section className="py-24 bg-surface relative">
-          <div className="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/10">
-            {/* Venue Benefits */}
-            <div className="bg-surface py-12 md:py-16 md:pr-12">
-              <h2 className="text-3xl md:text-4xl font-bold uppercase mb-4 text-on-surface">Growth for Venues</h2>
-              <p className="text-on-surface-variant text-lg mb-8 max-w-xl">
-                Beacon CRM helps venues book more tables, run more events, improve customer loyalty, and keep more players engaged in store.
+          <div className="max-w-7xl mx-auto px-6 md:px-8">
+            <div className="max-w-3xl mb-16">
+              <p className="mb-4 font-label text-xs font-bold uppercase tracking-[0.2em] text-tertiary">Everybody wins</p>
+              <h2 className="text-4xl md:text-5xl uppercase text-on-surface leading-[1.02]">
+                Built for both sides <span className="text-tertiary">of the table.</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+              <div className="rounded-md border border-secondary/25 bg-surface-container-low p-8 md:p-10">
+                <p className="mb-3 font-label text-xs font-bold uppercase tracking-[0.2em] text-secondary">For players</p>
+                <h3 className="mb-8 text-2xl md:text-3xl uppercase text-on-surface">More games. Less hassle.</h3>
+                <ul className="mb-10 space-y-6">
+                  {playerBenefits.map((item) => (
+                    <li key={item.title} className="flex gap-4">
+                      <Icon name={item.icon} className="mt-0.5 text-2xl text-secondary" />
+                      <div>
+                        <p className="font-bold text-on-surface">{item.title}</p>
+                        <p className="text-on-surface-variant">{item.description}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <JoinLink variant="accent">Get Early Access</JoinLink>
+              </div>
+
+              <div className="rounded-md border border-primary/25 bg-surface-container-low p-8 md:p-10">
+                <p className="mb-3 font-label text-xs font-bold uppercase tracking-[0.2em] text-primary">For venues</p>
+                <h3 className="mb-8 text-2xl md:text-3xl uppercase text-on-surface">Fuller tables. Less admin.</h3>
+                <ul className="mb-10 space-y-6">
+                  {venueBenefits.map((item) => (
+                    <li key={item.title} className="flex gap-4">
+                      <Icon name={item.icon} className="mt-0.5 text-2xl text-primary" />
+                      <div>
+                        <p className="font-bold text-on-surface">{item.title}</p>
+                        <p className="text-on-surface-variant">{item.description}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <Button href="/for-venues" variant="primary">
+                  See What Venues Get
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How the app and NorthMark connect */}
+        <section className="py-24 bg-surface-container-lowest relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 md:px-8">
+            <div className="max-w-3xl mb-16">
+              <p className="mb-4 font-label text-xs font-bold uppercase tracking-[0.2em] text-tertiary">How it connects</p>
+              <h2 className="text-4xl md:text-5xl uppercase text-on-surface leading-[1.02] mb-6">
+                One store calendar. <span className="text-tertiary">Every player nearby.</span>
+              </h2>
+              <p className="text-lg text-on-surface-variant leading-relaxed">
+                The moment a store puts a table or an event up in NorthMark CRM, players nearby see it in Battle Beacon, book it and play it. No double entry, no chasing payments, no waiting on a WhatsApp reply.
               </p>
-              <div className="space-y-6">
-                {venueBenefits.map((item) => (
-                  <div key={item.title} className="p-6 bg-surface-container rounded-xl">
-                    <h3 className="text-lg font-bold text-primary uppercase mb-2">{item.title}</h3>
-                    <p className="text-on-surface-variant text-sm">{item.description}</p>
-                  </div>
-                ))}
+            </div>
+
+            <div className="relative mb-20 lg:pr-48">
+              <BrowserShot id="crm-events-manager" />
+              <div className="mx-auto mt-10 w-[220px] lg:absolute lg:-bottom-12 lg:right-0 lg:mt-0">
+                <PhoneShot id="app-nearby-events" className="neon-glow-magenta" />
               </div>
             </div>
 
-            {/* Player Benefits */}
-            <div className="bg-surface py-12 md:py-16 md:pl-12 border-t md:border-t-0 md:border-l border-outline-variant/10">
-              <h2 className="text-3xl md:text-4xl font-bold uppercase mb-4 text-on-surface">Momentum for Players</h2>
-              <p className="text-on-surface-variant text-lg mb-8 max-w-xl">
-                Find more games, play more games, win more games, and stay connected to the stores and communities you care about most.
-              </p>
-              <div className="space-y-6">
-                {playerBenefits.map((item) => (
-                  <div key={item.title} className="p-6 bg-surface-container rounded-xl border border-secondary/20">
-                    <h3 className="text-lg font-bold text-secondary uppercase mb-2">{item.title}</h3>
-                    <p className="text-on-surface-variant text-sm">{item.description}</p>
+            <ol className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-outline-variant/15 bg-outline-variant/15 sm:grid-cols-2 lg:grid-cols-5">
+              {connectSteps.map((step, i) => (
+                <li key={step.title} className="bg-surface-container-low p-6">
+                  <div className="mb-4 flex items-center justify-between">
+                    <Icon name={step.icon} className="text-2xl text-tertiary" />
+                    <span className="font-label text-xs text-outline">0{i + 1}</span>
                   </div>
+                  <h3 className="mb-2 text-base uppercase text-on-surface">{step.title}</h3>
+                  <p className="text-sm leading-relaxed text-on-surface-variant">{step.description}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* For venues: NorthMark CRM */}
+        <section className="py-24 bg-surface relative">
+          <div className="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-5">
+              <p className="mb-4 font-label text-xs font-bold uppercase tracking-[0.2em] text-primary">For venues</p>
+              <h2 className="text-4xl md:text-5xl uppercase text-on-surface leading-[1.02] mb-6">
+                Run your whole store from <span className="text-primary">NorthMark CRM.</span>
+              </h2>
+              <p className="text-lg text-on-surface-variant leading-relaxed mb-8">
+                Battle Beacon brings the players. NorthMark handles everything after that: bookings, payments, event tickets, your customer list and the follow-up that brings people back. Start free and upgrade when it&apos;s paying for itself.
+              </p>
+              <ul className="mb-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {venuePoints.map((point) => (
+                  <li key={point.label} className="flex items-center gap-3 text-on-surface">
+                    <Icon name={point.icon} className="text-xl text-primary" />
+                    <span className="text-sm">{point.label}</span>
+                  </li>
                 ))}
+              </ul>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button href={NORTHMARK_URL} external variant="primary">
+                  Explore NorthMark CRM
+                </Button>
+                <Button href="/for-venues" variant="outline">
+                  Venue Features
+                </Button>
               </div>
+            </div>
+            <div className="lg:col-span-7">
+              <BrowserShot id="crm-dashboard" />
             </div>
           </div>
         </section>
@@ -389,19 +438,19 @@ export default function Home() {
         <section className="py-32 relative overflow-hidden diagonal-both bg-surface-container-high tactical-grid">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] bg-primary/10 blur-[160px] rounded-full" aria-hidden="true" />
           <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8 text-center">
-            <h2 className="text-5xl md:text-7xl font-black uppercase text-on-surface mb-8 tracking-tighter">
-              Join before launch
+            <h2 className="text-4xl md:text-6xl uppercase text-on-surface mb-8">
+              Be first to the table.
             </h2>
             <p className="text-lg md:text-xl text-on-surface-variant mb-12 font-body">
-              Sign up early to claim your place in the first wave of Battle Beacon players and venues, and unlock the early adopter badge before launch.
+              Battle Beacon lands on iOS and Android soon. Sign up now to be first in line and grab the early sign-up badge, which only the first wave will ever get. Running a store? Start free on NorthMark CRM and be ready for the players on day one.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <JoinLink variant="primary" size="lg">
-                Sign Up as a Venue
-              </JoinLink>
               <JoinLink variant="accent" size="lg">
                 Sign Up as a Player
               </JoinLink>
+              <Button href={NORTHMARK_URL} external variant="primary" size="lg">
+                Start Free as a Venue
+              </Button>
             </div>
           </div>
         </section>

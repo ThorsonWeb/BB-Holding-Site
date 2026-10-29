@@ -7,7 +7,7 @@
     "badge": "For Trainers & Game Stores",
     "headline": "Find Your Crew.",
     "headlineAccent": "Win More Games.",
-    "subheadline": "Battle Beacon helps trading card game players discover local events, connect with other collectors, and track their competitive journey. For stores, Beacon CRM keeps your tables filled and your community growing.",
+    "subheadline": "Battle Beacon helps trading card game players discover local events, connect with other collectors, and track their competitive journey. For stores, NorthMark CRM keeps your tables filled and your community growing.",
     "ctaPrimary": "Join the Network",
     "ctaSecondary": "For Game Stores"
   },
@@ -56,7 +56,7 @@
       {
         "icon": "dashboard_customize",
         "title": "Store Tools & Automation",
-        "description": "Beacon CRM gives game stores one place to manage event signups, player communications, and marketing without juggling separate apps.",
+        "description": "NorthMark CRM gives game stores one place to manage event signups, player communications, and marketing without juggling separate apps.",
         "bullets": ["Event & Booking Management", "Player Engagement & Automation"]
       }
     ]

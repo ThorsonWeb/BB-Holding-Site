@@ -4,7 +4,7 @@ import TopNavBar from "@/components/TopNavBar";
 
 function Section({ number, title, children }: { number: string; title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
+    <section className="rounded-md border border-outline-variant/20 bg-surface-container-low p-8 md:p-10">
       <div className="mb-4 inline-flex items-center gap-3">
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
           {number}
@@ -201,7 +201,7 @@ export default function AppEulaPage() {
               </Section>
 
               <Section number="9" title="Limitation of Liability and Disclaimer of Warranties">
-                <div className="rounded-xl border border-outline-variant/20 bg-surface-container p-6">
+                <div className="rounded-md border border-outline-variant/20 bg-surface-container p-6">
                   <p className="text-sm uppercase tracking-wide text-on-surface-variant">
                     THE APP IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND,
                     EITHER EXPRESS OR IMPLIED. TO THE MAXIMUM EXTENT PERMITTED BY UK LAW, TABLETOP SPORTS
@@ -234,13 +234,13 @@ export default function AppEulaPage() {
                   If you have any questions or concerns regarding this Agreement, please contact us at:
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2 mt-2">
-                  <div className="rounded-xl border border-outline-variant/15 bg-surface-container-high/60 p-5">
+                  <div className="rounded-md border border-outline-variant/15 bg-surface-container-high/60 p-5">
                     <p className="text-xs font-bold uppercase tracking-wide text-on-surface-variant mb-2">
                       General Support
                     </p>
                     <p className="text-primary font-medium">support@battle-beacon.com</p>
                   </div>
-                  <div className="rounded-xl border border-outline-variant/15 bg-surface-container-high/60 p-5">
+                  <div className="rounded-md border border-outline-variant/15 bg-surface-container-high/60 p-5">
                     <p className="text-xs font-bold uppercase tracking-wide text-on-surface-variant mb-2">
                       Registered Address
                     </p>

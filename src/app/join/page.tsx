@@ -23,7 +23,7 @@ export default function JoinPage() {
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 blur-[120px] rounded-full"></div>
         </div>
-        <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-0 bg-surface-container-low rounded-xl overflow-hidden relative z-10 shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
+        <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-0 bg-surface-container-low rounded-md overflow-hidden relative z-10 shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
           <div className="lg:col-span-5 hidden lg:block relative overflow-hidden group">
             {/* TODO(asset): replace with real venue/game-night photography */}
             <img

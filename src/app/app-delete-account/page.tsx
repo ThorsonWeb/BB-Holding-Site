@@ -46,7 +46,7 @@ export default function AppDeleteAccountPage() {
 
             {/* What happens info cards */}
             <div className="mb-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-6">
+              <div className="rounded-md border border-outline-variant/20 bg-surface-container-low p-6">
                 <div className="mb-4 flex items-center gap-2">
                   <span className="material-symbols-outlined text-tertiary" style={{ fontVariationSettings: "'FILL' 1" }}>
                     delete_forever
@@ -67,7 +67,7 @@ export default function AppDeleteAccountPage() {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-6">
+              <div className="rounded-md border border-outline-variant/20 bg-surface-container-low p-6">
                 <div className="mb-4 flex items-center gap-2">
                   <span className="material-symbols-outlined text-on-surface-variant" style={{ fontVariationSettings: "'FILL' 1" }}>
                     schedule
@@ -88,7 +88,7 @@ export default function AppDeleteAccountPage() {
             </div>
 
             {/* Warning */}
-            <div className="mb-8 flex items-start gap-3 rounded-2xl border border-error/20 bg-error/8 p-5">
+            <div className="mb-8 flex items-start gap-3 rounded-md border border-error/20 bg-error/8 p-5">
               <span className="material-symbols-outlined mt-0.5 text-error" style={{ fontVariationSettings: "'FILL' 1" }}>
                 warning
               </span>

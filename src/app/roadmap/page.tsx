@@ -151,7 +151,7 @@ export default function RoadmapPage() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-outline-variant/20 bg-surface-container-low/80 p-6 md:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
+              <div className="rounded-md border border-outline-variant/20 bg-surface-container-low/80 p-6 md:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
                 <div className="flex items-center justify-between gap-4 mb-6">
                   <div>
                     <p className="font-headline text-xs font-bold uppercase tracking-[0.24em] text-on-surface-variant">
@@ -171,7 +171,7 @@ export default function RoadmapPage() {
                   {roadmapHighlights.map((highlight) => (
                     <div
                       key={highlight.label}
-                      className={`rounded-xl border px-4 py-4 ${highlight.tone}`}
+                      className={`rounded-md border px-4 py-4 ${highlight.tone}`}
                     >
                       <p className="font-headline text-[10px] font-bold uppercase tracking-[0.24em] opacity-80">
                         {highlight.label}
@@ -219,7 +219,7 @@ export default function RoadmapPage() {
                     <div className="grid items-stretch gap-6 lg:grid-cols-[1fr_auto_1fr] lg:gap-10">
                       <div className={isReversed ? "lg:order-3" : ""}>
                         <div
-                          className={`h-full rounded-2xl border bg-surface-container-low p-6 md:p-8 shadow-[0_18px_50px_rgba(0,0,0,0.22)] ${phase.panelClass}`}
+                          className={`h-full rounded-md border bg-surface-container-low p-6 md:p-8 shadow-[0_18px_50px_rgba(0,0,0,0.22)] ${phase.panelClass}`}
                         >
                           <div className="flex flex-wrap items-center gap-3 mb-5">
                             <span
@@ -243,7 +243,7 @@ export default function RoadmapPage() {
                             {phase.items.map((item, itemIndex) => (
                               <div
                                 key={`${phase.phase}-${itemIndex}`}
-                                className="rounded-xl border border-outline-variant/15 bg-surface-container-high/60 p-5"
+                                className="rounded-md border border-outline-variant/15 bg-surface-container-high/60 p-5"
                               >
                                 <div className="flex items-start gap-3">
                                   <Icon
@@ -282,7 +282,7 @@ export default function RoadmapPage() {
                       </div>
 
                       <div className={isReversed ? "lg:order-1" : ""}>
-                        <div className="relative flex min-h-[280px] h-full items-center justify-center overflow-hidden rounded-2xl border border-outline-variant/15 bg-surface-container-high shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
+                        <div className="relative flex min-h-[280px] h-full items-center justify-center overflow-hidden rounded-md border border-outline-variant/15 bg-surface-container-high shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
                           <div className="absolute inset-0 opacity-20 tactical-grid" aria-hidden="true"></div>
                           <div
                             className={`absolute h-40 w-40 rounded-full blur-3xl ${

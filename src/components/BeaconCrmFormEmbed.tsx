@@ -18,8 +18,8 @@ const STYLE_OVERRIDES = `
   --bform-error: var(--color-error) !important;
   --bform-success-bg: rgba(47, 248, 1, 0.08) !important;
   --bform-success-text: var(--color-tertiary) !important;
-  --bform-radius: 14px !important;
-  --bform-font: var(--font-plus-jakarta-sans), sans-serif !important;
+  --bform-radius: var(--radius-md) !important;
+  --bform-font: var(--font-body) !important;
   max-width: none !important;
   border: 0 !important;
   background: transparent !important;
@@ -35,14 +35,14 @@ const STYLE_OVERRIDES = `
 #beacon-form.bform .bform-logo {
   width: 44px !important;
   height: 44px !important;
-  border-radius: 12px !important;
+  border-radius: var(--radius-md) !important;
   object-fit: cover !important;
 }
 
 #beacon-form.bform .bform-title {
   margin: 0 0 0.5rem !important;
   color: var(--color-on-surface) !important;
-  font-family: var(--font-space-grotesk), sans-serif !important;
+  font-family: var(--font-headline) !important;
   font-size: 1.9rem !important;
   font-weight: 800 !important;
   line-height: 1 !important;
@@ -68,7 +68,7 @@ const STYLE_OVERRIDES = `
 #beacon-form.bform .bform-label {
   margin-left: 0.25rem !important;
   color: var(--color-on-surface-variant) !important;
-  font-family: var(--font-space-grotesk), sans-serif !important;
+  font-family: var(--font-label) !important;
   font-size: 0.65rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.22em !important;
@@ -80,7 +80,7 @@ const STYLE_OVERRIDES = `
 #beacon-form.bform .bform-textarea {
   border: 1px solid rgba(68, 72, 79, 0.35) !important;
   border-bottom: 2px solid rgba(68, 72, 79, 0.55) !important;
-  border-radius: 0.9rem 0.9rem 0.35rem 0.35rem !important;
+  border-radius: var(--radius-md) !important;
   padding: 0.95rem 1rem !important;
   background: var(--color-surface-container-highest) !important;
   color: var(--color-on-surface) !important;
@@ -111,7 +111,7 @@ const STYLE_OVERRIDES = `
 
 #beacon-form.bform .bform-radio-group {
   gap: 0.75rem !important;
-  border-radius: 1rem !important;
+  border-radius: var(--radius-md) !important;
   background: var(--color-surface-container-highest) !important;
   padding: 1rem !important;
   border: 1px solid rgba(68, 72, 79, 0.3) !important;
@@ -131,10 +131,10 @@ const STYLE_OVERRIDES = `
 #beacon-form.bform .bform-submit {
   margin-top: 0.9rem !important;
   padding: 1rem 1.25rem !important;
-  border-radius: 0.9rem !important;
+  border-radius: var(--radius-md) !important;
   background: linear-gradient(to right, var(--color-primary), var(--color-primary-container)) !important;
   color: var(--color-on-primary-fixed) !important;
-  font-family: var(--font-space-grotesk), sans-serif !important;
+  font-family: var(--font-headline) !important;
   font-size: 0.9rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.16em !important;
@@ -157,7 +157,7 @@ const STYLE_OVERRIDES = `
 #beacon-form.bform .bform-success,
 #beacon-form.bform .bform-msg {
   margin: 1.25rem 0 0 !important;
-  border-radius: 1rem !important;
+  border-radius: var(--radius-md) !important;
   padding: 1rem 1.1rem !important;
 }
 
@@ -216,7 +216,7 @@ export default function BeaconCrmFormEmbed({ formKey, host }: Props) {
   }, [host]);
 
   return (
-    <div className="rounded-xl border border-outline-variant/15 bg-surface-container p-4 md:p-6 shadow-[0_20px_40px_rgba(0,0,0,0.25)]">
+    <div className="rounded-md border border-outline-variant/15 bg-surface-container p-4 md:p-6 shadow-[0_20px_40px_rgba(0,0,0,0.25)]">
       <div
         id="beacon-form"
         data-form-key={formKey}

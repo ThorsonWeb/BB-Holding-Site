@@ -7,7 +7,7 @@
     "badge": "For Players & Game Stores",
     "headline": "Build Your Deck.",
     "headlineAccent": "Conquer Your Galaxy.",
-    "subheadline": "Battle Beacon helps Star Wars: Unlimited players find local events, track their competitive journey, and stay connected to their game stores. For stores, Beacon CRM fills events and keeps your player base engaged.",
+    "subheadline": "Battle Beacon helps Star Wars: Unlimited players find local events, track their competitive journey, and stay connected to their game stores. For stores, NorthMark CRM fills events and keeps your player base engaged.",
     "ctaPrimary": "Join the Alliance",
     "ctaSecondary": "For Game Stores"
   },
@@ -56,7 +56,7 @@
       {
         "icon": "dashboard_customize",
         "title": "Store Operations & CRM",
-        "description": "Beacon CRM gives game stores one place to manage events, seatings, player communications, and marketing automation.",
+        "description": "NorthMark CRM gives game stores one place to manage events, seatings, player communications, and marketing automation.",
         "bullets": ["Event & Seat Management", "Player CRM & Outreach"]
       }
     ]

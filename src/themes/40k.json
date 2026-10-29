@@ -7,7 +7,7 @@
     "badge": "For Players & Venues",
     "headline": "Deploy.",
     "headlineAccent": "Dominate. Repeat.",
-    "subheadline": "Battle Beacon gives Warhammer players one command hub to find games, run events, and track every campaign. For venues, Beacon CRM fills tables, runs tournaments, and keeps your community mobilised.",
+    "subheadline": "Battle Beacon gives Warhammer players one command hub to find games, run events, and track every campaign. For venues, NorthMark CRM fills tables, runs tournaments, and keeps your community mobilised.",
     "ctaPrimary": "Join the Vanguard",
     "ctaSecondary": "For Venues"
   },
@@ -56,7 +56,7 @@
       {
         "icon": "dashboard_customize",
         "title": "Venue CRM & Automation",
-        "description": "Beacon CRM gives stores one place to manage bookings, events, customer records, automations, and forms without juggling multiple tools.",
+        "description": "NorthMark CRM gives stores one place to manage bookings, events, customer records, automations, and forms without juggling multiple tools.",
         "bullets": ["Booking & Event Management", "CRM, Automations & Forms"]
       }
     ]

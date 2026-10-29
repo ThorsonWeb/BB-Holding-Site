@@ -7,7 +7,7 @@ import MobileBottomNav from "@/components/MobileBottomNav";
 
 export const metadata: Metadata = {
   title: "Book a Demo",
-  description: "Book a 20-minute call to see how Beacon CRM can run bookings, events, and customer engagement for your venue.",
+  description: "Book a 20-minute call to see how NorthMark CRM can run bookings, events, and customer engagement for your venue.",
 };
 
 export default function BookADemoPage() {
@@ -19,7 +19,7 @@ export default function BookADemoPage() {
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 blur-[120px] rounded-full"></div>
         </div>
-        <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-0 bg-surface-container-low rounded-xl overflow-hidden relative z-10 shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
+        <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-0 bg-surface-container-low rounded-md overflow-hidden relative z-10 shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
           <div className="lg:col-span-5 hidden lg:block relative overflow-hidden group">
             {/* TODO(asset): replace with a real photo of a venue demo/booking session */}
             <img
@@ -37,7 +37,7 @@ export default function BookADemoPage() {
                 <div className="h-1 w-24 bg-primary mt-2"></div>
               </div>
               <p className="text-on-surface-variant text-sm leading-relaxed max-w-xs font-medium">
-                We&apos;ll walk through bookings, events, and CRM tools inside Beacon CRM and answer questions specific to your venue.
+                We&apos;ll walk through bookings, events, and CRM tools inside NorthMark CRM and answer questions specific to your venue.
               </p>
             </div>
           </div>

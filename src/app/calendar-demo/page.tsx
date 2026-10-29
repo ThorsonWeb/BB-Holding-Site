@@ -7,7 +7,7 @@ import Icon from "@/components/Icon";
 
 export const metadata: Metadata = {
   title: "Booking Calendar Demo",
-  description: "See the Beacon CRM booking calendar in action — live table availability and instant reservations for your venue.",
+  description: "See the NorthMark CRM booking calendar in action — live table availability and instant reservations for your venue.",
   robots: { index: false, follow: false },
 };
 
@@ -23,20 +23,20 @@ export default function CalendarDemoPage() {
               The <span className="text-primary italic">booking calendar</span> your venue could be running
             </h1>
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-on-surface-variant md:text-xl">
-              This is a live demo of the Beacon CRM booking widget &mdash; pick a slot and see how easy it is for players to reserve a table.
+              This is a live demo of the NorthMark CRM booking widget &mdash; pick a slot and see how easy it is for players to reserve a table.
             </p>
           </div>
         </header>
 
         <section className="px-6 pb-24 lg:px-24">
-          <div className="mx-auto mb-6 flex max-w-5xl items-start gap-3 rounded-xl border border-error/30 bg-error-container/15 p-4 text-sm text-on-surface">
+          <div className="mx-auto mb-6 flex max-w-5xl items-start gap-3 rounded-md border border-error/30 bg-error-container/15 p-4 text-sm text-on-surface">
             <Icon name="warning" className="mt-0.5 shrink-0 text-error" />
             <p>
               This venue doesn&apos;t exist &mdash; it&apos;s a demo calendar only. Any bookings made here will not be honoured.
             </p>
           </div>
 
-          <div className="mx-auto max-w-5xl rounded-3xl border border-outline-variant/15 bg-surface-container p-6 shadow-2xl md:p-10">
+          <div className="mx-auto max-w-5xl rounded-md border border-outline-variant/15 bg-surface-container p-6 shadow-2xl md:p-10">
             <BookingCalendarEmbed
               embedKey="kPUc1Gh0sE1FMpE3K_CYUi6saikjl8Um6ilnFOthPoE"
               host="https://beacon-crm.com"

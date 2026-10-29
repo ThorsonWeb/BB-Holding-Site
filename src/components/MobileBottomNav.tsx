@@ -55,7 +55,7 @@ export default function MobileBottomNav() {
       {/* Bottom sheet backdrop */}
       {sheetOpen && (
         <div
-          className="md:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+          className="lg:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
           onClick={() => setSheetOpen(false)}
         />
       )}
@@ -67,7 +67,7 @@ export default function MobileBottomNav() {
         role="dialog"
         aria-modal="true"
         aria-label="Pick your game"
-        className={`md:hidden fixed bottom-16 left-0 right-0 z-50 bg-surface-container-high border-t border-outline-variant/30 rounded-t-2xl shadow-[0_-8px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 ${
+        className={`lg:hidden fixed bottom-16 left-0 right-0 z-50 bg-surface-container-high border-t border-outline-variant/30 rounded-t-md shadow-[0_-8px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 ${
           sheetOpen ? "translate-y-0" : "translate-y-full pointer-events-none"
         }`}
       >
@@ -84,7 +84,7 @@ export default function MobileBottomNav() {
               ref={index === 0 ? firstGameRef : undefined}
               tabIndex={sheetOpen ? 0 : -1}
               onClick={() => selectGame(game.theme)}
-              className="w-full text-left px-4 py-3 rounded-xl font-headline font-bold uppercase tracking-tight text-on-surface hover:bg-primary/10 hover:text-primary transition-colors"
+              className="w-full text-left px-4 py-3 rounded-md font-headline font-bold uppercase tracking-tight text-on-surface hover:bg-primary/10 hover:text-primary transition-colors"
             >
               {game.label}
             </button>
@@ -93,7 +93,7 @@ export default function MobileBottomNav() {
       </div>
 
       {/* Bottom nav bar */}
-      <div className="md:hidden fixed bottom-0 w-full glass-panel border-t border-outline-variant/20 z-50 h-16 px-4 pb-safe flex justify-around items-center">
+      <div className="lg:hidden fixed bottom-0 w-full glass-panel border-t border-outline-variant/20 z-50 h-16 px-4 pb-safe flex justify-around items-center">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
           return (

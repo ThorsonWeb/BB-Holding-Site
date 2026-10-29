@@ -53,10 +53,13 @@
   --color-surface-tint: #81ecff;
   --color-inverse-primary: #006976;
 
-  --font-headline: var(--font-space-grotesk), sans-serif;
-  --font-body: var(--font-plus-jakarta-sans), sans-serif;
-  --font-label: var(--font-space-grotesk), sans-serif;
-  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-headline: var(--font-audiowide), sans-serif;
+  --font-body: var(--font-roboto), sans-serif;
+  --font-label: var(--font-anonymous-pro), ui-monospace, monospace;
+  --font-display: var(--font-audiowide), sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-marquee: marquee 30s linear infinite;
@@ -84,6 +87,17 @@
         0 0 32px color-mix(in srgb, var(--color-primary) 50%, transparent);
     }
   }
+}
+
+@layer base {
+  h1, h2, h3 {
+    font-family: var(--font-headline);
+  }
+}
+
+/* Audiowide ships a single 400 weight; stop browsers faking bold on it. */
+h1, h2, h3, .font-headline, .font-display {
+  font-synthesis-weight: none;
 }
 
 @layer utilities {
@@ -164,8 +178,8 @@ body {
   --bform-error: var(--color-error);
   --bform-success-bg: rgba(47, 248, 1, 0.08);
   --bform-success-text: var(--color-tertiary);
-  --bform-radius: 14px;
-  --bform-font: var(--font-plus-jakarta-sans), sans-serif;
+  --bform-radius: var(--radius-md);
+  --bform-font: var(--font-body);
 
   max-width: none;
   border: 0;
@@ -182,13 +196,13 @@ body {
 #beacon-form.bform .bform-logo {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   object-fit: cover;
   box-shadow: 0 0 20px rgba(129, 236, 255, 0.18);
 }
 
 #beacon-form.bform .bform-title {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-headline);
   font-size: 1.9rem;
   font-weight: 800;
   line-height: 1;
@@ -215,7 +229,7 @@ body {
 
 #beacon-form.bform .bform-label {
   margin-left: 0.25rem;
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-label);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -228,7 +242,7 @@ body {
 #beacon-form.bform .bform-textarea {
   border: 1px solid rgba(68, 72, 79, 0.35);
   border-bottom: 2px solid rgba(68, 72, 79, 0.55);
-  border-radius: 0.9rem 0.9rem 0.35rem 0.35rem;
+  border-radius: var(--radius-md);
   padding: 0.95rem 1rem;
   background: var(--color-surface-container-highest);
   color: var(--color-on-surface);
@@ -259,7 +273,7 @@ body {
 
 #beacon-form.bform .bform-radio-group {
   gap: 0.75rem;
-  border-radius: 1rem;
+  border-radius: var(--radius-md);
   background: var(--color-surface-container-highest);
   padding: 1rem;
   border: 1px solid rgba(68, 72, 79, 0.3);
@@ -279,10 +293,10 @@ body {
 #beacon-form.bform .bform-submit {
   margin-top: 0.9rem;
   padding: 1rem 1.25rem;
-  border-radius: 0.9rem;
+  border-radius: var(--radius-md);
   background: linear-gradient(to right, var(--color-primary), var(--color-primary-container));
   color: var(--color-on-primary-fixed);
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-headline);
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -305,7 +319,7 @@ body {
 #beacon-form.bform .bform-success,
 #beacon-form.bform .bform-msg {
   margin: 1.25rem 0 0;
-  border-radius: 1rem;
+  border-radius: var(--radius-md);
   padding: 1rem 1.1rem;
 }
 

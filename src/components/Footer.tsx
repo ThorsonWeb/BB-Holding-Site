@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NORTHMARK_URL } from "@/content/links";
 
 export default function Footer() {
   return (
@@ -14,6 +15,20 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-8">
+          <Link href="/for-players" className="text-slate-500 hover:text-primary transition-colors font-body text-xs tracking-widest uppercase">
+            The App
+          </Link>
+          <Link href="/for-venues" className="text-slate-500 hover:text-primary transition-colors font-body text-xs tracking-widest uppercase">
+            For Venues
+          </Link>
+          <a
+            href={NORTHMARK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-500 hover:text-primary transition-colors font-body text-xs tracking-widest uppercase"
+          >
+            NorthMark CRM
+          </a>
           <Link href="/privacy" className="text-slate-500 hover:text-primary transition-colors font-body text-xs tracking-widest uppercase">
             Privacy Policy
           </Link>

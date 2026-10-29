@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "Battle Beacon | More Games. Better Events.",
-    "description": "Battle Beacon helps players find more games and play more often. For venues, Beacon CRM fills tables and runs better events."
+    "description": "Battle Beacon helps players find more games and play more often. For venues, NorthMark CRM fills tables and runs better events."
   },
   "hero": {
     "badge": "For Players & Venues",
     "headline": "More Games.",
     "headlineAccent": "Better Events.",
-    "subheadline": "Battle Beacon helps players find more games, play more often, and track their progress. For venues, Beacon CRM fills tables, runs better events, and keeps local gaming communities coming back.",
+    "subheadline": "Battle Beacon helps players find more games, play more often, and track their progress. For venues, NorthMark CRM fills tables, runs better events, and keeps local gaming communities coming back.",
     "ctaPrimary": "Sign Up Early",
     "ctaSecondary": "For Venues"
   },
@@ -56,7 +56,7 @@
       {
         "icon": "dashboard_customize",
         "title": "Venue CRM & Automation",
-        "description": "Beacon CRM gives venues one place to manage bookings, events, customer engagement, and automations without juggling multiple tools.",
+        "description": "NorthMark CRM gives venues one place to manage bookings, events, customer engagement, and automations without juggling multiple tools.",
         "bullets": ["Booking & Event Management", "CRM, Automations & Forms"]
       }
     ]

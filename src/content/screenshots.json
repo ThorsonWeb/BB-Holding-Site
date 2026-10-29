@@ -1,0 +1,206 @@
+{
+  "app": [
+    {
+      "id": "app-dashboard",
+      "title": "Dashboard",
+      "alt": "Battle Beacon dashboard showing your games, games looking for players and nearby events",
+      "capture": "Dashboard tab, signed in, scrolled to the top. Show the My Games swipe list with at least one game, the quick actions, and the start of Games Looking for Players. Synthwave or Classic theme.",
+      "usedOn": [
+        "Home: hero",
+        "For Players: hero"
+      ],
+      "fallback": "/homescreen.jpeg"
+    },
+    {
+      "id": "app-find-game",
+      "title": "Find a game",
+      "alt": "Battle Beacon Find Game screen listing open games at nearby venues",
+      "capture": "All Games (Find Game) with a postcode search run. Show 3 or more game cards with venue logos, game type headers, dates and player counts.",
+      "usedOn": [
+        "Home: Inside the app",
+        "For Players: 01 Find a game"
+      ]
+    },
+    {
+      "id": "app-host-game",
+      "title": "Host a game",
+      "alt": "Battle Beacon Create Game Request screen with a venue, table type and time slot chosen",
+      "capture": "Create Game Request with a game system, venue and table type chosen and an available slot selected (the ticked slot visible). Fill in a game title.",
+      "usedOn": [
+        "Home: Inside the app",
+        "For Players: 02 Host & book"
+      ],
+      "fallback": "/hostgamescreen.jpeg"
+    },
+    {
+      "id": "app-booking-confirmed",
+      "title": "Booking confirmed",
+      "alt": "Battle Beacon payment screen confirming a table booking",
+      "capture": "The Booking Confirmed screen straight after a paid table booking (Payment page, success state).",
+      "usedOn": [
+        "For Players: 02 Host & book (second phone)"
+      ]
+    },
+    {
+      "id": "app-my-games",
+      "title": "My Games",
+      "alt": "Battle Beacon My Games list of hosted and joined games",
+      "capture": "My Games with 2 to 4 active games, a mix of hosted and joined. Optional: one card mid-swipe to show Cancel / Drop out / Play.",
+      "usedOn": [
+        "For Players: 03 My Games"
+      ]
+    },
+    {
+      "id": "app-submit-result",
+      "title": "Submit a result",
+      "alt": "Battle Beacon Play Game screen for submitting a game result",
+      "capture": "Play Game > Submit Result for a finished game, with the winner picked and the game type's own fields filled in.",
+      "usedOn": [
+        "For Players: 04 Play & log results"
+      ]
+    },
+    {
+      "id": "app-profile",
+      "title": "Player profile",
+      "alt": "Battle Beacon player profile with lifetime record, level, points and awards",
+      "capture": "Your Profile tab showing level, points, reputation, the lifetime record (wins, losses, draws) and awards. Use an account with a real-looking record.",
+      "usedOn": [
+        "Home: Inside the app",
+        "For Players: 05 Your profile"
+      ]
+    },
+    {
+      "id": "app-messages",
+      "title": "Messages",
+      "alt": "Battle Beacon direct message conversation planning a game",
+      "capture": "A Message Conversation between two friends arranging a game (a few messages each way). No real personal details.",
+      "usedOn": [
+        "For Players: 06 Friends & messages"
+      ]
+    },
+    {
+      "id": "app-private-invite",
+      "title": "Private game invite",
+      "alt": "Battle Beacon Private Game Invite screen choosing a venue, date and slot",
+      "capture": "Private Game Invite with game type, venue, date and slot chosen and a short note filled in (for example \"Bring your Orks\").",
+      "usedOn": [
+        "For Players: 06 Friends & messages (second phone)"
+      ]
+    },
+    {
+      "id": "app-venue-profile",
+      "title": "Venue profile",
+      "alt": "Battle Beacon venue profile with the local store option and booking details",
+      "capture": "A Venue Profile for a subscribed venue, showing the LOCAL STORE tick (after Set as Local), booking system and prices.",
+      "usedOn": [
+        "For Players: 07 Your local store",
+        "For Venues: Works with Battle Beacon"
+      ]
+    },
+    {
+      "id": "app-nearby-events",
+      "title": "Nearby events",
+      "alt": "Battle Beacon Nearby Events list of tournaments and game nights",
+      "capture": "Dashboard scrolled to Nearby Events (or the event detail page) with 2 or more upcoming events from NorthMark venues.",
+      "usedOn": [
+        "Home: How it connects",
+        "For Players: 08 Events near you",
+        "For Venues: Works with Battle Beacon (second phone)"
+      ]
+    },
+    {
+      "id": "app-themes",
+      "title": "Themes",
+      "alt": "Battle Beacon theme picker with Classic, Synthwave, Dark, Light and Ocean themes",
+      "capture": "The theme picker open, ideally with the Synthwave theme applied behind it.",
+      "usedOn": [
+        "For Players: 09 Make it yours"
+      ]
+    }
+  ],
+  "crm": [
+    {
+      "id": "crm-dashboard",
+      "title": "NorthMark CRM dashboard",
+      "alt": "NorthMark CRM dashboard with bookings, form submissions, upcoming events and charts",
+      "capture": "Supplied from the NorthMark CRM site images (home-hero-dashboard.png).",
+      "usedOn": [
+        "Home: For venues",
+        "For Venues: hero"
+      ]
+    },
+    {
+      "id": "crm-bookings-calendar",
+      "title": "Booking calendar",
+      "alt": "NorthMark CRM booking calendar with table types and available slots",
+      "capture": "Supplied from the NorthMark CRM site images (features-bookings-calendar.png).",
+      "usedOn": [
+        "For Venues: 01 Bookings & calendar"
+      ]
+    },
+    {
+      "id": "crm-payments-checkout",
+      "title": "Booking checkout",
+      "alt": "NorthMark CRM booking checkout with order summary and card form",
+      "capture": "Supplied from the NorthMark CRM site images (features-payments-checkout.png).",
+      "usedOn": [
+        "For Venues: 02 Payments"
+      ]
+    },
+    {
+      "id": "crm-events-manager",
+      "title": "Events",
+      "alt": "NorthMark CRM events screen with upcoming events and places sold",
+      "capture": "Supplied from the NorthMark CRM site images (features-events-manager.png).",
+      "usedOn": [
+        "Home: How it connects",
+        "For Venues: 03 Events"
+      ]
+    },
+    {
+      "id": "crm-forms-builder",
+      "title": "Forms and customer records",
+      "alt": "NorthMark CRM form builder with live preview",
+      "capture": "Supplied from the NorthMark CRM site images (features-forms-builder.png).",
+      "usedOn": [
+        "For Venues: 04 Forms & customer records"
+      ]
+    },
+    {
+      "id": "crm-leads-kanban",
+      "title": "Pipelines",
+      "alt": "NorthMark CRM pipeline board with customer cards in stages",
+      "capture": "Supplied from the NorthMark CRM site images (features-leads-kanban.png).",
+      "usedOn": [
+        "For Venues: 05 Pipelines"
+      ]
+    },
+    {
+      "id": "crm-workflows-editor",
+      "title": "Workflows",
+      "alt": "NorthMark CRM workflow editor with a trigger, wait, email and condition",
+      "capture": "Supplied from the NorthMark CRM site images (features-workflows-editor.png).",
+      "usedOn": [
+        "For Venues: 06 Workflows"
+      ]
+    },
+    {
+      "id": "crm-awards-leaderboard",
+      "title": "Awards",
+      "alt": "NorthMark CRM awards screen with award types and a leaderboard",
+      "capture": "Supplied from the NorthMark CRM site images (features-awards-leaderboard.png).",
+      "usedOn": [
+        "For Venues: 07 Awards"
+      ]
+    },
+    {
+      "id": "crm-venue-profile",
+      "title": "Venue profile and media",
+      "alt": "NorthMark CRM venue profile with amenities and photos",
+      "capture": "Supplied from the NorthMark CRM site images (features-venue-profile.png).",
+      "usedOn": [
+        "For Venues: 08 Venue profile & media"
+      ]
+    }
+  ]
+}

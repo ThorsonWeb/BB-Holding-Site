@@ -21,9 +21,9 @@ const STYLE_OVERRIDES = `
   --bcal-text-light: var(--color-on-surface-variant) !important;
   --bcal-border: rgba(68, 72, 79, 0.7) !important;
   --bcal-border-light: rgba(68, 72, 79, 0.35) !important;
-  --bcal-radius: 14px !important;
+  --bcal-radius: var(--radius-md) !important;
   --bcal-radius-full: 9999px !important;
-  --bcal-font: var(--font-plus-jakarta-sans), sans-serif !important;
+  --bcal-font: var(--font-body) !important;
   max-width: none !important;
   border: 0 !important;
   background: transparent !important;
@@ -45,7 +45,7 @@ const STYLE_OVERRIDES = `
   border-bottom: 2px solid transparent !important;
   background: transparent !important;
   color: var(--color-on-surface-variant) !important;
-  font-family: var(--font-space-grotesk), sans-serif !important;
+  font-family: var(--font-headline) !important;
   font-size: 0.78rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.06em !important;
@@ -75,7 +75,7 @@ const STYLE_OVERRIDES = `
   background: rgba(129, 236, 255, 0.07) !important;
   border: 1px solid rgba(129, 236, 255, 0.18) !important;
   color: var(--color-on-surface) !important;
-  font-family: var(--font-plus-jakarta-sans), sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 0.88rem !important;
   font-weight: 600 !important;
   letter-spacing: 0.01em !important;
@@ -112,16 +112,16 @@ const STYLE_OVERRIDES = `
 
 /* Squared-off day cells instead of the widget's default circular numerals. */
 #beacon-calendar.bcal .bcal-day-num {
-  border-radius: 0.5rem !important;
+  border-radius: var(--radius-md) !important;
 }
 
 #beacon-calendar.bcal .bcal-month-nav button {
-  border-radius: 0.5rem !important;
+  border-radius: var(--radius-md) !important;
 }
 
 #beacon-calendar.bcal .bcal-title {
   color: var(--color-on-surface) !important;
-  font-family: var(--font-space-grotesk), sans-serif !important;
+  font-family: var(--font-headline) !important;
   font-weight: 800 !important;
   letter-spacing: -0.03em !important;
   text-transform: uppercase !important;
@@ -131,7 +131,7 @@ const STYLE_OVERRIDES = `
 #beacon-calendar.bcal .bcal-date-heading,
 #beacon-calendar.bcal .bcal-month-label,
 #beacon-calendar.bcal .bcal-field label {
-  font-family: var(--font-space-grotesk), sans-serif !important;
+  font-family: var(--font-headline) !important;
   text-transform: uppercase !important;
 }
 
@@ -158,7 +158,7 @@ const STYLE_OVERRIDES = `
   border-radius: 0 !important;
   background: var(--color-surface-container-highest) !important;
   color: var(--color-on-surface) !important;
-  font-family: var(--font-plus-jakarta-sans), sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 0.85rem !important;
   transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s !important;
 }
@@ -204,7 +204,7 @@ const STYLE_OVERRIDES = `
   background: rgba(142, 255, 113, 0.08) !important;
   border: 1px solid rgba(142, 255, 113, 0.3) !important;
   color: var(--color-on-surface) !important;
-  font-family: var(--font-plus-jakarta-sans), sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 0.8rem !important;
   font-weight: 600 !important;
   line-height: 1.5 !important;
@@ -250,10 +250,10 @@ const STYLE_OVERRIDES = `
 #beacon-calendar.bcal .bcal-submit {
   margin-top: 0.9rem !important;
   padding: 1rem 1.25rem !important;
-  border-radius: 0.9rem !important;
+  border-radius: var(--radius-md) !important;
   background: linear-gradient(to right, var(--color-primary), var(--color-primary-container)) !important;
   color: var(--color-on-primary-fixed) !important;
-  font-family: var(--font-space-grotesk), sans-serif !important;
+  font-family: var(--font-headline) !important;
   font-size: 0.9rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.16em !important;

@@ -3,14 +3,26 @@ import TopNavBar from "@/components/TopNavBar";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import Button from "@/components/Button";
-import JoinLink from "@/components/JoinLink";
 import Icon from "@/components/Icon";
+import FeatureRow from "@/components/FeatureRow";
+import { BrowserShot, PhoneStage } from "@/components/Screenshot";
+import { NORTHMARK_FEATURES_URL, NORTHMARK_URL } from "@/content/links";
 
 export const metadata: Metadata = {
   title: "Table Booking Software for Game Stores",
   description:
-    "Let players book a table at your venue online with Beacon CRM. Manage table bookings, paid events, marketing, and customer engagement in one platform built for local gaming stores.",
+    "NorthMark CRM runs table bookings, payments, events, customer records and automated follow-up for game stores, and puts your venue in front of players on the Battle Beacon app.",
 };
+
+const workflowTriggers = [
+  "A booking is made or cancelled",
+  "A payment completes or fails",
+  "A form is submitted",
+  "A tag, stage or field changes",
+  "An award is given or an event ends",
+];
+
+const workflowSteps = ["Email", "SMS", "Wait", "Condition", "Move stage", "Add tag", "Check award", "API call"];
 
 export default function ForVenuesPage() {
   return (
@@ -21,218 +33,206 @@ export default function ForVenuesPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(129,236,255,0.12),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,81,250,0.12),transparent_35%)]" aria-hidden="true"></div>
           <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
             <div className="max-w-3xl">
-              <h1 className="mb-6 font-headline text-5xl font-bold uppercase tracking-tighter text-on-surface md:text-7xl">
-                Let players book a table at your venue with <span className="text-primary italic">Beacon CRM</span>
+              <p className="mb-5 font-label text-xs font-bold uppercase tracking-[0.2em] text-secondary">
+                For game stores, clubs and event organisers
+              </p>
+              <h1 className="mb-6 text-4xl uppercase leading-[1.05] text-on-surface md:text-5xl xl:text-6xl">
+                Fill more tables with <span className="text-primary">NorthMark CRM</span>
               </h1>
               <p className="mb-10 max-w-2xl text-lg leading-relaxed text-on-surface-variant md:text-xl">
-                Battle Beacon helps venue owners take table bookings online, run paid events, and manage marketing, customer engagement, and day-to-day operations in one easy-to-use CRM built for local gaming communities.
+                Bookings, payments, events, customer records and automated follow-up in one place. Every table and event you publish also shows up for players on the Battle Beacon app.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <JoinLink variant="primary">Sign Up</JoinLink>
+                <Button href={NORTHMARK_URL} external variant="primary">
+                  Start Free on NorthMark
+                </Button>
                 <Button href="/book-a-demo" variant="outline">
                   Book a Demo
                 </Button>
               </div>
             </div>
-
-            <div className="grid gap-4 rounded-3xl border border-outline-variant/20 bg-surface-container-low p-6 shadow-2xl">
-              <div className="rounded-2xl border border-primary/20 bg-surface-container p-6">
-                <div className="mb-3 flex items-center gap-3">
-                  <Icon name="event_seat" className="text-primary" />
-                  <h2 className="font-headline text-lg font-bold uppercase text-on-surface">
-                    Bookings and events
-                  </h2>
-                </div>
-                <p className="text-sm leading-relaxed text-on-surface-variant">
-                  Offer table booking, manage ticketed events, and take payments through one system instead of stitching together separate tools.
-                </p>
-              </div>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-2xl border border-outline-variant/20 bg-surface-container p-5">
-                  <div className="mb-3 flex items-center gap-3">
-                    <Icon name="forum" className="text-secondary" />
-                    <h2 className="font-headline text-sm font-bold uppercase text-on-surface">
-                      Customer engagement
-                    </h2>
-                  </div>
-                  <p className="text-sm leading-relaxed text-on-surface-variant">
-                    Keep players informed with updates, reminders, and follow-up communication that helps them come back more often.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-outline-variant/20 bg-surface-container p-5">
-                  <div className="mb-3 flex items-center gap-3">
-                    <Icon name="bolt" className="text-tertiary" />
-                    <h2 className="font-headline text-sm font-bold uppercase text-on-surface">
-                      Automation workflows
-                    </h2>
-                  </div>
-                  <p className="text-sm leading-relaxed text-on-surface-variant">
-                    Automate marketing, reminders, and repeat admin tasks so your team can spend more time serving customers in-store.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <BrowserShot id="crm-dashboard" className="neon-glow-primary" />
           </div>
         </header>
 
-        <section className="bg-surface px-6 py-24 lg:px-24">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-14 max-w-3xl">
-              <h2 className="mb-4 font-headline text-4xl font-bold uppercase tracking-tight text-on-surface md:text-5xl">
-                Everything your venue needs <span className="text-primary">in one place</span>
+        <FeatureRow
+          num="01"
+          label="Bookings & calendar"
+          title={<>A booking calendar that <span className="text-primary">knows your tables.</span></>}
+          body="Give every bookable thing its own type, with its own length, capacity, price and opening hours. Customers see live slots and book themselves, on your website or in the Battle Beacon app."
+          points={[
+            "Table types for standard tables, painting stations and big boards",
+            "Weekly hours, one-off changes and blackout days",
+            "Add the calendar to your own website with one line of code",
+          ]}
+          visual={<BrowserShot id="crm-bookings-calendar" />}
+        />
+
+        <div className="bg-surface-container-low/40">
+          <FeatureRow
+            num="02"
+            label="Payments"
+            accent="secondary"
+            reverse
+            title={<>Paid at booking. <span className="text-secondary">Fewer empty tables.</span></>}
+            body="Customers pay when they book, so the slot is theirs and you're not chasing anyone on the day. Connect the provider you already use and the money goes straight to you."
+            points={["Stripe, Square, PayPal and SumUp", "A receipt when it goes through, a nudge when it fails"]}
+            visual={<BrowserShot id="crm-payments-checkout" />}
+          />
+        </div>
+
+        <FeatureRow
+          num="03"
+          label="Events"
+          accent="tertiary"
+          title={<>Tournaments and game nights <span className="text-tertiary">that sell themselves.</span></>}
+          body="Publish an event, set the places and price, and share the link. NorthMark handles sign-ups, payment and the tables the event needs."
+          points={[
+            "Ticketed sign-up: see who's coming and what's left",
+            "Events hold their tables, so there's no double-booking",
+            "Co-host with other venues and organisers",
+            "Run the day in Battle Beacon: check-in, rounds, pairings and results",
+          ]}
+          visual={<BrowserShot id="crm-events-manager" />}
+        />
+
+        <div className="bg-surface-container-low/40">
+          <FeatureRow
+            num="04"
+            label="Forms & customer records"
+            reverse
+            title={<>Every enquiry, <span className="text-primary">one customer list.</span></>}
+            body="Forms, bookings, event sign-ups and imports all build the same customer record, so you see someone's whole history in one place."
+            points={[
+              "Embeddable contact, enquiry and sign-up forms",
+              "Your own fields: favourite game, army, club",
+              "Tags, applied by hand or automatically",
+              "Bring your existing list in with a CSV",
+            ]}
+            visual={<BrowserShot id="crm-forms-builder" />}
+          />
+        </div>
+
+        <FeatureRow
+          num="05"
+          label="Pipelines"
+          accent="secondary"
+          title={<>See where everyone is, <span className="text-secondary">at a glance.</span></>}
+          body="Boards for the things you track: enquiries, party bookings, league sign-ups, trade accounts. Drag a card to move it on, and let the move start the follow-up."
+          points={["As many pipelines as you need", "Name and reorder stages to match how you work"]}
+          visual={<BrowserShot id="crm-leads-kanban" />}
+        />
+
+        {/* Workflows: the signature feature gets a full-width panel */}
+        <section className="px-6 py-16 md:px-8 md:py-24">
+          <div className="mx-auto max-w-7xl rounded-md border border-outline-variant/20 bg-surface-container p-8 md:p-12">
+            <p className="mb-4 font-label text-xs font-bold uppercase tracking-[0.2em] text-tertiary">06 · Workflows</p>
+            <div className="mb-10 grid gap-8 lg:grid-cols-2">
+              <h2 className="text-3xl uppercase leading-[1.05] text-on-surface md:text-5xl">
+                Follow-up that <span className="text-tertiary">runs itself.</span>
               </h2>
-              <p className="text-lg text-on-surface-variant">
-                Beacon CRM is designed to replace clunky combinations of booking apps, event tools, forms, and marketing systems with one connected platform.
+              <p className="text-lg leading-relaxed text-on-surface-variant">
+                Build reminders, win-backs and event follow-ups as a flowchart. Pick what starts it, add the steps, switch it on, or start from a template and change the wording. One-click buttons in emails, like &ldquo;I&apos;m coming&rdquo; or &ldquo;Rebook&rdquo;, send each customer down the right path.
               </p>
             </div>
-
-            <ul className="grid gap-px bg-outline-variant/10 md:grid-cols-2 xl:grid-cols-4 rounded-2xl overflow-hidden border border-outline-variant/10">
-              {[
-                {
-                  num: "01",
-                  icon: "calendar_month",
-                  title: "Event management",
-                  description: "Create and manage casual nights, leagues, prereleases, tournaments, and special events from one calendar.",
-                },
-                {
-                  num: "02",
-                  icon: "payments",
-                  title: "Paid bookings",
-                  description: "Let players book a table, buy tickets, and pay online through an integrated payment gateway.",
-                },
-                {
-                  num: "03",
-                  icon: "assignment",
-                  title: "Smart forms",
-                  description: "Create interest forms for new releases, upcoming activities, leagues, and community feedback.",
-                },
-                {
-                  num: "04",
-                  icon: "campaign",
-                  title: "Marketing automation",
-                  description: "Trigger email and engagement workflows that help fill events, promote products, and bring players back.",
-                },
-              ].map((item) => (
-                <li key={item.num} className="bg-surface-container p-8 relative">
-                  <span className="ghost-numeral absolute top-4 right-6 text-4xl text-primary/15" aria-hidden="true">
-                    {item.num}
-                  </span>
-                  <Icon name={item.icon} className="mb-5 text-3xl text-primary relative" />
-                  <h3 className="mb-3 font-headline text-lg font-bold uppercase text-on-surface relative">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-on-surface-variant relative">
-                    {item.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
+            <BrowserShot id="crm-workflows-editor" className="mb-10" />
+            <div className="grid gap-8 md:grid-cols-2">
+              <div>
+                <h3 className="mb-4 font-label text-sm font-bold uppercase tracking-wider text-on-surface">Starts when</h3>
+                <ul className="space-y-2">
+                  {workflowTriggers.map((trigger) => (
+                    <li key={trigger} className="flex gap-3 text-on-surface-variant">
+                      <Icon name="bolt" className="text-lg text-tertiary" />
+                      {trigger}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="mb-4 font-label text-sm font-bold uppercase tracking-wider text-on-surface">Steps you can add</h3>
+                <ul className="flex flex-wrap gap-2">
+                  {workflowSteps.map((step) => (
+                    <li key={step} className="rounded-sm border border-tertiary/30 bg-tertiary/5 px-3 py-1 font-label text-xs font-bold uppercase text-tertiary">
+                      {step}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="bg-surface-container-low px-6 py-24 lg:px-24">
-          <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:items-start">
-            <div>
-              <h2 className="mb-4 font-headline text-4xl font-bold uppercase tracking-tight text-on-surface md:text-5xl">
-                Put live venue content <span className="text-secondary">on your site</span>
+        <FeatureRow
+          num="07"
+          label="Awards"
+          accent="secondary"
+          title={<>Give people something to <span className="text-secondary">come back for.</span></>}
+          body="Create your own awards, like tournament winner, best painted or 10 visits, and hand them out after an event. Every award lands on the customer's record and can start a congratulations workflow."
+          points={["Award a whole table or event at once", "A leaderboard of who's collected the most"]}
+          visual={<BrowserShot id="crm-awards-leaderboard" />}
+        />
+
+        <div className="bg-surface-container-low/40">
+          <FeatureRow
+            num="08"
+            label="Venue profile & media"
+            reverse
+            title={<>Show people what it&apos;s like <span className="text-primary">inside.</span></>}
+            body="Your details, amenities and best photos in one place, plus a gallery for your website that you approve before anything goes live."
+            points={["Parking, food and accessibility at a glance", "Photo folders with approval before publishing"]}
+            visual={<BrowserShot id="crm-venue-profile" />}
+          />
+        </div>
+
+        {/* Works with Battle Beacon */}
+        <section className="px-6 py-24 md:px-8">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            <div className="min-w-0">
+              <p className="mb-4 font-label text-xs font-bold uppercase tracking-[0.2em] text-secondary">Works with Battle Beacon</p>
+              <h2 className="mb-5 text-3xl uppercase leading-[1.05] text-on-surface md:text-5xl">
+                Players find you <span className="text-secondary">in the app.</span>
               </h2>
-              <p className="mb-8 text-lg text-on-surface-variant">
-                Drop embeddable widgets onto any page to show what is happening at your store &mdash; events, availability, booking links &mdash; without touching them again.
+              <p className="mb-8 max-w-xl text-lg leading-relaxed text-on-surface-variant">
+                Battle Beacon is the player app that sits on top of NorthMark. Your tables, games and events show up for players nearby, and they book and pay without leaving the app.
               </p>
-              <div className="space-y-5">
-                <div className="rounded-xl bg-surface-container p-6">
-                  <h3 className="mb-2 font-headline text-xl font-bold uppercase text-on-surface">
-                    Event widgets
-                  </h3>
-                  <p className="text-sm leading-relaxed text-on-surface-variant">
-                    Show upcoming events, live availability, and booking links directly on your website or landing pages.
-                  </p>
-                </div>
-                <div className="rounded-xl bg-surface-container p-6">
-                  <h3 className="mb-2 font-headline text-xl font-bold uppercase text-on-surface">
-                    Games and community widgets
-                  </h3>
-                  <p className="text-sm leading-relaxed text-on-surface-variant">
-                    Highlight active game systems, current interest, and player activity so customers can quickly see why they should visit.
-                  </p>
-                </div>
-                <div className="rounded-xl bg-surface-container p-6">
-                  <h3 className="mb-2 font-headline text-xl font-bold uppercase text-on-surface">
-                    Store presence
-                  </h3>
-                  <p className="text-sm leading-relaxed text-on-surface-variant">
-                    Keep your venue looking active and welcoming across your site, event pages, and future campaign landing pages.
-                  </p>
-                </div>
+              <ul className="space-y-3">
+                {[
+                  "Players host games at your store and book the table in the same step",
+                  "Regulars set you as their local store, so your games top their feed",
+                  "Your events appear in Nearby Events for players around you",
+                  "Premium venues get a gold tag in the app",
+                ].map((point) => (
+                  <li key={point} className="flex gap-3 text-on-surface">
+                    <Icon name="check_circle" fill className="mt-0.5 shrink-0 text-xl text-secondary" />
+                    <span className="leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-10">
+                <Button href="/for-players" variant="outline">
+                  See the Player App
+                </Button>
               </div>
             </div>
-
-            <div className="rounded-3xl border border-outline-variant/15 bg-surface-container p-8 shadow-2xl">
-              <div className="mb-8">
-                <div className="mb-4 inline-flex rounded-full bg-secondary/25 px-3 py-1">
-                  <span className="font-headline text-[10px] font-bold uppercase tracking-widest text-secondary">
-                    Planned next
-                  </span>
-                </div>
-                <h2 className="mb-4 font-headline text-4xl font-bold uppercase tracking-tight text-on-surface">
-                  One CRM, even more <span className="text-primary">under one roof</span>
-                </h2>
-                <p className="text-lg text-on-surface-variant">
-                  The longer-term plan is to help venues manage even more of the business from one place, reducing reliance on expensive third-party apps.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex gap-4 rounded-xl border border-outline-variant/15 bg-surface-container-high p-5">
-                  <Icon name="storefront" className="text-primary" />
-                  <div>
-                    <h3 className="mb-1 font-headline text-lg font-bold uppercase text-on-surface">
-                      Ecommerce platform
-                    </h3>
-                    <p className="text-sm leading-relaxed text-on-surface-variant">
-                      Sell tickets, products, and future offers from the same platform that already handles your events and customer data.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 rounded-xl border border-outline-variant/15 bg-surface-container-high p-5">
-                  <Icon name="integration_instructions" className="text-secondary" />
-                  <div>
-                    <h3 className="mb-1 font-headline text-lg font-bold uppercase text-on-surface">
-                      Simpler tool stack
-                    </h3>
-                    <p className="text-sm leading-relaxed text-on-surface-variant">
-                      Replace disconnected booking, forms, marketing, and engagement tools with a platform built around local game store workflows.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 rounded-xl border border-outline-variant/15 bg-surface-container-high p-5">
-                  <Icon name="groups" className="text-tertiary" />
-                  <div>
-                    <h3 className="mb-1 font-headline text-lg font-bold uppercase text-on-surface">
-                      Better customer relationships
-                    </h3>
-                    <p className="text-sm leading-relaxed text-on-surface-variant">
-                      Build a clearer view of your community so you can promote the right events, grow attendance, and reward loyal players.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <PhoneStage ids={["app-venue-profile", "app-nearby-events"]} glow="secondary" />
           </div>
         </section>
 
         <section className="px-6 py-24 lg:px-24">
-          <div className="mx-auto max-w-5xl diagonal-both border border-primary/20 bg-surface-container-high p-10 text-center shadow-2xl md:p-16 tactical-grid relative overflow-hidden">
-            <h2 className="mb-5 font-headline text-4xl font-bold uppercase tracking-tighter text-on-surface md:text-5xl">
-              Ready to run your venue through <span className="text-primary">Beacon CRM</span>?
+          <div className="mx-auto max-w-5xl diagonal-both border border-primary/20 bg-surface-container-high px-6 py-12 text-center shadow-2xl md:p-16 tactical-grid relative overflow-hidden">
+            <h2 className="mb-5 text-3xl uppercase text-on-surface md:text-5xl">
+              Run your venue on <span className="text-primary">NorthMark CRM</span>
             </h2>
             <p className="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-on-surface-variant">
-              Bring bookings, events, payments, forms, marketing, and customer engagement into one platform that is built for local gaming stores.
+              Start on the free plan and upgrade when you&apos;re taking enough bookings for it to pay for itself. Or book a call and we&apos;ll show you round.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <JoinLink variant="primary" size="lg">Sign Up</JoinLink>
+              <Button href={NORTHMARK_URL} external variant="primary" size="lg">
+                Start Free on NorthMark
+              </Button>
+              <Button href={NORTHMARK_FEATURES_URL} external variant="outline" size="lg">
+                Every Feature
+              </Button>
               <Button href="/book-a-demo" variant="outline" size="lg">
                 Book a Demo
               </Button>
