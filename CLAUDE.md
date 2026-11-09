@@ -71,4 +71,4 @@ Three client components follow the same pattern: dynamically inject an external 
 - `BeaconFeedbackFormEmbed.tsx` — used on `/app-feedback`
 
 ### App-facing legal/account pages
-`/app-privacy`, `/app-eula`, `/app-delete-account`, and `/app-feedback` are standalone pages for the mobile app (privacy policy, EULA, account deletion request, feedback form) distinct from the marketing site's own `/privacy`.
+`/app-privacy`, `/app-terms`, `/app-delete-account`, and `/app-feedback` are standalone pages for the mobile app (privacy policy, terms of use/EULA, account deletion request, feedback form) distinct from the marketing site's own `/privacy`. `/app-eula` re-exports `/app-terms` because the app's login screen still links to it.

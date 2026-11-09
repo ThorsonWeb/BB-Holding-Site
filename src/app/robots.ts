@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/app-privacy", "/app-eula", "/app-delete-account", "/app-feedback"],
+      disallow: ["/app-privacy", "/app-terms", "/app-eula", "/app-delete-account", "/app-feedback"],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
   };
